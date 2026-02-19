@@ -1,0 +1,114 @@
+@use "../../foundation" as *;
+
+// ========================================
+// 相談できる内容（1:354）
+// ========================================
+.p-consult-content {
+  padding: prem(40) prem(20);
+  background: linear-gradient(to bottom, $light-blue, $white);
+
+  @include mq("md") {
+    padding: prem(80) prem(25);
+  }
+}
+
+.p-consult-content__inner {
+  max-width: prem(900);
+  margin: 0 auto;
+}
+
+.p-consult-content__title {
+  margin-bottom: prem(32);
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  text-align: center;
+  color: $figma-dark-blue;
+
+  @include mq("md") {
+    font-size: prem(28);
+  }
+}
+
+.p-consult-content__list {
+  display: grid;
+  gap: prem(16);
+  grid-template-columns: 1fr;
+  margin: 0 0 prem(32);
+  padding: 0;
+  list-style: none;
+
+  @include mq("md") {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.p-consult-content__item {
+  padding: prem(20);
+  border-radius: prem(8);
+  font-size: prem(14);
+  line-height: 1.6;
+  text-align: center;
+  color: $white;
+  background-color: $figma-mizuiro;
+
+  @include mq("md") {
+    padding: prem(24);
+    font-size: prem(15);
+  }
+}
+
+.p-consult-content__text {
+  margin-bottom: prem(8);
+  font-size: prem(16);
+  text-align: center;
+  color: $text-black;
+}
+
+.p-consult-content__sub {
+  margin-bottom: prem(32);
+  font-size: prem(14);
+  text-align: center;
+  color: $text-black;
+}
+
+.p-consult-content__cta {
+  display: grid;
+  align-items: center;
+  gap: prem(24);
+  grid-template-columns: 1fr;
+
+  @include mq("md") {
+    grid-template-columns: 1fr auto;
+  }
+}
+
+.p-consult-content__cta-text {
+  font-size: prem(16);
+  font-weight: $font-weight-m;
+  line-height: 1.8;
+  color: $text-black;
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
+}
+
+.p-consult-content__highlight {
+  font-weight: $font-weight-b;
+  color: $main-orange;
+}
+
+.p-consult-content__img {
+  max-width: prem(250);
+  margin: 0 auto;
+
+  @include mq("md") {
+    margin: 0;
+  }
+}
+
+.p-consult-content__img img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

@@ -45,8 +45,8 @@
   background-size: cover;
   background-repeat: no-repeat;
   inset: 0;
-  
-  // WebP対応
+
+  // WebP対応（public/assets/images/fv/ に配置）
   @supports (background-image: url('/assets/images/fv/fv-overlay.webp')) {
     background-image: url('/assets/images/fv/fv-overlay.webp');
   }
@@ -137,7 +137,6 @@
   padding: 10px;
   text-align: center;
   text-decoration: none;
-  color: $main-green;
   transition: all 0.3s ease;
 
   @media (width <= 375px) {
@@ -211,7 +210,6 @@
   height: 28px;
   border-radius: 50%;
   text-decoration: none;
-  color: $main-green;
   transition: all 0.3s ease;
 
   @media (width <= 375px) {
@@ -239,7 +237,7 @@
   max-width: 202px;
   margin-top: 54px;
   padding: 12px 21px;
-  border: 1px solid $main-green;
+  border: 1px solid red;
   border-radius: 26px;
   background: transparent;
   transition: all 0.3s ease;
@@ -260,7 +258,7 @@
     font-weight: $font-weight-b;
     text-decoration: none;
     letter-spacing: 0.1em;
-    color: $main-green;
+    color: red;
     transition: color 0.3s ease;
 
     @media (width <= 375px) {
@@ -286,7 +284,7 @@
   }
 
   &:hover {
-    background: $main-green;
+    background: red;
 
     a {
       color: #fff;

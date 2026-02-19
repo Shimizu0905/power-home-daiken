@@ -1,0 +1,119 @@
+@use "../../foundation" as *;
+
+// ========================================
+// 購入前プロ相談メリットセクション
+// ========================================
+.p-benefits {
+  padding: prem(40) prem(20);
+  background: linear-gradient(to bottom, $white, $light-blue);
+
+  @include mq("md") {
+    padding: prem(80) prem(25);
+  }
+}
+
+.p-benefits__inner {
+  max-width: prem(900);
+  margin: 0 auto;
+}
+
+.p-benefits__title {
+  margin-bottom: prem(32);
+  padding: prem(20) prem(32);
+  border-radius: prem(8);
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  text-align: center;
+  color: $white;
+  background-color: $main-blue;
+
+  @include mq("md") {
+    padding: prem(24) prem(48);
+    font-size: prem(22);
+  }
+}
+
+.p-benefits__list {
+  margin: 0 0 prem(40);
+  padding: 0;
+  border-radius: prem(12);
+  box-shadow: 0 prem(4) prem(20) rgb(0 0 0 / 8%);
+  background: $white;
+  overflow: hidden;
+  list-style: none;
+}
+
+.p-benefits__item {
+  position: relative;
+  padding: prem(16) prem(24) prem(16) prem(56);
+  border-bottom: 1px solid #eee;
+  font-size: prem(14);
+  line-height: 1.7;
+  color: $text-black;
+
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: prem(20);
+    width: prem(24);
+    height: prem(24);
+    border-radius: 50%;
+    background-color: #ffe4cc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23EE780C'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-position: center;
+    background-size: prem(14);
+    background-repeat: no-repeat;
+    transform: translateY(-50%);
+    content: "";
+  }
+}
+
+.p-benefits__item:last-child {
+  border-bottom: none;
+}
+
+.p-benefits__qa {
+  display: flex;
+  flex-direction: column;
+  gap: prem(32);
+}
+
+.p-benefits__qa-item {
+  padding: prem(24);
+  border-radius: prem(12);
+  box-shadow: 0 prem(4) prem(20) rgb(0 0 0 / 8%);
+  background: $white;
+}
+
+.p-benefits__q {
+  margin-bottom: prem(16);
+  font-size: prem(16);
+  font-weight: $font-weight-m;
+  color: $text-black;
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
+}
+
+.p-benefits__a-label {
+  display: inline-block;
+  margin-bottom: prem(12);
+  padding: prem(12) prem(20);
+  border-radius: prem(20);
+  font-size: prem(14);
+  font-weight: $font-weight-b;
+  color: $white;
+  background-color: $main-blue;
+}
+
+.p-benefits__a-text {
+  font-size: prem(14);
+  line-height: 1.7;
+  color: $text-black;
+}
+
+.p-benefits__highlight {
+  font-weight: $font-weight-b;
+  color: $main-orange;
+}

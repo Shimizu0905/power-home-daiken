@@ -1,0 +1,110 @@
+@use "../../foundation" as *;
+
+// ========================================
+// 相談サービス5カードセクション
+// ========================================
+.p-consult-cards {
+  padding: prem(40) prem(20);
+  background-color: $white;
+
+  @include mq("md") {
+    padding: prem(80) prem(25);
+  }
+}
+
+.p-consult-cards__inner {
+  max-width: prem(1000);
+  margin: 0 auto;
+}
+
+.p-consult-cards__banner {
+  margin-bottom: prem(40);
+  padding: prem(24) prem(32);
+  border: prem(3) solid $main-blue;
+  border-radius: prem(12);
+  text-align: center;
+
+  @include mq("md") {
+    margin-bottom: prem(48);
+    padding: prem(32) prem(48);
+  }
+}
+
+.p-consult-cards__banner-text {
+  font-size: prem(14);
+  line-height: 1.6;
+  color: $text-black;
+
+  @include mq("md") {
+    font-size: prem(16);
+  }
+}
+
+.p-consult-cards__banner-highlight {
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  color: $main-orange;
+
+  @include mq("md") {
+    font-size: prem(22);
+  }
+}
+
+.p-consult-cards__list {
+  display: grid;
+  gap: prem(20);
+  grid-template-columns: 1fr;
+  margin: 0 0 prem(40);
+  padding: 0;
+  list-style: none;
+
+  @include mq("md") {
+    gap: prem(24);
+    grid-template-columns: repeat(3, 1fr);
+
+    .p-consult-cards__item:nth-child(4),
+    .p-consult-cards__item:nth-child(5) {
+      grid-column: span 1;
+      max-width: prem(300);
+      margin: 0 auto;
+    }
+  }
+}
+
+.p-consult-cards__item {
+  padding: prem(24);
+  border: prem(2) solid $main-blue;
+  border-radius: prem(12);
+  font-size: prem(14);
+  line-height: 1.6;
+  text-align: center;
+  color: $main-blue;
+
+  @include mq("md") {
+    padding: prem(32);
+    font-size: prem(16);
+  }
+}
+
+.p-consult-cards__cta {
+  padding: prem(32);
+  border-radius: prem(12);
+  text-align: center;
+  background: linear-gradient(to bottom, $light-blue, $white);
+}
+
+.p-consult-cards__cta-lead {
+  margin-bottom: prem(8);
+  font-size: prem(14);
+  color: $text-black;
+}
+
+.p-consult-cards__cta-text {
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  color: $main-orange;
+
+  @include mq("md") {
+    font-size: prem(28);
+  }
+}

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- ページタイトル -->
-    <title>サイトタイトル</title>
+    <title>中古リノベ無料相談｜パワーホーム大建</title>
 
     <!-- ファビコン -->
     <!-- <link rel="icon" href="./favicon.ico" type="image/x-icon"> -->
@@ -47,31 +47,22 @@
     </script> -->
 
     <!-- 外部ライブラリ -->
-    <!-- Google Fonts (使用していないためコメントアウト) -->
-    <!-- <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <!-- CSS & JavaScript -->
     <script type="module" src="/src/js/main.js"></script>
   </head>
 
   <body>
     <!-- 固定背景 -->
-    <div class="l-fixed-bg"></div>
 
     <div id="page" class="l-site">
       <header class="c-header js-header" id="header">
         <div class="c-header__inner">
           <h1 class="c-header__logo js-header__logo">
             <a href="./" class="c-header__logo-link">
-              <img src="./assets/images/common/logo-green.svg" alt="サイト名" class="c-header__logo-img">
+              <img src="./assets/common/header-logo.png" alt="パワーホーム大建">
             </a>
           </h1>
-          <button class="c-header__hamburger js-hamburger" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
         </div>
       </header>
 
@@ -87,7 +78,250 @@
       </div>
 
       <main class="l-main-content">
-        <!-- コンテンツエリア -->
+        <!-- FVヒーロー（Figma 1:805） -->
+        <section class="p-fv">
+          <div class="p-fv__banner">
+            <div class="p-fv__bg">
+              <img src="./assets/fv/fv-bg.webp" alt="" width="1200" height="800">
+            </div>
+            <div class="p-fv__content">
+              <p class="p-fv__lead">
+                <img src="./assets/fv/fv-top-copy.svg" alt="中古物件をリノベしたいけど どこまで直すべきか迷っている方へ">
+              </p>
+              <h2 class="p-fv__title">
+                <img src="./assets/fv/fv-main-title.png" alt="パワーホーム大建">
+              </h2>
+              <p class="p-fv__subtitle">中古リノベ無料相談</p>
+              <p class="p-fv__text">ムダな工事を無くして、理想の暮らしを創るならお任せください！<br>「どこまで直すべき？」「予算内に収まる？」など<br>気になる疑問を無料で相談できます。</p>
+            </div>
+          </div>
+          <!-- CTA（Figma 1:179） -->
+          <div class="c-cta">
+            <div class="c-cta__inner l-inner">
+              <p class="c-cta__label">\ <span class="c-cta__label-inner">現地調査・無料見積もり</span>/</p>
+              <a href="#" class="c-cta__button" target="_blank" rel="noopener noreferrer">
+                <img src="./assets/cta/cta-btn.svg" alt="24時間365日受付可能！LINEで相談する">
+              </a>
+              <p class="c-cta__contact">まずはお気軽にご連絡ください</p>
+              <div class="c-cta__tel-block">
+                <a href="tel:0120-12-3456" class="c-cta__tel">
+                  <img src="./assets/cta/tel-number.svg" alt="0120-12-3456">
+                </a>
+                <p class="c-cta__hours">【受付時間】9:00-18:00 <br>(休業日:水曜・日曜)</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- 中古物件のお悩み（Figma 2032:18） -->
+        <section class="p-worries">
+          <div class="p-worries__inner">
+            <h2 class="p-worries__heading">
+              <img src="./assets/worries/worries-icon-home.svg" alt="" class="p-worries__heading-bg-icon" aria-hidden="true">
+              <div class="p-worries__heading-content">
+                <p class="p-worries__heading-lead">
+                  <span class="u-color-blue">中古物件</span>を探すとき
+                </p>
+                <p class="p-worries__heading-text">
+                  こんなお悩みありませんか?
+                </p>
+              </div>
+            </h2>
+            <div class="p-worries__content">
+              <ul class="p-worries__list">
+                <li class="p-worries__item">
+                  <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
+                  <span class="p-worries__item-text">新築は高すぎる･･･。でも<span class="p-worries__highlight">戸建ての暮らし</span>はあきらめたくない</span>
+                </li>
+                <li class="p-worries__item">
+                  <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
+                  <span class="p-worries__item-text">中古なら手が届きそうだけど、買って失敗したくない...</span>
+                </li>
+                <li class="p-worries__item">
+                  <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
+                  <span class="p-worries__item-text">見た目はキレイでも、<span class="p-worries__highlight">床下・雨漏り</span>など"見えない所"が心配</span>
+                </li>
+                <li class="p-worries__item">
+                  <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
+                  <span class="p-worries__item-text">リノベ費用が読めないから、結局いくら必要なのか分からない</span>
+                </li>
+                <li class="p-worries__item">
+                  <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
+                  <span class="p-worries__item-text">どこまで直すべきか判断できないから、優先順位が決められない</span>
+                </li>
+                <li class="p-worries__item">
+                  <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
+                  <span class="p-worries__item-text">業者選びを間違えて、<span class="p-worries__highlight">余計な工事</span>を勧められたくない</span>
+                </li>
+              </ul>
+
+              <div class="p-worries__result-block">
+                <div class="p-worries__result-intro">
+                  <p class="p-worries__result-label">その結果</p>
+                  <img src="./assets/worries/dot-navy.svg" alt="" class="p-worries__result-dots" aria-hidden="true">
+                </div>
+
+                <div class="p-worries__message-container">
+                  <div class="p-worries__message-content">
+                    <p class="p-worries__quote">「良い物件があっても決めきれない...」</p>
+                    <p class="p-worries__message">そんな不安を抱えている方がとても多いです。</p>
+                  </div>
+                  <div class="p-worries__illustration">
+                    <img src="./assets/worries/worries-women.png" alt="悩みを抱える女性のイラスト" width="160" height="auto">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- サービスご利用の流れ（1:273） -->
+        <section class="p-flow">
+          <div class="p-flow__inner">
+            <h2 class="p-flow__title">サービスご利用の流れ</h2>
+            <ol class="p-flow__list">
+              <li class="p-flow__item">
+                <div class="p-flow__img"><img src="./assets/flow/flow_01.jpg" alt="スマートフォンで相談" width="200" height="150">
+                </div>
+                <div class="p-flow__content">
+                  <h3 class="p-flow__step-title">無料相談 (LINE/お電話)</h3>
+                  <p class="p-flow__step-text">まずはLINEまたはお電話でお気軽にご相談ください。「購入前で迷っている」「費用感だけ知りたい」でも大丈夫です。</p>
+                </div>
+              </li>
+              <li class="p-flow__item">
+                <div class="p-flow__img"><img src="./assets/flow/flow_02.jpg" alt="現地確認" width="200" height="150"></div>
+                <div class="p-flow__content">
+                  <h3 class="p-flow__step-title">現地確認・ヒアリング(無料)</h3>
+                  <p class="p-flow__step-text">実際のお住まい(または検討中の物件)を確認しながら、状態とご希望を丁寧に伺います。気になる点や不安も遠慮なくお聞かせください。</p>
+                </div>
+              </li>
+              <li class="p-flow__item">
+                <div class="p-flow__img"><img src="./assets/flow/flow_03.jpg" alt="お見積書" width="200" height="150"></div>
+                <div class="p-flow__content">
+                  <h3 class="p-flow__step-title">設計・無料見積もり</h3>
+                  <p class="p-flow__step-text">ご要望とご予算に合わせて、最適なプランをご提案します。必要な工事だけを分かりやすくまとめ、無料でお見積もりを作成します。</p>
+                </div>
+              </li>
+              <li class="p-flow__item">
+                <div class="p-flow__img"><img src="./assets/flow/flow_04.jpg" alt="ご契約" width="200" height="150"></div>
+                <div class="p-flow__content">
+                  <h3 class="p-flow__step-title">ご納得いただけたら契約</h3>
+                  <p class="p-flow__step-text">内容・金額にご納得いただけた段階でご契約となります。無理な営業はありませんので、じっくりご検討ください。</p>
+                </div>
+              </li>
+              <li class="p-flow__item">
+                <div class="p-flow__img"><img src="./assets/flow/flow_05.jpg" alt="工事" width="200" height="150"></div>
+                <div class="p-flow__content">
+                  <h3 class="p-flow__step-title">工事</h3>
+                  <p class="p-flow__step-text">近隣への配慮や安全管理を徹底しながら、丁寧に工事を進めます。工事中も進捗をご説明し、安心してお任せいただける体制を整えています。</p>
+                </div>
+              </li>
+              <li class="p-flow__item">
+                <div class="p-flow__img"><img src="./assets/flow/flow_06.jpg" alt="完成" width="200" height="150"></div>
+                <div class="p-flow__content">
+                  <h3 class="p-flow__step-title">完成</h3>
+                  <p class="p-flow__step-text">仕上がりを一緒に確認し、問題がなければお引き渡しとなります。新しい暮らしを気持ちよくスタートできるよう、細部まで整えます。</p>
+                </div>
+              </li>
+              <li class="p-flow__item">
+                <div class="p-flow__img"><img src="./assets/flow/flow_07.jpg" alt="アフターサービス" width="200" height="150">
+                </div>
+                <div class="p-flow__content">
+                  <h3 class="p-flow__step-title">アフターサービス</h3>
+                  <p class="p-flow__step-text">完成後も、気になることがあればいつでもご相談ください。地域密着だからこそ、長く安心して暮らせるサポートを大切にしています。</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- 相談できる内容（1:354） -->
+        <section class="p-consult-content">
+          <div class="p-consult-content__inner">
+            <h2 class="p-consult-content__title">相談できる内容</h2>
+            <ul class="p-consult-content__list">
+              <li class="p-consult-content__item">この中古物件、買ってから後悔しない?</li>
+              <li class="p-consult-content__item">水回りだけ交換したらいくら?</li>
+              <li class="p-consult-content__item">断熱を入れるとどれくらい変わる?</li>
+              <li class="p-consult-content__item">間取り変更は可能?</li>
+              <li class="p-consult-content__item">予算○○万円なら、どこまでできる?</li>
+              <li class="p-consult-content__item">優先順位を一緒に整理してほしい</li>
+            </ul>
+            <p class="p-consult-content__text">どんな内容でも大丈夫です。</p>
+            <p class="p-consult-content__sub">「これ聞いていいのかな?」と思うことほど、遠慮なくご相談ください。</p>
+            <div class="p-consult-content__cta">
+              <p class="p-consult-content__cta-text">私たちは「工事ありき」ではなく、まず<span
+                  class="p-consult-content__highlight">不安を整理</span>して<span
+                  class="p-consult-content__highlight">優先順位を決め</span>るところからお手伝いします。</p>
+              <div class="p-consult-content__img"><img src="./assets/consult-content/consult_01.png" alt="相談対応の様子"
+                  width="300" height="300"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 最後に + WEB限定（1:259, 1:417） -->
+        <section class="p-finally">
+          <div class="p-finally__content">
+            <h2 class="p-finally__title">「最後に」</h2>
+            <p class="p-finally__text">中古物件は「買ったらゴール」ではありません。購入後、ご家族が快適に暮らせるように整えてこそ、初めて「良い買い物」になります。</p>
+            <p class="p-finally__text">「購入後に想定外の修繕が必要だった…」そんな後悔を防ぐために、購入前〜購入直後に一度プロに見てもらうことをおすすめします。</p>
+            <ul class="p-finally__list">
+              <li>・見積もりだけでもOK</li>
+              <li>・必要な工事だけを正直にご提案</li>
+              <li>・無理な営業は一切ありません</li>
+            </ul>
+            <p class="p-finally__cta">中古物件の購入前・購入直後のご相談、大歓迎です。</p>
+          </div>
+          <div class="p-finally__banner">WEB限定キャンペーン</div>
+        </section>
+
+        <section class="p-campaign">
+          <div class="p-campaign__inner">
+            <h2 class="p-campaign__title">WEB限定キャンペーン</h2>
+            <p class="p-campaign__sub">お問い合わせ後、見積もり依頼で</p>
+            <div class="p-campaign__box">
+              <div class="p-campaign__gift">
+                <img src="./assets/campaign/campaign_01.png" alt="ギフトカード" width="150" height="100">
+                <p class="p-campaign__gift-text">ギフトカード<span class="p-campaign__gift-amount">3,000円分</span>プレゼント</p>
+                <p class="p-campaign__gift-note">本サイトからお問い合わせいただいたお客様限定</p>
+              </div>
+            </div>
+            <p class="p-campaign__lead">「相談したいけど、まだ迷っている」</p>
+            <p class="p-campaign__text">そんな方でも動きやすいように、Web限定の特典をご用意しました。</p>
+            <ul class="p-campaign__disclaimers">
+              <li>※10万円以上のリフォームをご検討の方が対象です。</li>
+              <li>※ご成約後のお渡しとなります。</li>
+              <li>※予告なく終了する場合があります。</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- 購入前プロ相談メリット -->
+        <section class="p-benefits">
+          <div class="p-benefits__inner">
+            <h2 class="p-benefits__title">「購入前の段階からプロに相談するメリット」</h2>
+            <ul class="p-benefits__list">
+              <li class="p-benefits__item">リフォーム費用の目安が分かり、資金計画が立つ</li>
+              <li class="p-benefits__item">「この物件でOKかどうか」の判断材料が増える</li>
+              <li class="p-benefits__item">工事の優先順位が明確になり、ムダが減る</li>
+              <li class="p-benefits__item">必要以上に不安にならず、前に進める</li>
+              <li class="p-benefits__item">家族が安心して暮らせる住まいに近づく</li>
+            </ul>
+            <div class="p-benefits__qa">
+              <div class="p-benefits__qa-item">
+                <p class="p-benefits__q">まだ買ってないのに相談していいの?</p>
+                <p class="p-benefits__a-label">もちろん大丈夫です!</p>
+                <p class="p-benefits__a-text"><span
+                    class="p-benefits__highlight">むしろ一番おすすめのタイミングです。</span>買ってから「想定外の修繕が必要だった･･･」となる前に、先に全体像を把握しておく方が安全です。
+                </p>
+              </div>
+              <div class="p-benefits__qa-item">
+                <p class="p-benefits__q">とりあえず見積もりだけでもいい?</p>
+                <p class="p-benefits__a-label">大丈夫です。</p>
+                <p class="p-benefits__a-text">「費用感だけ知りたい」「相場を知りたい」そんな段階でも問題ありません。</p>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <!-- Footer -->

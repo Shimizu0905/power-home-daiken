@@ -1,0 +1,123 @@
+@use "../../foundation" as *;
+
+// ========================================
+// 選ばれる3つの理由（1:454）
+// ========================================
+.p-reasons {
+  padding: prem(40) prem(20);
+  background: linear-gradient(to bottom, $light-blue, $white);
+
+  @include mq("md") {
+    padding: prem(80) prem(25);
+  }
+}
+
+.p-reasons__inner {
+  max-width: prem(1000);
+  margin: 0 auto;
+}
+
+.p-reasons__heading {
+  margin-bottom: prem(40);
+  text-align: center;
+}
+
+.p-reasons__heading-lead {
+  display: block;
+  font-size: prem(14);
+  color: $figma-mizuiro;
+
+  @include mq("md") {
+    font-size: prem(16);
+  }
+}
+
+.p-reasons__heading-text {
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  color: $figma-dark-blue;
+
+  @include mq("md") {
+    font-size: prem(32);
+  }
+}
+
+.p-reasons__heading-num {
+  color: $main-orange;
+}
+
+.p-reasons__list {
+  display: flex;
+  flex-direction: column;
+  gap: prem(48);
+}
+
+.p-reasons__item {
+  display: grid;
+  align-items: center;
+  gap: prem(24);
+  grid-template-columns: 1fr;
+
+  @include mq("md") {
+    gap: prem(48);
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.p-reasons__item--reverse {
+  @include mq("md") {
+    direction: rtl;
+  }
+}
+
+.p-reasons__item--reverse > * {
+  @include mq("md") {
+    direction: ltr;
+  }
+}
+
+.p-reasons__label {
+  margin-bottom: prem(8);
+  font-size: prem(14);
+  color: $text-black;
+}
+
+.p-reasons__title {
+  margin-bottom: prem(16);
+  font-size: prem(18);
+  font-weight: $font-weight-m;
+  line-height: 1.6;
+  color: $text-black;
+
+  @include mq("md") {
+    font-size: prem(22);
+  }
+}
+
+.p-reasons__highlight {
+  font-weight: $font-weight-b;
+  color: $main-orange;
+}
+
+.p-reasons__text {
+  font-size: prem(14);
+  line-height: 1.8;
+  color: $text-black;
+}
+
+.p-reasons__img {
+  border-radius: prem(8);
+  overflow: hidden;
+  aspect-ratio: 1;
+
+  @include mq("md") {
+    aspect-ratio: 1;
+  }
+}
+
+.p-reasons__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

@@ -1,0 +1,80 @@
+@use "../../foundation" as *;
+
+// ========================================
+// CTAコンポーネント（Figma 1:179）
+// ========================================
+.c-cta {
+  display: flex;
+  justify-content: center;
+  padding: prem(32) 0;
+  background-image: url("/assets/cta/cta-bg.webp");
+  background-size: cover;
+
+  @include mq("md") {
+    gap: prem(24);
+    padding: prem(48) prem($padding-pc);
+  }
+}
+
+.c-cta__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.c-cta__label {
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  letter-spacing: 0.05em;
+  color: $white;
+}
+
+.c-cta__contact {
+  margin-top: prem(24);
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  letter-spacing: 0.05em;
+  color: $white;
+}
+
+.c-cta__button {
+  display: block;
+  width: 100%;
+  max-width: prem(553);
+}
+
+.c-cta__tel-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: prem(8);
+  margin-top: prem(16);
+}
+
+.c-cta__tel {
+  font-size: prem(32);
+  font-weight: $font-weight-b;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  color: $figma-yellow;
+  transition: opacity 0.3s ease;
+
+  @include mq("md") {
+    font-size: prem(40);
+  }
+
+  &:hover {
+    text-decoration: underline;
+    opacity: 0.9;
+    text-underline-offset: 0.2em;
+  }
+}
+
+.c-cta__hours {
+  font-size: prem(14);
+  font-weight: $font-weight-b;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: 0.02em; /* 0.28px @ 14px */
+  color: $white;
+}

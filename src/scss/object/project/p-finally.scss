@@ -1,0 +1,73 @@
+@use "../../foundation" as *;
+
+// ========================================
+// 最後に + WEB限定（1:259）
+// ========================================
+.p-finally {
+  padding: prem(40) prem(20);
+
+  @include mq("md") {
+    padding: prem(60) prem(25);
+  }
+}
+
+.p-finally__content {
+  max-width: prem(700);
+  margin: 0 auto prem(0);
+  padding: prem(32);
+  border-left: prem(4) solid $main-orange;
+  border-radius: prem(12);
+  background: rgb(255 255 255 / 95%);
+
+  @include mq("md") {
+    padding: prem(48);
+  }
+}
+
+.p-finally__title {
+  margin-bottom: prem(24);
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  text-align: center;
+  color: $main-orange;
+
+  @include mq("md") {
+    font-size: prem(28);
+  }
+}
+
+.p-finally__text {
+  margin-bottom: prem(16);
+  font-size: prem(14);
+  line-height: 1.8;
+  color: $text-black;
+}
+
+.p-finally__list {
+  margin-bottom: prem(24);
+  padding-left: prem(24);
+  font-size: prem(14);
+  line-height: 1.8;
+  color: $text-black;
+}
+
+.p-finally__cta {
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  text-align: center;
+  color: $main-orange;
+}
+
+.p-finally__banner {
+  padding: prem(24);
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  text-align: center;
+  color: $white;
+  background-color: $main-orange;
+
+  @include mq("md") {
+    padding: prem(32);
+    font-size: prem(32);
+  }
+}

@@ -1,0 +1,171 @@
+@use "../../foundation" as *;
+
+// ========================================
+// FVヒーローセクション（Figma 1:805）
+// ========================================
+.p-fv {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+  margin-top: prem(80);
+  margin-bottom: 0;
+}
+
+.p-fv__banner {
+  position: relative;
+  display: grid;
+  flex: 1;
+  grid-template-areas: "main";
+  min-height: 0;
+  overflow: hidden;
+}
+
+.p-fv > .c-cta {
+  flex-shrink: 0;
+}
+
+.p-fv__bg {
+  overflow: hidden;
+  grid-area: main;
+}
+
+.p-fv__bg img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-fv__overlay {
+  background: linear-gradient(
+    to bottom,
+    rgb(255 255 255 / 20%) 0%,
+    rgb(255 255 255 / 50%) 100%
+  );
+  grid-area: main;
+  pointer-events: none;
+}
+
+.p-fv__content {
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: clamp(prem(600), 52vw, prem(723));
+  height: 100%;
+  margin: 0 auto;
+  padding: prem(32) prem($padding-sp);
+  background-color: rgb(255 255 255 / 50%);
+  grid-area: main;
+  place-self: center center;
+
+  @include mq("md") {
+    gap: prem(20);
+    padding: prem(40) prem($padding-pc);
+  }
+}
+
+.p-fv__lead {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  img {
+    max-width: 100%;
+    height: prem(88);
+  }
+
+  // 左アクセント（左右対称にするため反転）
+  &::before {
+    display: block;
+    width: clamp(60px, 5.17vw, 74.5px);
+    height: prem(97);
+    margin-top: prem(5.2);
+    background-image: url("scss-assets/common/fv-accent-left.png");
+    content: "";
+    flex-shrink: 0;
+
+    @include mq("md") {
+      width: clamp(32px, 2.83vw, 38.5px);
+    }
+  }
+
+  // 右アクセント
+  &::after {
+    display: block;
+    width: clamp(60px, 5.17vw, 74.5px);
+    height: prem(97);
+    margin-top: prem(5.2);
+    background-image: url("scss-assets/common/fv-accent-left.png");
+    transform: scaleX(-1);
+    content: "";
+    flex-shrink: 0;
+
+    @include mq("md") {
+      width: clamp(32px, 2.83vw, 38.5px);
+      height: clamp(32px, 2.83vw, 38.5px);
+    }
+  }
+}
+
+.p-fv__title {
+  position: relative;
+  margin-top: prem(21);
+
+  &::after {
+    position: absolute;
+    bottom: prem(-5);
+    left: 50%;
+    z-index: -1;
+    width: 100%;
+    height: prem(26);
+    background-color: #f6e93c;
+    transform: translateX(-50%);
+    content: "";
+  }
+}
+
+.p-fv__subtitle {
+  margin-top: prem(16);
+  border-radius: prem(4);
+  font-size: prem(60);
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1;
+  text-align: center;
+  letter-spacing: 1.8px;
+  color: #070e50;
+  -webkit-text-stroke: prem(4) #fff;
+  paint-order: stroke fill;
+  text-shadow:
+    0 0 prem(1) rgb(255 255 255 / 90%),
+    0 0 prem(2) rgb(255 255 255 / 70%),
+    0 0 prem(3) rgb(255 255 255 / 50%);
+
+  @include mq("md") {
+    padding: prem(6) prem(16);
+    font-size: prem(24);
+    letter-spacing: 0.9px;
+    -webkit-text-stroke: prem(2) #fff;
+    text-shadow:
+      0 0 prem(0.5) rgb(255 255 255 / 90%),
+      0 0 prem(1) rgb(255 255 255 / 60%);
+  }
+}
+
+.p-fv__text {
+  margin-top: prem(64);
+  font-size: prem(20);
+  font-weight: $font-weight-m;
+  line-height: 1.6; /* 160% */
+  text-align: center;
+  letter-spacing: 0.03em; /* 0.6px @ 20px */
+
+  @include mq("md") {
+    font-size: prem(13);
+    text-align: center;
+  }
+}
+

@@ -1,19 +1,19 @@
-@use '../../foundation' as *;
+@use "../../foundation" as *;
 
 // ========================================
 // ヘッダー（新デザイン）
 // ========================================
 .c-header {
-  // position: sticky;
   position: fixed;
   top: 0;
   left: 50%;
   z-index: 10000;
   width: 100%;
-  max-width: 430px;
-  height: 50px;
-  background: rgb(255 255 255 / 45%);
-  transition: background 0.3s ease, backdrop-filter 0.3s ease;
+  height: 80px;
+  background: #fff;
+  transition:
+    background 0.3s ease,
+    backdrop-filter 0.3s ease;
   transform: translateX(-50%);
 
   &.is-scrolled {
@@ -30,12 +30,10 @@
 .c-header__inner {
   position: relative;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: 430px;
   height: 100%;
   margin: 0 auto;
-  padding: 15px 16px;
+  padding: prem(5) prem(56);
 }
 
 .c-header__logo {
@@ -52,7 +50,10 @@
 .c-header__logo-link {
   display: block;
   height: 100%;
-  text-decoration: none;
+}
+
+.c-header__logo-link img {
+  height: 100%;
 }
 
 .c-header__logo-img {
@@ -82,7 +83,7 @@
     width: 24px;
     height: 1.58px;
     border-radius: 2px;
-    background: $main-green;
+    background: red;
     transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     &:nth-child(1) {

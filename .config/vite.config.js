@@ -14,6 +14,13 @@ export default defineConfig({
   base: './', // 相対パス化。サブディレクトリ配布でも崩れにくい
   publicDir: 'public', // publicフォルダを指定（デフォルトは'public'）
 
+  resolve: {
+    alias: {
+      // CSS url()から画像を参照（publicに統一、擬似要素も同じ場所）
+      'scss-assets': resolve(projectRoot, 'public/assets'),
+    },
+  },
+
   // jQueryをグローバルに公開（slick-carousel用）
   optimizeDeps: {
     include: ['jquery', 'slick-carousel'],

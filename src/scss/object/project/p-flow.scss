@@ -1,0 +1,88 @@
+@use "../../foundation" as *;
+
+// ========================================
+// サービスご利用の流れ（1:273）
+// ========================================
+.p-flow {
+  padding: prem(40) prem(20);
+
+  @include mq("md") {
+    padding: prem(80) prem(25);
+  }
+}
+
+.p-flow__inner {
+  max-width: prem(800);
+  margin: 0 auto;
+}
+
+.p-flow__title {
+  margin-bottom: prem(40);
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  text-align: center;
+  color: $text-black;
+
+  @include mq("md") {
+    font-size: prem(32);
+  }
+}
+
+.p-flow__list {
+  display: flex;
+  flex-direction: column;
+  gap: prem(24);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.p-flow__item {
+  display: grid;
+  gap: prem(24);
+  grid-template-columns: prem(120) 1fr;
+  padding: prem(24);
+  border: prem(2) solid $figma-dark-blue;
+  border-radius: prem(12);
+  box-shadow: 0 prem(4) prem(12) rgb(0 0 0 / 6%);
+  background: $white;
+
+  @include mq("md") {
+    grid-template-columns: prem(180) 1fr;
+    padding: prem(32);
+  }
+}
+
+.p-flow__img {
+  border-radius: prem(8);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.p-flow__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-flow__step-title {
+  margin-bottom: prem(8);
+  font-size: prem(16);
+  font-weight: $font-weight-b;
+  color: $figma-mizuiro;
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
+}
+
+.p-flow__step-text {
+  font-size: prem(13);
+  line-height: 1.7;
+  color: $text-black;
+
+  @include mq("md") {
+    font-size: prem(14);
+  }
+}

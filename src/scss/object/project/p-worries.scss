@@ -1,0 +1,224 @@
+@use "../../foundation" as *;
+
+// ========================================
+// 中古物件のお悩みセクション（Figma 2032:18）
+// ========================================
+.p-worries {
+  padding: prem(40) prem(20);
+  background-color: #a5d3f5;
+
+  @include mq("md") {
+    padding: prem(80) prem(25);
+  }
+}
+
+.p-worries__inner {
+  max-width: prem(900);
+  margin: 0 auto;
+}
+
+.p-worries__heading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: prem(120);
+  margin-bottom: prem(40);
+  text-align: center;
+}
+
+.p-worries__heading-bg-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: prem(100);
+  height: auto;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+}
+
+.p-worries__heading-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.p-worries__heading-content::before,
+.p-worries__heading-content::after {
+  position: absolute;
+  top: 35%;
+  width: 30%;
+  border-top: prem(1) dotted $figma-kon;
+  content: "";
+
+  @include mq("md") {
+    width: calc(50% - prem(120));
+  }
+}
+
+.p-worries__heading-content::before {
+  left: 0;
+}
+
+.p-worries__heading-content::after {
+  right: 0;
+}
+
+.p-worries__heading-lead {
+  margin-bottom: prem(8);
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  letter-spacing: 0.05em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(22);
+  }
+}
+
+.p-worries__heading-text {
+  font-size: prem(28);
+  font-weight: $font-weight-b;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(36);
+  }
+}
+
+.p-worries__content {
+  margin-top: prem(32);
+}
+
+.p-worries__list {
+  max-width: prem(800);
+  margin: 0 auto prem(40);
+  padding: prem(30) prem(20);
+  border-radius: prem(15);
+  box-shadow: 0 prem(10) prem(30) rgb(0 0 0 / 5%);
+  background: $white;
+  list-style: none;
+
+  @include mq("md") {
+    padding: prem(50) prem(60);
+  }
+}
+
+.p-worries__item {
+  display: flex;
+  align-items: flex-start;
+  gap: prem(12);
+  margin-bottom: prem(20);
+}
+
+.p-worries__item:last-child {
+  margin-bottom: 0;
+}
+
+.p-worries__item-icon {
+  width: prem(24);
+  height: auto;
+  margin-top: prem(2);
+  flex-shrink: 0;
+  object-fit: contain;
+}
+
+.p-worries__item-text {
+  font-size: prem(15);
+  font-weight: $font-weight-m;
+  line-height: 1.6;
+  color: $color-navy;
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
+}
+
+.p-worries__highlight {
+  font-weight: $font-weight-b;
+  text-decoration: underline;
+  color: $color-orange;
+  text-underline-offset: prem(4);
+}
+
+.p-worries__result-block {
+  text-align: center;
+  color: $color-navy;
+}
+
+.p-worries__result-intro {
+  margin-bottom: prem(24);
+}
+
+.p-worries__result-label {
+  margin-bottom: prem(8);
+  font-size: prem(16);
+  font-weight: $font-weight-b;
+}
+
+.p-worries__result-dots {
+  width: prem(7);
+  height: prem(33);
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.p-worries__message-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(20);
+
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-end;
+    text-align: left;
+  }
+}
+
+.p-worries__message-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @include mq("md") {
+    align-items: flex-start;
+  }
+}
+
+.p-worries__quote {
+  margin-bottom: prem(8);
+  font-size: prem(20);
+  font-weight: $font-weight-b;
+
+  @include mq("md") {
+    font-size: prem(24);
+  }
+}
+
+.p-worries__message {
+  font-size: prem(16);
+  line-height: 1.6;
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
+}
+
+.p-worries__illustration {
+  width: prem(120);
+
+  @include mq("md") {
+    width: prem(160);
+    margin-bottom: prem(-10);
+  }
+}
+
+.p-worries__illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
