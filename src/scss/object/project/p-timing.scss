@@ -1,0 +1,173 @@
+@use "../../foundation" as *;
+
+// ========================================
+// おすすめのタイミングセクション（Figma 2002:300）
+// ========================================
+.p-timing {
+  position: relative;
+  padding-top: prem(56);
+  padding-bottom: prem(56);
+  overflow: hidden;
+
+  @include mq("md") {
+    padding-top: prem(72);
+    padding-bottom: prem(72);
+  }
+}
+
+.p-timing__bg {
+  position: absolute;
+  z-index: 0;
+  background-color: #e8f4fc;
+  inset: 0;
+}
+
+.p-timing__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: prem(900);
+  margin: 0 auto;
+  padding: 0 prem(20);
+}
+
+.p-timing__bubble {
+  display: inline-block;
+  padding: prem(10) prem(18);
+  border-radius: prem(12);
+  box-shadow: 0 prem(4) prem(12) rgb(0 0 0 / 15%);
+  font-size: prem(16);
+  font-weight: $font-weight-b;
+  color: $white;
+  background-color: $figma-dark-blue;
+}
+
+.p-timing__bubble--top {
+  margin-bottom: prem(16);
+}
+
+.p-timing__bubble--small {
+  padding: prem(8) prem(14);
+  font-size: prem(14);
+}
+
+.p-timing__title {
+  margin: 0 0 prem(20);
+  font-size: prem(22);
+  font-weight: $font-weight-h;
+  line-height: 1.45;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    margin-bottom: prem(24);
+    font-size: prem(28);
+  }
+}
+
+.p-timing__titleAccent {
+  color: $color-orange;
+}
+
+.p-timing__text {
+  margin: 0 0 prem(28);
+  font-size: prem(15);
+  font-weight: $font-weight-m;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    margin-bottom: prem(32);
+    font-size: prem(16);
+  }
+}
+
+.p-timing__qa {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(12);
+  margin-bottom: prem(28);
+
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: center;
+    gap: prem(16);
+    margin-bottom: prem(32);
+  }
+}
+
+.p-timing__question {
+  margin: 0;
+  padding: prem(16) prem(28);
+  border: prem(1) solid rgb(0 0 0 / 10%);
+  border-radius: prem(999);
+  box-shadow: inset 0 prem(2) prem(6) rgb(0 0 0 / 5%);
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+  background-color: $white;
+
+  @include mq("md") {
+    padding: prem(18) prem(32);
+    font-size: prem(20);
+  }
+}
+
+.p-timing__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(20);
+  padding: prem(20) prem(24);
+  border: prem(2) solid $figma-kon;
+  border-radius: prem(14);
+  box-shadow: 0 prem(6) prem(16) rgb(0 0 0 / 8%);
+  background-color: $white;
+
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: prem(32);
+    padding: prem(24) prem(32);
+  }
+}
+
+.p-timing__info-text {
+  margin: 0;
+  font-size: prem(15);
+  font-weight: $font-weight-m;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(16);
+  }
+}
+
+.p-timing__info-accent {
+  font-weight: $font-weight-b;
+}
+
+.p-timing__illustration {
+  width: prem(120);
+  flex-shrink: 0;
+
+  @include mq("md") {
+    width: prem(160);
+  }
+}
+
+.p-timing__illustration img {
+  display: block;
+  width: 100%;
+  height: auto;
+}

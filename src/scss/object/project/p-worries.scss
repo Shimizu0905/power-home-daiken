@@ -6,6 +6,10 @@
 .p-worries {
   padding: prem(40) prem(20);
   background-color: #a5d3f5;
+  background-image: url("/assets/worries/worries-bg-01.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   @include mq("md") {
     padding: prem(80) prem(25);
@@ -27,6 +31,18 @@
   text-align: center;
 }
 
+/* リード下の点線ボーダー（家アイコンの下層） */
+.p-worries__heading::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: 80%;
+  border-top: prem(1) dotted $figma-kon;
+  transform: translate(-50%, -50%);
+  content: "";
+}
+
 .p-worries__heading-bg-icon {
   position: absolute;
   top: 50%;
@@ -44,28 +60,8 @@
   width: 100%;
 }
 
-.p-worries__heading-content::before,
-.p-worries__heading-content::after {
-  position: absolute;
-  top: 35%;
-  width: 30%;
-  border-top: prem(1) dotted $figma-kon;
-  content: "";
-
-  @include mq("md") {
-    width: calc(50% - prem(120));
-  }
-}
-
-.p-worries__heading-content::before {
-  left: 0;
-}
-
-.p-worries__heading-content::after {
-  right: 0;
-}
-
 .p-worries__heading-lead {
+  position: relative;
   margin-bottom: prem(8);
   font-size: prem(18);
   font-weight: $font-weight-b;
@@ -92,25 +88,31 @@
   margin-top: prem(32);
 }
 
-.p-worries__list {
-  max-width: prem(800);
-  margin: 0 auto prem(40);
-  padding: prem(30) prem(20);
-  border-radius: prem(15);
-  box-shadow: 0 prem(10) prem(30) rgb(0 0 0 / 5%);
-  background: $white;
-  list-style: none;
+.p-worries__content-box {
+  display: flex;
+  justify-content: center;
+  padding: prem(46) prem(20);
+  border-radius: prem(10);
+  background-image: url("/assets/worries/worries-content-bg.jpg");
+  background-size: cover;
 
   @include mq("md") {
-    padding: prem(50) prem(60);
+    padding: clamp(prem(46), 5vw, prem(50)) clamp(prem(20), 5vw, prem(60));
   }
+}
+
+.p-worries__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: prem(16);
+  background: transparent;
 }
 
 .p-worries__item {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: prem(12);
-  margin-bottom: prem(20);
 }
 
 .p-worries__item:last-child {
@@ -118,7 +120,7 @@
 }
 
 .p-worries__item-icon {
-  width: prem(24);
+  width: prem(40);
   height: auto;
   margin-top: prem(2);
   flex-shrink: 0;
@@ -126,7 +128,7 @@
 }
 
 .p-worries__item-text {
-  font-size: prem(15);
+  font-size: prem(24);
   font-weight: $font-weight-m;
   line-height: 1.6;
   color: $color-navy;
@@ -143,77 +145,117 @@
   text-underline-offset: prem(4);
 }
 
+// ========================================
+// 結論ブロック（修正版）
+// ========================================
+
 .p-worries__result-block {
+  margin-top: prem(40);
   text-align: center;
   color: $color-navy;
 }
 
 .p-worries__result-intro {
-  margin-bottom: prem(24);
+  margin-bottom: prem(16); // 点との距離を調整
 }
 
 .p-worries__result-label {
-  margin-bottom: prem(8);
+  margin-bottom: prem(12);
   font-size: prem(16);
   font-weight: $font-weight-b;
+  color: $figma-kon;
 }
 
+// 3つの点をCSSで表現
 .p-worries__result-dots {
-  width: prem(7);
-  height: prem(33);
-  margin: 0 auto;
-  object-fit: contain;
-}
-
-.p-worries__message-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: prem(20);
+  gap: prem(6);
+  width: prem(4);
+  margin: 0 auto;
+
+  &::before,
+  &::after,
+  span {
+    display: block;
+    width: prem(4);
+    height: prem(4);
+    border-radius: 50%;
+    background-color: $figma-kon;
+    content: "";
+  }
+}
+
+// 斜め背景のコンテナ
+.p-worries__message-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(24);
+  margin-top: prem(-10); // ドットとの重なり微調整用
+  padding: prem(60) prem(20) prem(40);
+  background-color: $white;
+
+  // 上辺を斜めにする設定（左が高く、右が低い）
+  clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
 
   @include mq("md") {
     flex-direction: row;
     justify-content: center;
-    align-items: flex-end;
-    text-align: left;
+    align-items: center; // 中央揃え
+    max-width: prem(1000);
+    margin: 0 auto;
+    padding: prem(80) prem(40) prem(60);
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); // PC用に角度調整
   }
 }
 
 .p-worries__message-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  z-index: 2;
+  text-align: center;
 
   @include mq("md") {
-    align-items: flex-start;
+    margin-right: prem(40);
+    text-align: left;
   }
 }
 
 .p-worries__quote {
-  margin-bottom: prem(8);
-  font-size: prem(20);
+  margin-bottom: prem(12);
+  font-size: prem(18);
   font-weight: $font-weight-b;
+  color: $figma-kon;
 
   @include mq("md") {
-    font-size: prem(24);
+    font-size: prem(26);
   }
 }
 
 .p-worries__message {
-  font-size: prem(16);
-  line-height: 1.6;
+  font-size: prem(20);
+  font-weight: $font-weight-b;
+  line-height: 1.5;
+  color: $figma-kon;
 
   @include mq("md") {
-    font-size: prem(18);
+    font-size: prem(32);
   }
 }
 
 .p-worries__illustration {
+  z-index: 2;
   width: prem(120);
+  flex-shrink: 0;
 
   @include mq("md") {
-    width: prem(160);
-    margin-bottom: prem(-10);
+    // 右端に寄せるための調整
+    position: relative;
+    right: 0;
+    width: prem(180);
+    margin-bottom: prem(-60); // 下辺からはみ出すデザインの場合
+    align-self: flex-end;
   }
 }
 

@@ -29,7 +29,7 @@ $breakpoints: null;
 // ========================================
 // レイアウト設定
 // ========================================
-$inner: 1250px;
+$inner: 1050px;
 $design-width: 1920px; // デザインカンプの基準幅
 
 // ========================================
@@ -70,46 +70,18 @@ $extra-bold: 800;
 // ========================================
 // カラー設定
 // ========================================
-// ベースカラー
-$black: #212529;
 $white: #fff;
-$bg-beige: #e9e7e0;
-
-
-// テキストカラー
 $text-black: #212529;
 $text-base: #070E50; // 基本テキストカラー（デフォルト）
-
-// メインカラー
-$main-green: #004639;
-$main-orange: #EE780C;
-
-// 濃い緑
-$dark-green: #0c3b2c;
-$dark-green-2: #213B33;
-
-// 明るい緑
-$light-green: #428d65;
-$light-green-2: #2a5c3f;
-
-// 青系（Figmaデザイン用）
+$text-gray: #4a4a4a;
+$main-orange: #F46600;
 $main-blue: #1e3a5f;
-$dark-blue: #0f2847;
+$dark-green: #0c3b2c; // フッター等
 $light-blue: #e8f4fc;
-$bg-blue: #0f2847;
-
-// FV 1:805（Figma変数より）
 $figma-kon: #070E50;
-$figma-blue: #0068b7; // 「中古物件」の青
+$blue-01: #005FC5;
 $figma-mizuiro: #008BE8;
 $figma-dark-blue: #124388;
 $figma-yellow: #FFF100;
-$figma-yellow-light: #fff0b5; // アイコン用
-
-// アクセント
-$accent-yellow: #ffd700;
-$text-gray: #4a4a4a;
-
-// worriesセクション用
 $color-orange: #f29400; // オレンジの強調色
 $color-navy: #001233; // テキストの紺色

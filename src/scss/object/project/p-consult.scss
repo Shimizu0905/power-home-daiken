@@ -1,0 +1,159 @@
+@use "../../foundation" as *;
+
+// ========================================
+// consult（相談できる内容）
+// ========================================
+.p-consult {
+  --consult-card-bg: url("/assets/consult/consult-card-bg.png");
+
+  padding-top: prem(56);
+  padding-bottom: prem(0);
+  background-color: #f4f6f7;
+}
+
+.p-consult__inner {
+  max-width: prem(1080);
+  margin: 0 auto;
+  padding: 0 prem(20);
+}
+
+.p-consult__title {
+  margin: 0;
+  font-size: prem(34);
+  font-weight: $font-weight-uh;
+  line-height: 1.25;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: transparent;
+  background-image: linear-gradient(90deg, #2f79c9 0% 35%, $figma-kon 35% 100%);
+  background-clip: text;
+
+  @include mq("md") {
+    font-size: prem(40);
+  }
+}
+
+.p-consult__grid {
+  display: grid;
+  gap: prem(18);
+  grid-template-columns: 1fr;
+  max-width: prem(980);
+  margin-top: prem(34);
+  margin-right: auto;
+  margin-left: auto;
+
+  @include mq("md") {
+    gap: prem(24);
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: prem(40);
+  }
+}
+
+.p-consult__card {
+  display: grid;
+  min-height: prem(96);
+  padding: prem(22) prem(18);
+  border-radius: prem(10);
+  background-image: var(--consult-card-bg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  place-items: center;
+
+  @include mq("md") {
+    min-height: prem(110);
+    padding: prem(26) prem(18);
+  }
+}
+
+.p-consult__cardText {
+  margin: 0;
+  font-size: prem(18);
+  font-weight: $font-weight-h;
+  line-height: 1.5;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: $white;
+
+  @include mq("md") {
+    font-size: prem(20);
+  }
+}
+
+.p-consult__note {
+  margin: prem(34) 0 0;
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  line-height: 1.85;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    margin-top: prem(44);
+    font-size: prem(20);
+  }
+}
+
+.p-consult__band {
+  margin-top: prem(40);
+  padding-top: prem(24);
+  padding-bottom: prem(24);
+  background-color: #dcecf7;
+
+  @include mq("md") {
+    margin-top: prem(52);
+    padding-top: prem(34);
+    padding-bottom: prem(34);
+  }
+}
+
+.p-consult__bandInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(18);
+  max-width: prem(1080);
+  margin: 0 auto;
+  padding: 0 prem(20);
+
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: prem(28);
+  }
+}
+
+.p-consult__message {
+  margin: 0;
+  font-size: prem(28);
+  font-weight: $font-weight-uh;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(34);
+  }
+}
+
+.p-consult__messageAccent {
+  color: $color-orange;
+}
+
+.p-consult__illustration {
+  flex: 0 0 auto;
+  width: 100%;
+  max-width: prem(360);
+
+  @include mq("md") {
+    max-width: prem(420);
+  }
+}
+
+.p-consult__illustrationImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}

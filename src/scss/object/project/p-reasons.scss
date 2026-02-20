@@ -1,123 +1,203 @@
 @use "../../foundation" as *;
 
 // ========================================
-// 選ばれる3つの理由（1:454）
+// Reasons（選ばれる3つの理由）
 // ========================================
 .p-reasons {
-  padding: prem(40) prem(20);
-  background: linear-gradient(to bottom, $light-blue, $white);
-
-  @include mq("md") {
-    padding: prem(80) prem(25);
-  }
+  background-color: $white;
 }
 
-.p-reasons__inner {
-  max-width: prem(1000);
-  margin: 0 auto;
-}
-
-.p-reasons__heading {
-  margin-bottom: prem(40);
+.p-reasons__header {
+  position: relative;
+  padding-top: prem(26);
+  padding-bottom: prem(26);
   text-align: center;
-}
-
-.p-reasons__heading-lead {
-  display: block;
-  font-size: prem(14);
-  color: $figma-mizuiro;
+  overflow: hidden;
 
   @include mq("md") {
-    font-size: prem(16);
+    padding-top: prem(34);
+    padding-bottom: prem(34);
   }
 }
 
-.p-reasons__heading-text {
-  font-size: prem(24);
+.p-reasons__headerBg {
+  position: absolute;
+  z-index: 0;
+  background-color: $figma-dark-blue;
+  background-image: url("/assets/reasons/reason-bg.png");
+  background-position: center;
+  background-size: cover;
+  inset: 0;
+}
+
+.p-reasons__kicker {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 prem(8);
+  font-size: prem(16);
   font-weight: $font-weight-b;
-  color: $figma-dark-blue;
+  letter-spacing: 0.04em;
+  color: $white;
 
   @include mq("md") {
-    font-size: prem(32);
+    font-size: prem(18);
   }
-}
-
-.p-reasons__heading-num {
-  color: $main-orange;
-}
-
-.p-reasons__list {
-  display: flex;
-  flex-direction: column;
-  gap: prem(48);
-}
-
-.p-reasons__item {
-  display: grid;
-  align-items: center;
-  gap: prem(24);
-  grid-template-columns: 1fr;
-
-  @include mq("md") {
-    gap: prem(48);
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.p-reasons__item--reverse {
-  @include mq("md") {
-    direction: rtl;
-  }
-}
-
-.p-reasons__item--reverse > * {
-  @include mq("md") {
-    direction: ltr;
-  }
-}
-
-.p-reasons__label {
-  margin-bottom: prem(8);
-  font-size: prem(14);
-  color: $text-black;
 }
 
 .p-reasons__title {
-  margin-bottom: prem(16);
-  font-size: prem(18);
-  font-weight: $font-weight-m;
-  line-height: 1.6;
-  color: $text-black;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: prem(28);
+  font-weight: $font-weight-uh;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: $white;
 
   @include mq("md") {
-    font-size: prem(22);
+    font-size: prem(36);
   }
 }
 
-.p-reasons__highlight {
-  font-weight: $font-weight-b;
-  color: $main-orange;
+.p-reasons__titleNum {
+  display: inline-block;
+  margin: 0 prem(2);
+  color: $figma-yellow;
 }
 
+.p-reasons__inner {
+  max-width: prem(1080);
+  margin: 0 auto;
+  padding: prem(34) prem(20) prem(0);
+
+  @include mq("md") {
+    padding-top: prem(44);
+  }
+}
+
+.p-reasons__list {
+  display: grid;
+  gap: prem(34);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include mq("md") {
+    gap: prem(46);
+  }
+}
+
+.p-reasons__row {
+  display: flex;
+  flex-direction: column;
+  gap: prem(18);
+
+  @include mq("md") {
+    flex-direction: row;
+    align-items: center;
+    gap: prem(44);
+  }
+}
+
+.p-reasons__row--reverse {
+  flex-direction: column;
+
+  @include mq("md") {
+    flex-direction: row-reverse;
+  }
+}
+
+.p-reasons__content {
+  flex: 1 1 auto;
+}
+
+.p-reasons__label {
+  margin: 0 0 prem(10);
+  font-size: prem(18);
+  font-weight: $font-weight-h;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+}
+
+.p-reasons__labelNum {
+  display: inline-block;
+  margin-left: prem(6);
+  font-size: prem(40);
+  font-weight: $font-weight-uh;
+  line-height: 1;
+  color: rgb(120 180 220 / 45%);
+}
+
+.p-reasons__lead {
+  margin: 0 0 prem(6);
+  font-size: prem(18);
+  font-weight: $font-weight-h;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+}
+
+.p-reasons__heading {
+  margin: 0 0 prem(12);
+  font-size: prem(28);
+  font-weight: $font-weight-uh;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: $color-orange;
+}
+
+
 .p-reasons__text {
-  font-size: prem(14);
-  line-height: 1.8;
-  color: $text-black;
+  margin: 0;
+  font-size: prem(16);
+  font-weight: $font-weight-r;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+}
+
+.p-reasons__media {
+  flex: 0 0 auto;
+  width: 100%;
+  overflow: hidden;
+
+  @include mq("md") {
+    width: prem(520);
+  }
+}
+
+.p-reasons__media--circle {
+  border-radius: prem(20);
+
+  @include mq("md") {
+    border-radius: prem(120);
+  }
+}
+
+.p-reasons__media--rect {
+  border-radius: prem(20);
+
+  @include mq("md") {
+    border-radius: prem(20);
+  }
 }
 
 .p-reasons__img {
-  border-radius: prem(8);
-  overflow: hidden;
-  aspect-ratio: 1;
-
-  @include mq("md") {
-    aspect-ratio: 1;
-  }
-}
-
-.p-reasons__img img {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
+}
+
+.p-reasons__media--circle .p-reasons__img {
+  aspect-ratio: 1;
+}
+
+.p-reasons__accent {
+  margin-top: prem(24);
+}
+
+.p-reasons__accentImg {
+  display: block;
+  width: 100%;
+  height: auto;
 }

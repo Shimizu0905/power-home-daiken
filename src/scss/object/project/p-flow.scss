@@ -1,88 +1,164 @@
 @use "../../foundation" as *;
 
 // ========================================
-// サービスご利用の流れ（1:273）
+// flow（ご相談の流れ）
+// 左：画像固定 / 右：テキスト固定（画像＝テキスト同じ高さ）
 // ========================================
 .p-flow {
-  padding: prem(40) prem(20);
-
-  @include mq("md") {
-    padding: prem(80) prem(25);
-  }
+  padding-top: prem(56);
+  padding-bottom: prem(56);
+  background-color: #eef6fb;
 }
 
 .p-flow__inner {
-  max-width: prem(800);
+  max-width: prem(1080);
   margin: 0 auto;
+  padding: 0 prem(20);
 }
 
 .p-flow__title {
-  margin-bottom: prem(40);
-  font-size: prem(24);
-  font-weight: $font-weight-b;
+  margin: 0 0 prem(34);
+  font-size: prem(34);
+  font-weight: $font-weight-uh;
+  line-height: 1.25;
   text-align: center;
-  color: $text-black;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+}
 
-  @include mq("md") {
-    font-size: prem(32);
+@include mq("md") {
+  .p-flow__title {
+    margin-bottom: prem(44);
+    font-size: prem(40);
   }
 }
 
 .p-flow__list {
-  display: flex;
-  flex-direction: column;
-  gap: prem(24);
+  display: grid;
+  gap: prem(22);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.p-flow__item {
-  display: grid;
-  gap: prem(24);
-  grid-template-columns: prem(120) 1fr;
-  padding: prem(24);
-  border: prem(2) solid $figma-dark-blue;
-  border-radius: prem(12);
-  box-shadow: 0 prem(4) prem(12) rgb(0 0 0 / 6%);
-  background: $white;
-
-  @include mq("md") {
-    grid-template-columns: prem(180) 1fr;
-    padding: prem(32);
+@include mq("md") {
+  .p-flow__list {
+    gap: prem(26);
   }
 }
 
-.p-flow__img {
-  border-radius: prem(8);
-  overflow: hidden;
-  aspect-ratio: 4 / 3;
+/* item は「カード＋矢印」の縦積み */
+.p-flow__item {
+  display: grid;
+  gap: prem(10);
 }
 
-.p-flow__img img {
+/* カード本体（ここが左右レイアウトの本体） */
+.p-flow__card {
+  display: flex;
+  align-items: stretch; /* ←これで画像と右側が同じ高さ */
+  gap: prem(18);
+  padding: prem(14);
+  border: prem(3) solid $figma-kon;
+  border-radius: prem(14);
+  background-color: #fff;
+}
+
+@include mq("md") {
+  .p-flow__card {
+    gap: prem(22);
+    padding: prem(18);
+  }
+}
+
+/* 左：画像（固定幅） */
+.p-flow__media {
+  flex: 0 0 prem(360);
+  border-radius: prem(10);
+  background-color: #fff;
+  overflow: hidden;
+}
+
+.p-flow__img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.p-flow__step-title {
-  margin-bottom: prem(8);
-  font-size: prem(16);
-  font-weight: $font-weight-b;
-  color: $figma-mizuiro;
+/* 右：テキスト */
+.p-flow__content {
+  flex: 1 1 auto;
+  padding-top: prem(4);
+  padding-right: prem(8);
+  padding-bottom: prem(4);
+}
 
-  @include mq("md") {
-    font-size: prem(18);
+.p-flow__heading {
+  margin: 0;
+  padding-bottom: prem(10);
+  border-bottom: prem(1) solid rgb(47 121 201 / 45%);
+  font-size: prem(26);
+  font-weight: $font-weight-uh;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: #2f79c9;
+}
+
+@include mq("md") {
+  .p-flow__heading {
+    font-size: prem(28);
   }
 }
 
-.p-flow__step-text {
-  font-size: prem(13);
-  line-height: 1.7;
-  color: $text-black;
+.p-flow__text {
+  margin: prem(12) 0 0;
+  font-size: prem(18);
+  font-weight: $font-weight-r;
+  line-height: 1.85;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+}
 
-  @include mq("md") {
-    font-size: prem(14);
+/* 下の矢印（ボックス枠線と繋がって見えるタイプ） */
+.p-flow__arrow {
+  display: grid;
+  height: prem(22);
+  place-items: start center;
+}
+
+.p-flow__arrow::before {
+  width: prem(22);
+  height: prem(22);
+  margin-top: prem(-12);
+  border-right: prem(3) solid $figma-kon;
+  border-bottom: prem(3) solid $figma-kon;
+  background-color: #fff;
+  transform: rotate(45deg);
+  content: "";
+}
+
+/* 最後の item は矢印なし（HTML側で arrow を置いてないので保険） */
+.p-flow__item:last-child .p-flow__arrow {
+  display: none;
+}
+
+/* ===== 1024未満（ひとまず縦積み） ===== */
+@media (width <= 1023px) {
+  .p-flow__card {
+    flex-direction: column;
+  }
+
+  .p-flow__media {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  .p-flow__img {
+    height: auto;
+  }
+
+  .p-flow__content {
+    padding-right: 0;
   }
 }

@@ -1,0 +1,104 @@
+@use "../../foundation" as *;
+
+// ========================================
+// メリットセクション
+// ========================================
+.p-merit {
+  padding-top: prem(40);
+  padding-bottom: prem(40);
+  background-color: #eaf3fb;
+
+  @include mq("md") {
+    padding-top: prem(52);
+    padding-bottom: prem(52);
+  }
+}
+
+.p-merit__inner {
+  max-width: prem(960);
+  margin: 0 auto;
+  padding: 0 prem(20);
+}
+
+.p-merit__title {
+  max-width: prem(820);
+  margin: 0 auto prem(22);
+  padding: prem(18) prem(20);
+  border-radius: prem(14);
+  font-size: prem(26);
+  font-weight: $font-weight-h;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: $white;
+  background-color: $figma-dark-blue;
+
+  @include mq("md") {
+    margin-bottom: prem(26);
+    padding: prem(20) prem(24);
+    font-size: prem(30);
+  }
+}
+
+.p-merit__list {
+  max-width: prem(820);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.p-merit__item {
+  display: flex;
+  align-items: center;
+  gap: prem(16);
+  padding: prem(16) 0;
+  border-bottom: prem(1) solid rgb(240 138 26 / 55%);
+}
+
+.p-merit__item:last-child {
+  border-bottom: none;
+}
+
+.p-merit__icon {
+  display: grid;
+  flex: 0 0 auto;
+  width: prem(34);
+  height: prem(34);
+  border-radius: 9999px;
+  color: $white;
+  background-color: $color-orange;
+  place-items: center;
+
+  @include mq("md") {
+    width: prem(36);
+    height: prem(36);
+  }
+}
+
+.p-merit__check {
+  width: prem(18);
+  height: prem(18);
+
+  @include mq("md") {
+    width: prem(20);
+    height: prem(20);
+  }
+}
+
+.p-merit__text {
+  margin: 0;
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  line-height: 1.6;
+  letter-spacing: 0.01em;
+  color: $text-black;
+
+  @include mq("md") {
+    font-size: prem(20);
+  }
+}
+
+.p-merit__accent {
+  font-weight: $font-weight-h;
+  color: $color-orange;
+}

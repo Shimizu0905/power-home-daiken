@@ -96,7 +96,7 @@
             </div>
           </div>
           <!-- CTA（Figma 1:179） -->
-          <div class="c-cta">
+          <div class="c-cta" id="cta">
             <div class="c-cta__inner l-inner">
               <p class="c-cta__label">\ <span class="c-cta__label-inner">現地調査・無料見積もり</span>/</p>
               <a href="#" class="c-cta__button" target="_blank" rel="noopener noreferrer">
@@ -112,11 +112,12 @@
             </div>
           </div>
         </section>
-        <!-- 中古物件のお悩み（Figma 2032:18） -->
+        <!-- section-02中古物件のお悩み -->
         <section class="p-worries">
           <div class="p-worries__inner">
             <h2 class="p-worries__heading">
-              <img src="./assets/worries/worries-icon-home.svg" alt="" class="p-worries__heading-bg-icon" aria-hidden="true">
+              <img src="./assets/worries/worries-icon-home.svg" alt="" class="p-worries__heading-bg-icon"
+                aria-hidden="true">
               <div class="p-worries__heading-content">
                 <p class="p-worries__heading-lead">
                   <span class="u-color-blue">中古物件</span>を探すとき
@@ -127,46 +128,47 @@
               </div>
             </h2>
             <div class="p-worries__content">
-              <ul class="p-worries__list">
+              <div class="p-worries__content-box">
+                <ul class="p-worries__list">
                 <li class="p-worries__item">
                   <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
-                  <span class="p-worries__item-text">新築は高すぎる･･･。でも<span class="p-worries__highlight">戸建ての暮らし</span>はあきらめたくない</span>
+                  <p class="p-worries__item-text">新築は高すぎる･･･。でも<span class="p-worries__highlight">戸建ての暮らしはあきらめたくない</span></p>
                 </li>
                 <li class="p-worries__item">
                   <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
-                  <span class="p-worries__item-text">中古なら手が届きそうだけど、買って失敗したくない...</span>
+                  <p class="p-worries__item-text">中古なら手が届きそうだけど、<span class="p-worries__highlight">買って失敗したくない...</span></p>
                 </li>
                 <li class="p-worries__item">
                   <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
-                  <span class="p-worries__item-text">見た目はキレイでも、<span class="p-worries__highlight">床下・雨漏り</span>など"見えない所"が心配</span>
+                  <p class="p-worries__item-text">見た目はキレイでも、<span class="p-worries__highlight">床下・雨漏りなど“見えない所”が心配</span></p>
                 </li>
                 <li class="p-worries__item">
                   <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
-                  <span class="p-worries__item-text">リノベ費用が読めないから、結局いくら必要なのか分からない</span>
+                  <p class="p-worries__item-text">リノベ費用が読めないから、<span class="p-worries__highlight">結局いくら必要なのか分からない</span></p>
                 </li>
                 <li class="p-worries__item">
                   <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
-                  <span class="p-worries__item-text">どこまで直すべきか判断できないから、優先順位が決められない</span>
+                  <p class="p-worries__item-text">どこまで直すべきか判断できないから、<span class="p-worries__highlight">優先順位が決められない</span></p>
                 </li>
                 <li class="p-worries__item">
                   <img src="./assets/worries/check-blue.svg" alt="" class="p-worries__item-icon" aria-hidden="true">
-                  <span class="p-worries__item-text">業者選びを間違えて、<span class="p-worries__highlight">余計な工事</span>を勧められたくない</span>
+                  <p class="p-worries__item-text">業者選びを間違えて、<span class="p-worries__highlight">余計な工事を勧められたくない</span></p>
                 </li>
-              </ul>
-
+                </ul>
+              </div>
               <div class="p-worries__result-block">
                 <div class="p-worries__result-intro">
                   <p class="p-worries__result-label">その結果</p>
-                  <img src="./assets/worries/dot-navy.svg" alt="" class="p-worries__result-dots" aria-hidden="true">
+                  <div class="p-worries__result-dots"><span></span></div>
                 </div>
 
                 <div class="p-worries__message-container">
                   <div class="p-worries__message-content">
                     <p class="p-worries__quote">「良い物件があっても決めきれない...」</p>
-                    <p class="p-worries__message">そんな不安を抱えている方がとても多いです。</p>
+                    <p class="p-worries__message">そんな不安を抱えている方が<br class="u-show-md">とても多いです。</p>
                   </div>
                   <div class="p-worries__illustration">
-                    <img src="./assets/worries/worries-women.png" alt="悩みを抱える女性のイラスト" width="160" height="auto">
+                    <img src="./assets/worries/worries-women.png" alt="悩みを抱える女性のイラスト">
                   </div>
                 </div>
               </div>
@@ -174,90 +176,555 @@
           </div>
         </section>
 
+        <!-- section-03リスクセクション -->
+        <section class="p-risk">
+          <div class="p-risk__inner">
+            <div class="p-risk__heading">
+              <p class="p-risk__heading-lead">中古物件のリフォームで一番怖いのは</p>
+              <p class="p-risk__heading-main">「購入後に想定外の出費が出ること」です。</p>
+            </div>
+            <div class="p-risk__intro">
+              <p class="p-risk__intro-label">たとえば･･･</p>
+              <div class="p-risk__intro-dots"><span></span></div>
+            </div>
+            <ul class="p-risk__list">
+              <li class="p-risk__item">
+                <p class="p-risk__item-title"><span class="p-risk__item-highlight">水回りの老朽化</span>が想像以上で<br><span
+                    class="p-risk__item-highlight">交換が必要</span></p>
+                <div class="p-risk__item-img">
+                  <img src="./assets/risk/risk-01.jpg" alt="水回りの老朽化したキッチンのシンクと水栓">
+                </div>
+              </li>
+              <li class="p-risk__item">
+                <p class="p-risk__item-title"><span class="p-risk__item-highlight">床のきしみ、</span><br><span
+                    class="p-risk__item-highlight">下地の傷みが発覚</span></p>
+                <div class="p-risk__item-img">
+                  <img src="./assets/risk/risk-02.jpg" alt="経年劣化した木材の床">
+                </div>
+              </li>
+              <li class="p-risk__item">
+                <p class="p-risk__item-title"><span class="p-risk__item-highlight">断熱が弱く、</span><br><span
+                    class="p-risk__item-highlight">冬の寒さがきつい</span></p>
+                <div class="p-risk__item-img">
+                  <img src="./assets/risk/risk-03.jpg" alt="暖房器具で手を温めている様子">
+                </div>
+              </li>
+              <li class="p-risk__item">
+                <p class="p-risk__item-title"><span class="p-risk__item-highlight">雨漏りや外壁の劣化</span>が<br><span
+                    class="p-risk__item-highlight">進んでいた</span></p>
+                <div class="p-risk__item-img">
+                  <img src="./assets/risk/risk-04.jpg" alt="天井の水漏れ跡">
+                </div>
+              </li>
+              <li class="p-risk__item">
+                <p class="p-risk__item-title">結果的に「<span class="p-risk__item-highlight">直す範囲が増えて</span><br><span
+                    class="p-risk__item-highlight">予算オーバー</span>」</p>
+                <div class="p-risk__item-img">
+                  <img src="./assets/risk/risk-05.jpg" alt="電卓と予算計算の様子">
+                </div>
+              </li>
+            </ul>
+            <div class="p-risk__cta-block">
+              <a href="#cta" class="p-risk__cta-button">だからこそ</a>
+              <div class="p-risk__cta-message">
+                <p class="p-risk__cta-line1">購入前〜購入直後のタイミングで</p>
+                <p class="p-risk__cta-line2">一度プロに見てもらうだけで、<span class="p-risk__highlight">失敗確率は一気に下がります。</span></p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- section-04 悩みセクション -->
+        <section class="p-clarity" aria-labelledby="clarity-title">
+          <div class="p-clarity__bg" aria-hidden="true"></div>
+          <div class="p-clarity__inner">
+            <div class="p-clarity__header">
+              <p class="p-clarity__badge">私たちの強み</p>
+              <h2 class="p-clarity__title" id="clarity-title">
+                見積もりから<span class="p-clarity__titleAccent">工事後まで</span><br>
+                分かりやすくお伝えします
+              </h2>
+              <div class="p-clarity__advisor">
+                <img class="p-clarity__advisorImg" src="./assets/clarity/clarity-01.png" alt="" width="96" height="96"
+                  loading="lazy">
+              </div>
+            </div>
+            <div class="p-clarity__cards">
+              <ul class="p-clarity__row p-clarity__row--top">
+                <li class="p-clarity__card">
+                  <div class="p-clarity__icon">
+                    <img class="p-clarity__svg" src="./assets/clarity/clarity-icon-01.png" alt="" width="44" height="44"
+                      loading="lazy">
+                  </div>
+                  <p class="p-clarity__text">範囲と費用が一目瞭然</p>
+                </li>
+                <li class="p-clarity__card">
+                  <div class="p-clarity__icon">
+                    <img class="p-clarity__svg" src="./assets/clarity/clarity-icon-02.png" alt="" width="44" height="44"
+                      loading="lazy">
+                  </div>
+                  <p class="p-clarity__text">必要な工事だけを明確に</p>
+                </li>
+                <li class="p-clarity__card">
+                  <div class="p-clarity__icon">
+                    <img class="p-clarity__svg" src="./assets/clarity/clarity-icon-03.png" alt="" width="44" height="44"
+                      loading="lazy">
+                  </div>
+                  <p class="p-clarity__text">進捗をこまめに共有</p>
+                </li>
+              </ul>
+              <ul class="p-clarity__row p-clarity__row--bottom">
+                <li class="p-clarity__card">
+                  <div class="p-clarity__icon">
+                    <img class="p-clarity__svg" src="./assets/clarity/clarity-icon-04.png" alt="" width="44" height="44"
+                      loading="lazy">
+                  </div>
+                  <p class="p-clarity__text">ご不明点はその場で解消</p>
+                </li>
+                <li class="p-clarity__card">
+                  <div class="p-clarity__icon">
+                    <img class="p-clarity__svg" src="./assets/clarity/clarity-icon-05.png" alt="" width="44" height="44"
+                      loading="lazy">
+                  </div>
+                  <p class="p-clarity__text">アフターも安心サポート</p>
+                </li>
+              </ul>
+            </div>
+            <div class="p-clarity__cta">
+              <p class="p-clarity__ctaLead">分かりにくいことは一切なし</p>
+              <p class="p-clarity__ctaSmall">まずは無料相談から</p>
+              <p class="p-clarity__ctaMain">お気軽に<span class="p-clarity__ctaEm">お問い合わせ</span>ください</p>
+            </div>
+          </div>
+        </section>
+        <!-- section-05 メリット -->
+        <section class="p-merit" aria-labelledby="merit-title">
+          <div class="p-merit__inner">
+            <h2 class="p-merit__title" id="merit-title">購入前の段階からプロに相談するメリット</h2>
+            <ul class="p-merit__list">
+              <li class="p-merit__item">
+                <span class="p-merit__icon">
+                  <img class="p-merit__check" src="./assets/merit/merit-icon-check.svg" alt="" width="18" height="18">
+                </span>
+                <p class="p-merit__text">リフォーム費用の目安が分かり、<span class="p-merit__accent">資金計画が立つ</span></p>
+              </li>
+              <li class="p-merit__item">
+                <span class="p-merit__icon">
+                  <img class="p-merit__check" src="./assets/merit/merit-icon-check.svg" alt="" width="18" height="18">
+                </span>
+                <p class="p-merit__text">「この物件でOKかどうか」の<span class="p-merit__accent">判断材料が増える</span></p>
+              </li>
+              <li class="p-merit__item">
+                <span class="p-merit__icon">
+                  <img class="p-merit__check" src="./assets/merit/merit-icon-check.svg" alt="" width="18" height="18">
+                </span>
+                <p class="p-merit__text">工事の優先順位が明確になり、<span class="p-merit__accent">ムダが減る</span></p>
+              </li>
+              <li class="p-merit__item">
+                <span class="p-merit__icon">
+                  <img class="p-merit__check" src="./assets/merit/merit-icon-check.svg" alt="" width="18" height="18">
+                </span>
+                <p class="p-merit__text">必要以上に不安にならず、<span class="p-merit__accent">前に進める</span></p>
+              </li>
+              <li class="p-merit__item">
+                <span class="p-merit__icon">
+                  <img class="p-merit__check" src="./assets/merit/merit-icon-check.svg" alt="" width="18" height="18">
+                </span>
+                <p class="p-merit__text"><span class="p-merit__accent">家族が安心して暮らせる</span>住まいに近づく</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!-- section-06 おすすめのタイミング -->
+        <section class="p-timing" aria-labelledby="timing-title">
+          <div class="p-timing__bg" aria-hidden="true"></div>
+          <div class="p-timing__inner">
+            <p class="p-timing__bubble p-timing__bubble--top" aria-hidden="true">もちろん大丈夫です!</p>
+            <h2 class="p-timing__title" id="timing-title">
+              むしろ一番 <span class="p-timing__titleAccent">おすすめのタイミング</span>です。
+            </h2>
+            <p class="p-timing__text">買ってから「想定外の修繕が必要だった･･･」となる前に、先に全体像を把握しておく方が安全です。</p>
+            <div class="p-timing__qa">
+              <p class="p-timing__question">とりあえず見積もりだけでもいい?</p>
+              <p class="p-timing__bubble p-timing__bubble--small" aria-hidden="true">大丈夫です。</p>
+            </div>
+            <div class="p-timing__info">
+              <p class="p-timing__info-text">「<span class="p-timing__info-accent">費用感だけ知りたい</span>」「<span
+                  class="p-timing__info-accent">相場を知りたい</span>」そんな段階でも問題ありません。</p>
+              <div class="p-timing__illustration">
+                <img src="./assets/timing/timing-img-02.png" alt="安心してOKサインをする女性のイラスト" loading="lazy">
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- section-07 選ばれる3つの理由 -->
+        <section class="p-reasons" aria-labelledby="reasons-title">
+          <!-- タイトル：青い背景 -->
+          <div class="p-reasons__header">
+            <div class="p-reasons__headerBg" aria-hidden="true"></div>
+            <p class="p-reasons__kicker">パワーホーム大建が</p>
+            <h2 class="p-reasons__title" id="reasons-title">
+              選ばれる<span class="p-reasons__titleNum">3</span>つの理由
+            </h2>
+          </div>
+          <div class="p-reasons__inner">
+            <ol class="p-reasons__list">
+              <!-- reason 1（円形画像） -->
+              <li class="p-reasons__item">
+                <article class="p-reasons__row" aria-labelledby="reason-1-title">
+                  <div class="p-reasons__content">
+                    <p class="p-reasons__label">理由<span class="p-reasons__labelNum">01</span></p>
+                    <p class="p-reasons__lead">購入前から相談OK。</p>
+                    <h3 class="p-reasons__heading" id="reason-1-title">ムダな出費を防げます</h3>
+                    <p class="p-reasons__text">
+                      中古物件は「買ってから」では遅いケースがあります。<br />
+                      購入前に相談できれば、「直す範囲」「予算感」「優先順位」が整理でき、失敗を防ぐ判断ができます。
+                    </p>
+                  </div>
+                  <figure class="p-reasons__media p-reasons__media--circle">
+                    <img class="p-reasons__img" src="./assets/reasons/reason-01.png" alt="相談している様子（3人で打ち合わせ）"
+                      width="520" height="520" loading="lazy">
+                  </figure>
+                </article>
+              </li>
+
+              <!-- reason 2（reverse・角丸四角形画像） -->
+              <li class="p-reasons__item">
+                <article class="p-reasons__row p-reasons__row--reverse" aria-labelledby="reason-2-title">
+                  <div class="p-reasons__content">
+                    <p class="p-reasons__label">理由<span class="p-reasons__labelNum">02</span></p>
+                    <p class="p-reasons__lead">必要な工事だけをご提案。</p>
+                    <h3 class="p-reasons__heading" id="reason-2-title">押し売りはしません。</h3>
+                    <p class="p-reasons__text">
+                      「全部やりましょう」「この際だからまとめて」そんな提案をされたら不安になりますよね。<br />
+                      当社は、状況とご予算に合わせて、必要な工事だけをご提案します。
+                    </p>
+                  </div>
+                  <figure class="p-reasons__media p-reasons__media--rect">
+                    <img class="p-reasons__img" src="./assets/reasons/reason-02.png" alt="電卓と住まいのイメージ（計画・予算のイメージ）"
+                      width="520" height="520" loading="lazy">
+                  </figure>
+                </article>
+              </li>
+
+              <!-- reason 3（円形画像） -->
+              <li class="p-reasons__item">
+                <article class="p-reasons__row" aria-labelledby="reason-3-title">
+                  <div class="p-reasons__content">
+                    <p class="p-reasons__label">理由<span class="p-reasons__labelNum">03</span></p>
+                    <p class="p-reasons__lead">三重県で地域密着だから、</p>
+                    <h3 class="p-reasons__heading" id="reason-3-title">相談しやすい。</h3>
+                    <p class="p-reasons__text">
+                      中古リフォームは、工事後の暮らしが本番です。<br />
+                      だからこそ「何かあったらすぐ相談できる会社」が安心です。<br />
+                      鈴鹿・亀山・津・四日市を中心に、地域の住まいを見てきた経験を活かして対応します。
+                    </p>
+                  </div>
+                  <figure class="p-reasons__media p-reasons__media--circle">
+                    <img class="p-reasons__img" src="./assets/reasons/reason-03.png" alt="街並みのイメージ（三重県の地域）" width="520"
+                      height="520" loading="lazy">
+                  </figure>
+                </article>
+              </li>
+            </ol>
+          </div>
+
+          <!-- 下部：家のアクセント -->
+          <div class="p-reasons__accent" aria-hidden="true">
+            <img class="p-reasons__accentImg" src="./assets/reasons/reason-accent-bottom.png" alt="" width="1600"
+              height="180" loading="lazy">
+          </div>
+        </section>
+        <!-- section-08 WEB限定キャンペーン -->
+        <section class="p-campaign">
+          <div class="p-campaign__bg">
+            <img class="p-campaign__bg-img" src="./assets/campaign/campaign-bg.png" alt="" width="1200" height="600"
+              loading="lazy">
+            <img class="p-campaign__bg-accent" src="./assets/campaign/campaign-bg-accent.png" alt="" width="1200"
+              height="600" loading="lazy">
+          </div>
+          <div class="p-campaign__inner">
+            <h2 class="p-campaign__title">WEB限定キャンペーン</h2>
+            <p class="p-campaign__sub">お問い合わせ後、見積もり依頼で</p>
+            <div class="p-campaign__box">
+              <div class="p-campaign__gift">
+                <img class="p-campaign__gift-img" src="./assets/campaign/campaign-01.svg" alt="ギフトカード3,000円分"
+                  width="150" height="100" loading="lazy">
+                <p class="p-campaign__gift-text">ギフトカード<span class="p-campaign__gift-amount">3,000円分</span>プレゼント</p>
+                <p class="p-campaign__gift-note">本サイトからお問い合わせいただいたお客様限定</p>
+              </div>
+              <div class="p-campaign__illustrations">
+                <img class="p-campaign__illustration p-campaign__illustration--male"
+                  src="./assets/campaign/campaign-02.png" alt="" width="120" height="120" loading="lazy">
+                <img class="p-campaign__illustration p-campaign__illustration--female"
+                  src="./assets/campaign/campaign-03.png" alt="" width="120" height="120" loading="lazy">
+              </div>
+            </div>
+            <p class="p-campaign__lead">「相談したいけど、まだ迷っている」</p>
+            <p class="p-campaign__text">そんな方でも動きやすいように、Web限定の特典をご用意しました。</p>
+            <ul class="p-campaign__disclaimers">
+              <li>※10万円以上のリフォームをご検討の方が対象です。</li>
+              <li>※ご成約後のお渡しとなります。</li>
+              <li>※予告なく終了する場合があります。</li>
+            </ul>
+          </div>
+        </section>
+        <!-- section-09 相談できる内容 -->
+        <section class="p-consult" aria-labelledby="consult-title">
+          <div class="p-consult__inner">
+            <h2 class="p-consult__title" id="consult-title">
+              相談できる内容
+            </h2>
+
+            <div class="p-consult__grid" role="list">
+              <div class="p-consult__card" role="listitem">
+                <p class="p-consult__cardText">
+                  この中古物件、<br />
+                  買ってから後悔しない？
+                </p>
+              </div>
+
+              <div class="p-consult__card" role="listitem">
+                <p class="p-consult__cardText">
+                  水回りだけ<br />
+                  交換したらいくら？
+                </p>
+              </div>
+
+              <div class="p-consult__card" role="listitem">
+                <p class="p-consult__cardText">
+                  断熱を入れると<br />
+                  どれくらい変わる？
+                </p>
+              </div>
+
+              <div class="p-consult__card" role="listitem">
+                <p class="p-consult__cardText">
+                  間取り変更は可能？
+                </p>
+              </div>
+
+              <div class="p-consult__card" role="listitem">
+                <p class="p-consult__cardText">
+                  予算〇〇万円なら、<br />
+                  どこまでできる？
+                </p>
+              </div>
+
+              <div class="p-consult__card" role="listitem">
+                <p class="p-consult__cardText">
+                  優先順位を<br />
+                  一緒に整理してほしい
+                </p>
+              </div>
+            </div>
+
+            <p class="p-consult__note">
+              どんな内容でも大丈夫です。<br />
+              「これ聞いていいのかな？」と思うことほど、遠慮なくご相談ください。
+            </p>
+          </div>
+
+          <!-- 下の帯（背景＋コピー＋イラスト） -->
+          <div class="p-consult__band">
+            <div class="p-consult__bandInner">
+              <p class="p-consult__message">
+                私たちは「工事ありき」ではなく、<br />
+                まず<span class="p-consult__messageAccent">不安を整理</span>して優先順位を決め<br />
+                るところからお手伝いします。
+              </p>
+
+              <div class="p-consult__illustration" aria-hidden="true">
+                <!-- TODO: 後で差し替え（人物イラスト） -->
+                <img class="p-consult__illustrationImg" src="" alt="" width="520" height="360" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </section>
         <!-- サービスご利用の流れ（1:273） -->
-        <section class="p-flow">
+        <section class="p-flow" aria-labelledby="flow-title">
           <div class="p-flow__inner">
-            <h2 class="p-flow__title">サービスご利用の流れ</h2>
+            <h2 class="p-flow__title" id="flow-title">ご相談の流れ</h2>
+
             <ol class="p-flow__list">
               <li class="p-flow__item">
-                <div class="p-flow__img"><img src="./assets/flow/flow_01.jpg" alt="スマートフォンで相談" width="200" height="150">
+                <div class="p-flow__card">
+                  <div class="p-flow__media">
+                    <img src="./assets/flow/flow-01.jpg" alt="スマホを操作する様子" class="p-flow__img">
+                  </div>
+                  <div class="p-flow__content">
+                    <h3 class="p-flow__heading">無料相談（LINE/お電話）</h3>
+                    <p class="p-flow__text">
+                      まずはLINEまたはお電話でお気軽にご相談ください。<br>
+                      「購入前で迷っている」「費用感だけ知りたい」でも大丈夫です。
+                    </p>
+                  </div>
                 </div>
-                <div class="p-flow__content">
-                  <h3 class="p-flow__step-title">無料相談 (LINE/お電話)</h3>
-                  <p class="p-flow__step-text">まずはLINEまたはお電話でお気軽にご相談ください。「購入前で迷っている」「費用感だけ知りたい」でも大丈夫です。</p>
-                </div>
+                <div class="p-flow__arrow" aria-hidden="true"></div>
               </li>
+
               <li class="p-flow__item">
-                <div class="p-flow__img"><img src="./assets/flow/flow_02.jpg" alt="現地確認" width="200" height="150"></div>
-                <div class="p-flow__content">
-                  <h3 class="p-flow__step-title">現地確認・ヒアリング(無料)</h3>
-                  <p class="p-flow__step-text">実際のお住まい(または検討中の物件)を確認しながら、状態とご希望を丁寧に伺います。気になる点や不安も遠慮なくお聞かせください。</p>
+                <div class="p-flow__card">
+                  <div class="p-flow__media">
+                    <img src="./assets/flow/flow-02.jpg" alt="家の模型と図面" class="p-flow__img">
+                  </div>
+                  <div class="p-flow__content">
+                    <h3 class="p-flow__heading">現地確認・ヒアリング（無料）</h3>
+                    <p class="p-flow__text">
+                      実際のお住まい（または検討中の物件）を確認しながら、状態とご希望を丁寧に伺います。<br>
+                      気になる点や不安も遠慮なくお聞かせください。
+                    </p>
+                  </div>
                 </div>
+                <div class="p-flow__arrow" aria-hidden="true"></div>
               </li>
+
               <li class="p-flow__item">
-                <div class="p-flow__img"><img src="./assets/flow/flow_03.jpg" alt="お見積書" width="200" height="150"></div>
-                <div class="p-flow__content">
-                  <h3 class="p-flow__step-title">設計・無料見積もり</h3>
-                  <p class="p-flow__step-text">ご要望とご予算に合わせて、最適なプランをご提案します。必要な工事だけを分かりやすくまとめ、無料でお見積もりを作成します。</p>
+                <div class="p-flow__card">
+                  <div class="p-flow__media">
+                    <img src="./assets/flow/flow-03.jpg" alt="お見積書" class="p-flow__img">
+                  </div>
+                  <div class="p-flow__content">
+                    <h3 class="p-flow__heading">設計・無料見積もり</h3>
+                    <p class="p-flow__text">
+                      ご要望とご予算に合わせて、最適なプランをご提案します。<br>
+                      必要な工事だけを分かりやすくまとめ、無料でお見積もりを作成します。
+                    </p>
+                  </div>
                 </div>
+                <div class="p-flow__arrow" aria-hidden="true"></div>
               </li>
+
               <li class="p-flow__item">
-                <div class="p-flow__img"><img src="./assets/flow/flow_04.jpg" alt="ご契約" width="200" height="150"></div>
-                <div class="p-flow__content">
-                  <h3 class="p-flow__step-title">ご納得いただけたら契約</h3>
-                  <p class="p-flow__step-text">内容・金額にご納得いただけた段階でご契約となります。無理な営業はありませんので、じっくりご検討ください。</p>
+                <div class="p-flow__card">
+                  <div class="p-flow__media">
+                    <img src="./assets/flow/flow-04.jpg" alt="契約の握手" class="p-flow__img">
+                  </div>
+                  <div class="p-flow__content">
+                    <h3 class="p-flow__heading">ご納得いただけたら契約</h3>
+                    <p class="p-flow__text">
+                      内容・金額にご納得いただけた段階でご契約となります。<br>
+                      無理な営業はありませんので、じっくりご検討ください。
+                    </p>
+                  </div>
                 </div>
+                <div class="p-flow__arrow" aria-hidden="true"></div>
               </li>
+
               <li class="p-flow__item">
-                <div class="p-flow__img"><img src="./assets/flow/flow_05.jpg" alt="工事" width="200" height="150"></div>
-                <div class="p-flow__content">
-                  <h3 class="p-flow__step-title">工事</h3>
-                  <p class="p-flow__step-text">近隣への配慮や安全管理を徹底しながら、丁寧に工事を進めます。工事中も進捗をご説明し、安心してお任せいただける体制を整えています。</p>
+                <div class="p-flow__card">
+                  <div class="p-flow__media">
+                    <img src="./assets/flow/flow-05.jpg" alt="工事中の室内の様子" class="p-flow__img">
+                  </div>
+                  <div class="p-flow__content">
+                    <h3 class="p-flow__heading">工事</h3>
+                    <p class="p-flow__text">
+                      近隣への配慮や安全管理を徹底しながら、丁寧に工事を進めます。<br>
+                      工事中も進捗をご説明し、安心してお任せいただける体制を整えています。
+                    </p>
+                  </div>
                 </div>
+                <div class="p-flow__arrow" aria-hidden="true"></div>
               </li>
+
               <li class="p-flow__item">
-                <div class="p-flow__img"><img src="./assets/flow/flow_06.jpg" alt="完成" width="200" height="150"></div>
-                <div class="p-flow__content">
-                  <h3 class="p-flow__step-title">完成</h3>
-                  <p class="p-flow__step-text">仕上がりを一緒に確認し、問題がなければお引き渡しとなります。新しい暮らしを気持ちよくスタートできるよう、細部まで整えます。</p>
+                <div class="p-flow__card">
+                  <div class="p-flow__media">
+                    <img src="./assets/flow/flow-06.jpg" alt="完成したリビング" class="p-flow__img">
+                  </div>
+                  <div class="p-flow__content">
+                    <h3 class="p-flow__heading">完成</h3>
+                    <p class="p-flow__text">
+                      仕上がりを一緒に確認し、問題がなければお引き渡しとなります。<br>
+                      新しい暮らしを気持ちよくスタートできるよう、細部まで整えます。
+                    </p>
+                  </div>
                 </div>
+                <div class="p-flow__arrow" aria-hidden="true"></div>
               </li>
+
               <li class="p-flow__item">
-                <div class="p-flow__img"><img src="./assets/flow/flow_07.jpg" alt="アフターサービス" width="200" height="150">
-                </div>
-                <div class="p-flow__content">
-                  <h3 class="p-flow__step-title">アフターサービス</h3>
-                  <p class="p-flow__step-text">完成後も、気になることがあればいつでもご相談ください。地域密着だからこそ、長く安心して暮らせるサポートを大切にしています。</p>
+                <div class="p-flow__card">
+                  <div class="p-flow__media">
+                    <img src="./assets/flow/flow-07.jpg" alt="アフターサービスの握手" class="p-flow__img">
+                  </div>
+                  <div class="p-flow__content">
+                    <h3 class="p-flow__heading">アフターサービス</h3>
+                    <p class="p-flow__text">
+                      完成後も、気になることがあればいつでもご相談ください。<br>
+                      地域密着だからこそ、長く安心して暮らせるサポートを大切にしています。
+                    </p>
+                  </div>
                 </div>
               </li>
             </ol>
           </div>
         </section>
+        <!-- section-11 よくある質問 -->
+        <section class="p-faq" aria-labelledby="faq-title">
+          <div class="p-faq__inner">
+            <h2 class="p-faq__title" id="faq-title">よくある質問</h2>
 
-        <!-- 相談できる内容（1:354） -->
-        <section class="p-consult-content">
-          <div class="p-consult-content__inner">
-            <h2 class="p-consult-content__title">相談できる内容</h2>
-            <ul class="p-consult-content__list">
-              <li class="p-consult-content__item">この中古物件、買ってから後悔しない?</li>
-              <li class="p-consult-content__item">水回りだけ交換したらいくら?</li>
-              <li class="p-consult-content__item">断熱を入れるとどれくらい変わる?</li>
-              <li class="p-consult-content__item">間取り変更は可能?</li>
-              <li class="p-consult-content__item">予算○○万円なら、どこまでできる?</li>
-              <li class="p-consult-content__item">優先順位を一緒に整理してほしい</li>
-            </ul>
-            <p class="p-consult-content__text">どんな内容でも大丈夫です。</p>
-            <p class="p-consult-content__sub">「これ聞いていいのかな?」と思うことほど、遠慮なくご相談ください。</p>
-            <div class="p-consult-content__cta">
-              <p class="p-consult-content__cta-text">私たちは「工事ありき」ではなく、まず<span
-                  class="p-consult-content__highlight">不安を整理</span>して<span
-                  class="p-consult-content__highlight">優先順位を決め</span>るところからお手伝いします。</p>
-              <div class="p-consult-content__img"><img src="./assets/consult-content/consult_01.png" alt="相談対応の様子"
-                  width="300" height="300"></div>
+            <div class="p-faq__items">
+              <!-- item 01 -->
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__qIcon" aria-hidden="true">Q</span>
+                  <span class="p-faq__qText">（質問を入れてください）</span>
+                  <span class="p-faq__toggle" aria-hidden="true"></span>
+                </summary>
+
+                <div class="p-faq__answer">
+                  <div class="p-faq__answerInner">
+                    <span class="p-faq__aIcon" aria-hidden="true">A</span>
+                    <div class="p-faq__aBody">
+                      <p class="p-faq__aText">
+                        （回答を入れてください。改行が必要なら<br>でOK）
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <!-- item 02 -->
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__qIcon" aria-hidden="true">Q</span>
+                  <span class="p-faq__qText">（質問を入れてください）</span>
+                  <span class="p-faq__toggle" aria-hidden="true"></span>
+                </summary>
+
+                <div class="p-faq__answer">
+                  <div class="p-faq__answerInner">
+                    <span class="p-faq__aIcon" aria-hidden="true">A</span>
+                    <div class="p-faq__aBody">
+                      <p class="p-faq__aText">（回答を入れてください）</p>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <!-- item 03 -->
+              <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__qIcon" aria-hidden="true">Q</span>
+                  <span class="p-faq__qText">（質問を入れてください）</span>
+                  <span class="p-faq__toggle" aria-hidden="true"></span>
+                </summary>
+
+                <div class="p-faq__answer">
+                  <div class="p-faq__answerInner">
+                    <span class="p-faq__aIcon" aria-hidden="true">A</span>
+                    <div class="p-faq__aBody">
+                      <p class="p-faq__aText">（回答を入れてください）</p>
+                    </div>
+                  </div>
+                </div>
+              </details>
+
+              <!-- 必要数だけdetailsを増やしてください -->
             </div>
           </div>
         </section>
-
         <!-- 最後に + WEB限定（1:259, 1:417） -->
         <section class="p-finally">
           <div class="p-finally__content">
@@ -272,55 +739,6 @@
             <p class="p-finally__cta">中古物件の購入前・購入直後のご相談、大歓迎です。</p>
           </div>
           <div class="p-finally__banner">WEB限定キャンペーン</div>
-        </section>
-
-        <section class="p-campaign">
-          <div class="p-campaign__inner">
-            <h2 class="p-campaign__title">WEB限定キャンペーン</h2>
-            <p class="p-campaign__sub">お問い合わせ後、見積もり依頼で</p>
-            <div class="p-campaign__box">
-              <div class="p-campaign__gift">
-                <img src="./assets/campaign/campaign_01.png" alt="ギフトカード" width="150" height="100">
-                <p class="p-campaign__gift-text">ギフトカード<span class="p-campaign__gift-amount">3,000円分</span>プレゼント</p>
-                <p class="p-campaign__gift-note">本サイトからお問い合わせいただいたお客様限定</p>
-              </div>
-            </div>
-            <p class="p-campaign__lead">「相談したいけど、まだ迷っている」</p>
-            <p class="p-campaign__text">そんな方でも動きやすいように、Web限定の特典をご用意しました。</p>
-            <ul class="p-campaign__disclaimers">
-              <li>※10万円以上のリフォームをご検討の方が対象です。</li>
-              <li>※ご成約後のお渡しとなります。</li>
-              <li>※予告なく終了する場合があります。</li>
-            </ul>
-          </div>
-        </section>
-
-        <!-- 購入前プロ相談メリット -->
-        <section class="p-benefits">
-          <div class="p-benefits__inner">
-            <h2 class="p-benefits__title">「購入前の段階からプロに相談するメリット」</h2>
-            <ul class="p-benefits__list">
-              <li class="p-benefits__item">リフォーム費用の目安が分かり、資金計画が立つ</li>
-              <li class="p-benefits__item">「この物件でOKかどうか」の判断材料が増える</li>
-              <li class="p-benefits__item">工事の優先順位が明確になり、ムダが減る</li>
-              <li class="p-benefits__item">必要以上に不安にならず、前に進める</li>
-              <li class="p-benefits__item">家族が安心して暮らせる住まいに近づく</li>
-            </ul>
-            <div class="p-benefits__qa">
-              <div class="p-benefits__qa-item">
-                <p class="p-benefits__q">まだ買ってないのに相談していいの?</p>
-                <p class="p-benefits__a-label">もちろん大丈夫です!</p>
-                <p class="p-benefits__a-text"><span
-                    class="p-benefits__highlight">むしろ一番おすすめのタイミングです。</span>買ってから「想定外の修繕が必要だった･･･」となる前に、先に全体像を把握しておく方が安全です。
-                </p>
-              </div>
-              <div class="p-benefits__qa-item">
-                <p class="p-benefits__q">とりあえず見積もりだけでもいい?</p>
-                <p class="p-benefits__a-label">大丈夫です。</p>
-                <p class="p-benefits__a-text">「費用感だけ知りたい」「相場を知りたい」そんな段階でも問題ありません。</p>
-              </div>
-            </div>
-          </div>
         </section>
       </main>
 

@@ -1,0 +1,229 @@
+@use "../../foundation" as *;
+
+// ========================================
+// クリアリティセクション
+// ========================================
+.p-clarity {
+  position: relative;
+  padding-top: prem(56);
+  padding-bottom: prem(56);
+  overflow: hidden;
+
+  @include mq("md") {
+    padding-top: prem(72);
+    padding-bottom: prem(72);
+  }
+}
+
+.p-clarity__bg {
+  position: absolute;
+  z-index: 0;
+  background-image: url("/assets/clarity/clarity-bg.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 1;
+  inset: 0;
+}
+
+.p-clarity__bg::after {
+  position: absolute;
+  background-color: rgb(255 255 255 / 72%);
+  inset: 0;
+  content: "";
+}
+
+.p-clarity__inner {
+  position: relative;
+  z-index: 1;
+  max-width: prem(1080);
+  margin: 0 auto;
+  padding: 0 prem(20);
+}
+
+.p-clarity__header {
+  position: relative;
+  padding: prem(24) prem(28);
+  border: prem(3) solid $figma-kon;
+  border-radius: prem(18);
+  background-color: rgb(255 255 255 / 92%);
+
+  @include mq("md") {
+    padding: prem(28) prem(36);
+  }
+}
+
+.p-clarity__badge {
+  margin: 0 0 prem(6);
+  font-size: prem(14);
+  font-weight: $font-weight-b;
+  letter-spacing: 0.03em;
+  color: $figma-kon;
+}
+
+.p-clarity__title {
+  margin: 0;
+  padding-right: prem(120);
+  font-size: prem(26);
+  font-weight: $font-weight-h;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    padding-right: prem(180);
+    font-size: prem(32);
+  }
+}
+
+.p-clarity__titleAccent {
+  color: $color-orange;
+}
+
+.p-clarity__advisor {
+  position: absolute;
+  top: prem(10);
+  right: prem(14);
+  width: prem(96);
+  height: prem(96);
+}
+
+.p-clarity__advisorImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.p-clarity__cards {
+  display: grid;
+  gap: prem(20);
+  grid-template-columns: repeat(6, 1fr);
+  margin-top: prem(36);
+
+  @include mq("md") {
+    gap: prem(16);
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.p-clarity__row {
+  display: contents;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.p-clarity__row--top .p-clarity__card:nth-child(1),
+.p-clarity__row--top .p-clarity__card:nth-child(2),
+.p-clarity__row--top .p-clarity__card:nth-child(3) {
+  grid-column: span 2;
+}
+
+.p-clarity__row--bottom .p-clarity__card:nth-child(1) {
+  grid-column: 2 / span 2;
+}
+
+.p-clarity__row--bottom .p-clarity__card:nth-child(2) {
+  grid-column: 4 / span 2;
+}
+
+@include mq("md") {
+  .p-clarity__row--top .p-clarity__card:nth-child(1),
+  .p-clarity__row--top .p-clarity__card:nth-child(2),
+  .p-clarity__row--top .p-clarity__card:nth-child(3),
+  .p-clarity__row--bottom .p-clarity__card:nth-child(1),
+  .p-clarity__row--bottom .p-clarity__card:nth-child(2) {
+    grid-column: auto;
+  }
+
+  .p-clarity__row--bottom .p-clarity__card:nth-child(2) {
+    grid-column: span 2;
+    width: 50%;
+    margin: 0 auto;
+  }
+}
+
+.p-clarity__card {
+  padding: prem(64) prem(18) prem(18);
+  border-bottom: prem(10) solid rgb(66 160 255 / 65%);
+  border-radius: prem(16);
+  box-shadow: 0 prem(14) prem(0) rgb(66 160 255 / 35%);
+  text-align: center;
+  background-color: rgb(255 255 255 / 94%);
+}
+
+.p-clarity__icon {
+  display: grid;
+  width: prem(120);
+  height: prem(120);
+  margin-top: prem(-110);
+  margin-bottom: prem(14);
+  border: prem(3) solid rgb(90 160 255 / 55%);
+  border-radius: 9999px;
+  color: rgb(255 255 255 / 95%);
+  background:
+    radial-gradient(circle at 30% 30%, rgb(255 255 255 / 55%), rgb(255 255 255 / 0%) 55%),
+    linear-gradient(180deg, rgb(120 190 255 / 30%), rgb(90 160 255 / 18%));
+  place-items: center;
+}
+
+.p-clarity__svg {
+  width: prem(44);
+  height: prem(44);
+}
+
+.p-clarity__text {
+  margin: 0;
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  line-height: 1.55;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+}
+
+.p-clarity__cta {
+  margin-top: prem(34);
+  padding: prem(28) prem(18);
+  border-radius: prem(18);
+  text-align: center;
+  background:
+    radial-gradient(circle at 50% 20%, rgb(255 255 255 / 95%), rgb(210 240 255 / 95%)),
+    repeating-conic-gradient(from 0deg, rgb(255 255 255 / 0%) 0 12deg, rgb(255 255 255 / 14%) 12deg 24deg);
+
+  @include mq("md") {
+    margin-top: prem(44);
+    padding: prem(34) prem(22);
+  }
+}
+
+.p-clarity__ctaLead {
+  margin: 0 0 prem(10);
+  font-size: prem(18);
+  font-weight: $font-weight-h;
+  letter-spacing: 0.03em;
+  color: $figma-kon;
+}
+
+.p-clarity__ctaSmall {
+  font-size: prem(14);
+  font-weight: $font-weight-b;
+  letter-spacing: 0.03em;
+}
+
+.p-clarity__ctaMain {
+  margin: 0;
+  font-size: prem(28);
+  font-weight: $font-weight-uh;
+  line-height: 1.25;
+  letter-spacing: 0.02em;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(34);
+  }
+}
+
+.p-clarity__ctaEm {
+  color: $color-orange;
+}

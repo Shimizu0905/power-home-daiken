@@ -1,0 +1,251 @@
+@use "../../foundation" as *;
+
+// ========================================
+// リスクセクション（Figma 2044:64）
+// ========================================
+.p-risk {
+  padding: prem(40) prem(20);
+  background-color: #e8f4fc;
+  background-image: url("/assets/risk/risk-bg.png");
+  background-position: center;
+  background-size: cover;
+
+  @include mq("md") {
+    padding: prem(80) prem(25);
+  }
+}
+
+.p-risk__inner {
+  max-width: prem(1000);
+  margin: 0 auto;
+}
+
+.p-risk__heading {
+  margin-bottom: prem(16);
+  text-align: center;
+}
+
+.p-risk__heading-lead {
+  margin-bottom: prem(8);
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(22);
+  }
+}
+
+.p-risk__heading-main {
+  font-size: prem(24);
+  font-weight: $font-weight-b;
+  line-height: 1.4;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(32);
+  }
+}
+
+.p-risk__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: prem(24);
+}
+
+.p-risk__intro-label {
+  margin-bottom: prem(12);
+  font-size: prem(16);
+  font-weight: $font-weight-b;
+  color: $figma-kon;
+}
+
+.p-risk__intro-dots {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(6);
+  width: prem(4);
+  margin: 0 auto;
+}
+
+.p-risk__intro-dots::before,
+.p-risk__intro-dots::after {
+  display: block;
+  width: prem(4);
+  height: prem(4);
+  border-radius: 50%;
+  background-color: $figma-kon;
+  content: "";
+}
+
+.p-risk__intro-dots span {
+  display: block;
+  width: prem(4);
+  height: prem(4);
+  border-radius: 50%;
+  background-color: $figma-kon;
+}
+
+.p-risk__list {
+  display: grid;
+  gap: prem(20);
+
+  // PC版：3列（正確には下の2個を中央寄せにするため6列で定義）
+  grid-template-columns: repeat(6, 1fr);
+  margin: 0 0 prem(48);
+  padding: 0;
+  list-style: none;
+
+  @include mq("md") {
+    gap: prem(16);
+
+    // スマホ・タブレット：2列
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: prem(32);
+  }
+}
+
+.p-risk__item {
+  display: flex;
+  flex-direction: column;
+  border-radius: prem(12);
+  background-color: #333; // Figmaの暗い色
+  overflow: hidden;
+
+  // 上段（1〜3枚目）：2列ずつ占有して3カラムに見せる
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  // 下段（4〜5枚目）：中央に寄せるための位置指定
+  &:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  &:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+
+  // ----------------------------------------
+  // 画面幅が狭い時（2, 2, 1）の制御
+  // ----------------------------------------
+  @include mq("md") {
+    // 一旦全要素の幅とマージンをリセット
+    grid-column: auto;
+    width: 100%;
+    margin: 0;
+
+    // 5枚目を1列分サイズで中央配置
+    &:nth-child(5) {
+      grid-column: span 2;
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.p-risk__item-highlight {
+  color: $figma-yellow;
+}
+
+.p-risk__item-img {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+.p-risk__item-img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.p-risk__item-title {
+  padding: prem(16);
+  font-size: prem(14);
+  font-weight: $font-weight-b;
+  line-height: 1.5;
+  text-align: center;
+  color: $white;
+
+  @include mq("md") {
+    padding: prem(20);
+    font-size: prem(16);
+  }
+}
+
+.p-risk__cta-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(24);
+}
+
+.p-risk__cta-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: prem(320);
+  padding: prem(16) prem(32);
+  border-radius: prem(8);
+  font-size: prem(20);
+  font-weight: $font-weight-b;
+  text-decoration: none;
+  color: $white;
+  background-color: $figma-mizuiro;
+  transition: opacity 0.2s;
+
+  @include mq("md") {
+    max-width: prem(400);
+    padding: prem(20) prem(48);
+    font-size: prem(24);
+  }
+}
+
+.p-risk__cta-button:hover {
+  opacity: 0.9;
+}
+
+.p-risk__cta-message {
+  max-width: prem(600);
+  margin: 0 auto;
+  padding: prem(24) prem(20);
+  border-radius: prem(12);
+  text-align: center;
+  background-color: rgb(255 255 255 / 60%);
+
+  @include mq("md") {
+    padding: prem(32) prem(40);
+  }
+}
+
+.p-risk__cta-line1 {
+  margin-bottom: prem(8);
+  font-size: prem(16);
+  font-weight: $font-weight-b;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(18);
+  }
+}
+
+.p-risk__cta-line2 {
+  font-size: prem(18);
+  font-weight: $font-weight-b;
+  line-height: 1.5;
+  color: $figma-kon;
+
+  @include mq("md") {
+    font-size: prem(22);
+  }
+}
+
+.p-risk__highlight {
+  color: $color-orange;
+}
