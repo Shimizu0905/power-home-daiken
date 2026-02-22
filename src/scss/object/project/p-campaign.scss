@@ -67,7 +67,7 @@
 .p-campaign__sub {
   margin-bottom: prem(24);
   font-size: prem(14);
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     font-size: prem(15);
@@ -110,7 +110,7 @@
   margin: 0;
   font-size: prem(16);
   font-weight: $font-weight-m;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     font-size: prem(18);
@@ -162,7 +162,7 @@
   border-radius: prem(8);
   font-size: prem(16);
   font-weight: $font-weight-m;
-  color: $figma-kon;
+  color: $navy;
   background: $white;
 
   @include mq("md") {
@@ -176,7 +176,7 @@
 .p-campaign__text {
   margin-bottom: prem(24);
   font-size: prem(14);
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     margin-bottom: prem(28);
@@ -188,7 +188,7 @@
   margin: 0;
   padding: 0;
   font-size: prem(12);
-  color: $figma-kon;
+  color: $navy;
   list-style: none;
 
   @include mq("md") {

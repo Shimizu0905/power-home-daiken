@@ -19,11 +19,11 @@
 .p-flow__title {
   margin: 0 0 prem(34);
   font-size: prem(34);
-  font-weight: $font-weight-uh;
+  font-weight: bold;
   line-height: 1.25;
   text-align: center;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 }
 
 @include mq("md") {
@@ -59,7 +59,7 @@
   align-items: stretch; /* ←これで画像と右側が同じ高さ */
   gap: prem(18);
   padding: prem(14);
-  border: prem(3) solid $figma-kon;
+  border: prem(3) solid $navy;
   border-radius: prem(14);
   background-color: #fff;
 }
@@ -99,7 +99,7 @@
   padding-bottom: prem(10);
   border-bottom: prem(1) solid rgb(47 121 201 / 45%);
   font-size: prem(26);
-  font-weight: $font-weight-uh;
+  font-weight: bold;
   line-height: 1.25;
   letter-spacing: 0.02em;
   color: #2f79c9;
@@ -117,7 +117,7 @@
   font-weight: $font-weight-r;
   line-height: 1.85;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 }
 
 /* 下の矢印（ボックス枠線と繋がって見えるタイプ） */
@@ -131,8 +131,8 @@
   width: prem(22);
   height: prem(22);
   margin-top: prem(-12);
-  border-right: prem(3) solid $figma-kon;
-  border-bottom: prem(3) solid $figma-kon;
+  border-right: prem(3) solid $navy;
+  border-bottom: prem(3) solid $navy;
   background-color: #fff;
   transform: rotate(45deg);
   content: "";

@@ -12,7 +12,6 @@
 
   @include mq("md") {
     gap: prem(24);
-    padding: prem(48) prem($padding-pc);
   }
 }
 
@@ -23,7 +22,7 @@
 }
 
 .c-cta__label {
-  font-size: prem(24);
+  font-size: clamp(prem(20), 1.6vw, prem(24));
   font-weight: $font-weight-b;
   letter-spacing: 0.05em;
   color: $white;
@@ -31,7 +30,7 @@
 
 .c-cta__contact {
   margin-top: prem(24);
-  font-size: prem(24);
+  font-size: clamp(prem(20), 1.4vw, prem(24));
   font-weight: $font-weight-b;
   letter-spacing: 0.05em;
   color: $white;
@@ -39,8 +38,15 @@
 
 .c-cta__button {
   display: block;
-  width: 100%;
-  max-width: prem(553);
+  width: clamp(prem(400), 38.9vw, prem(553));
+
+  @include mq("md") {
+    width: clamp(prem(320), 75vw, prem(553));
+  }
+
+  @include mq("sm") {
+    width: 100%;
+  }
 }
 
 .c-cta__tel-block {
@@ -49,6 +55,15 @@
   align-items: center;
   gap: prem(8);
   margin-top: prem(16);
+
+  @include mq("md") {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.c-cta__tel-block img {
+  width: clamp(prem(250), 30.5vw, prem(425));
 }
 
 .c-cta__tel {

@@ -4,7 +4,7 @@
 // consult（相談できる内容）
 // ========================================
 .p-consult {
-  --consult-card-bg: url("/assets/consult/consult-card-bg.png");
+  --consult-card-bg: url("/assets/consult/consult-card-bg.webp");
 
   padding-top: prem(56);
   padding-bottom: prem(0);
@@ -20,12 +20,12 @@
 .p-consult__title {
   margin: 0;
   font-size: prem(34);
-  font-weight: $font-weight-uh;
+  font-weight: bold;
   line-height: 1.25;
   text-align: center;
   letter-spacing: 0.02em;
   color: transparent;
-  background-image: linear-gradient(90deg, #2f79c9 0% 35%, $figma-kon 35% 100%);
+  background-image: linear-gradient(90deg, #2f79c9 0% 35%, $navy 35% 100%);
   background-clip: text;
 
   @include mq("md") {
@@ -87,7 +87,7 @@
   line-height: 1.85;
   text-align: center;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     margin-top: prem(44);
@@ -100,7 +100,8 @@
   padding-top: prem(24);
   padding-bottom: prem(24);
   background-color: #dcecf7;
-
+  overflow: hidden;
+  
   @include mq("md") {
     margin-top: prem(52);
     padding-top: prem(34);
@@ -128,10 +129,10 @@
 .p-consult__message {
   margin: 0;
   font-size: prem(28);
-  font-weight: $font-weight-uh;
+  font-weight: bold;
   line-height: 1.35;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     font-size: prem(34);

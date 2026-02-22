@@ -2,8 +2,8 @@
 // jQueryをグローバル化
 import './jquery-setup.js';
 
-// yakuhanjp（日本語フォント調整）
-import 'yakuhanjp/dist/css/yakuhanjp_s.css';
+// yakuhanjp（日本語フォント調整・句読点含む約物すべて）
+import 'yakuhanjp/dist/css/yakuhanjp.css';
 
 import '../scss/style.scss';
 

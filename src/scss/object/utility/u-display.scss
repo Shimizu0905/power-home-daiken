@@ -1,10 +1,35 @@
 @use "../../foundation" as *;
 
-// md以上でのみ表示（brタグの改行などに使用）
+// md以下（767px以下）でのみ表示（brタグの改行などに使用）
 .u-show-md {
   display: none;
 
   @include mq("md") {
     display: inline;
+  }
+}
+
+.u-show-sm {
+  display: none;
+
+  @include mq("sm") {
+    display: inline;
+  }
+}
+
+.lg-show {
+  display: none;
+
+  @include mq("lg") {
+    display: block;
+  }
+}
+
+// 767px以下（md）で非表示
+.md-none {
+  display: block;
+
+  @include mq("md") {
+    display: none;
   }
 }

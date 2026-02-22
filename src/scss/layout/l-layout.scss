@@ -12,10 +12,20 @@
 .l-inner {
   max-width: $inner;
   margin: 0 auto;
-  padding: 0 prem(25);
+  padding: 0 $padding-pc;
+
+  @include mq("lg") {
+    max-width: $inner-lg;
+    padding: 0 prem(15);
+  }
 
   @include mq("md") {
-    padding: 0 prem(15);
+    max-width: $inner-md;
+  }
+
+  @include mq("sm") {
+    max-width: $inner-sm;
+    padding: 0 $padding-sm;
   }
 }
 

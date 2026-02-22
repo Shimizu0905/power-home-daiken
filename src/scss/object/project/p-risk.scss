@@ -4,47 +4,86 @@
 // リスクセクション（Figma 2044:64）
 // ========================================
 .p-risk {
-  padding: prem(40) prem(20);
+  position: relative;
+  z-index: 1;
+  padding: prem(30) 0;
   background-color: #e8f4fc;
-  background-image: url("/assets/risk/risk-bg.png");
+  background-image: url("/assets/risk/risk-bg.webp");
   background-position: center;
   background-size: cover;
-
-  @include mq("md") {
-    padding: prem(80) prem(25);
-  }
-}
-
-.p-risk__inner {
-  max-width: prem(1000);
-  margin: 0 auto;
 }
 
 .p-risk__heading {
+  position: relative;
   margin-bottom: prem(16);
   text-align: center;
+
+  &::before {
+    position: absolute;
+    top: 49%;
+    left: -7%;
+    z-index: -1;
+    width: 100%;
+    height: prem(120);
+    background-image: url("/assets/risk/risk-title-accent.webp");
+    background-position: top center;
+    background-size: 100% prem(120);
+    content: "";
+
+    @include mq("md") {
+      top: 25%;
+      left: 0%;
+    }
+  }
 }
 
 .p-risk__heading-lead {
   margin-bottom: prem(8);
-  font-size: prem(18);
+  font-size: prem(38);
   font-weight: $font-weight-b;
-  color: $figma-kon;
+  line-height: 1.4;
+  letter-spacing: 0.05em;
+  color: $navy;
+
+  @include mq("lg") {
+    font-size: clamp(prem(28), 3.5vw, prem(36));
+  }
 
   @include mq("md") {
-    font-size: prem(22);
+    font-size: 4.4vw;
   }
 }
 
 .p-risk__heading-main {
-  font-size: prem(24);
+  font-size: prem(38);
   font-weight: $font-weight-b;
   line-height: 1.4;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
-    font-size: prem(32);
+    font-size: 4.4vw;
   }
+
+  .p-risk__heading-main-bold {
+    font-size: prem(48);
+    font-weight: $font-weight-b;
+    line-height: 1.4;
+    color: #524a45;
+    word-break: auto-phrase;
+
+    @include mq("lg") {
+      font-size: clamp(prem(36), 4vw, prem(46));
+    }
+
+    @include mq("md") {
+      font-size: 5vw;
+    }
+  }
+
+  span {
+    font-weight: $font-weight-b;
+  }
+
 }
 
 .p-risk__intro {
@@ -56,62 +95,46 @@
 
 .p-risk__intro-label {
   margin-bottom: prem(12);
-  font-size: prem(16);
+  font-size: prem(30);
   font-weight: $font-weight-b;
-  color: $figma-kon;
+  color: $navy;
+
+  @include mq("md") {
+    font-size: 4.4vw;
+  }
 }
 
 .p-risk__intro-dots {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: prem(6);
-  width: prem(4);
+  display: block;
+  width: prem(101);
+  height: auto;
   margin: 0 auto;
-}
+  object-fit: contain;
 
-.p-risk__intro-dots::before,
-.p-risk__intro-dots::after {
-  display: block;
-  width: prem(4);
-  height: prem(4);
-  border-radius: 50%;
-  background-color: $figma-kon;
-  content: "";
-}
-
-.p-risk__intro-dots span {
-  display: block;
-  width: prem(4);
-  height: prem(4);
-  border-radius: 50%;
-  background-color: $figma-kon;
+  @include mq("sm") {
+    width: clamp(prem(75), 20.1vw, prem(101));
+  }
 }
 
 .p-risk__list {
   display: grid;
   gap: prem(20);
-
-  // PC版：3列（正確には下の2個を中央寄せにするため6列で定義）
   grid-template-columns: repeat(6, 1fr);
-  margin: 0 0 prem(48);
+  margin: 0 0 prem(88);
   padding: 0;
   list-style: none;
 
   @include mq("md") {
-    gap: prem(16);
-
-    // スマホ・タブレット：2列
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: prem(32);
+    gap: prem(24);
+    grid-template-columns: 1fr;
   }
 }
 
 .p-risk__item {
   display: flex;
   flex-direction: column;
-  border-radius: prem(12);
-  background-color: #333; // Figmaの暗い色
+  border-radius: prem(10);
+  background-color: #4d4d4d;
   overflow: hidden;
 
   // 上段（1〜3枚目）：2列ずつ占有して3カラムに見せる
@@ -131,30 +154,48 @@
   }
 
   // ----------------------------------------
-  // 画面幅が狭い時（2, 2, 1）の制御
+  // md以下：1列表示（nth-childの指定を上書き）
   // ----------------------------------------
   @include mq("md") {
-    // 一旦全要素の幅とマージンをリセット
-    grid-column: auto;
+    grid-column: 1;
     width: 100%;
     margin: 0;
 
-    // 5枚目を1列分サイズで中央配置
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4),
     &:nth-child(5) {
-      grid-column: span 2;
-      width: 50%;
-      margin: 0 auto;
+      grid-column: 1;
     }
   }
 }
 
 .p-risk__item-highlight {
+  font-size: prem(20);
   color: $figma-yellow;
+
+  @include mq("lg") {
+    font-size: clamp(prem(16), 3.9vw, prem(18));
+  }
+
+  @include mq("md") {
+    font-size: 4.4vw;
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(16), 6.5vw, prem(22));
+  }
 }
 
 .p-risk__item-img {
+  height: 100%;
   overflow: hidden;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 320 / 151;
+
+  @include mq("md") {
+    aspect-ratio: 335 / 151;
+  }
 }
 
 .p-risk__item-img img {
@@ -165,87 +206,106 @@
 }
 
 .p-risk__item-title {
-  padding: prem(16);
-  font-size: prem(14);
-  font-weight: $font-weight-b;
-  line-height: 1.5;
-  text-align: center;
-  color: $white;
-
-  @include mq("md") {
-    padding: prem(20);
-    font-size: prem(16);
-  }
-}
-
-.p-risk__cta-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: prem(24);
-}
-
-.p-risk__cta-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: prem(320);
-  padding: prem(16) prem(32);
-  border-radius: prem(8);
-  font-size: prem(20);
-  font-weight: $font-weight-b;
-  text-decoration: none;
-  color: $white;
-  background-color: $figma-mizuiro;
-  transition: opacity 0.2s;
-
-  @include mq("md") {
-    max-width: prem(400);
-    padding: prem(20) prem(48);
-    font-size: prem(24);
-  }
-}
-
-.p-risk__cta-button:hover {
-  opacity: 0.9;
-}
-
-.p-risk__cta-message {
-  max-width: prem(600);
-  margin: 0 auto;
-  padding: prem(24) prem(20);
-  border-radius: prem(12);
-  text-align: center;
-  background-color: rgb(255 255 255 / 60%);
-
-  @include mq("md") {
-    padding: prem(32) prem(40);
-  }
-}
-
-.p-risk__cta-line1 {
-  margin-bottom: prem(8);
-  font-size: prem(16);
-  font-weight: $font-weight-b;
-  color: $figma-kon;
-
-  @include mq("md") {
-    font-size: prem(18);
-  }
-}
-
-.p-risk__cta-line2 {
+  padding: prem(20) prem(10);
   font-size: prem(18);
   font-weight: $font-weight-b;
   line-height: 1.5;
-  color: $figma-kon;
+  text-align: center;
+  color: $white;
+
+  @include mq("lg") {
+    font-size: prem(18);
+  }
 
   @include mq("md") {
-    font-size: prem(22);
+    padding: prem(20);
+    font-size: 4.1vw;
+  }
+}
+
+.p-risk__bottom-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.p-risk__bottom-message {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  padding: prem(75) prem(20) prem(48);
+  border-radius: prem(12);
+  text-align: center;
+  background-color: #eff6fc;
+
+  @include mq("md") {
+    padding: prem(64) prem(20) prem(32);
+  }
+
+  &::before {
+    position: absolute;
+    top: -18%;
+    left: 50%;
+    width: min(100%, prem(294));
+    height: prem(94);
+    background-image: url("/assets/risk/risk-blue-text.svg");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+    content: "";
+    pointer-events: none;
+  }
+}
+
+.p-risk__bottom-line1 {
+  margin-bottom: prem(8);
+  font-size: prem(30);
+  font-weight: $font-weight-b;
+  color: $navy;
+
+  @include mq("md") {
+    font-size: prem(24);
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(18), 5.1vw, prem(20));
+  }
+}
+
+.p-risk__bottom-line2 {
+  font-size: prem(30);
+  font-weight: $font-weight-b;
+  line-height: 1.5;
+  color: $navy;
+
+  @include mq("lg") {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: clamp(prem(22), 3.5vw, prem(30));
+    text-align: center;
+  }
+
+  @include mq("md") {
+    font-size: prem(24);
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(18), 5.1vw, prem(20));
   }
 }
 
 .p-risk__highlight {
-  color: $color-orange;
+  font-size: prem(36);
+  color: $main-orange;
+
+  @include mq("md") {
+    font-size: clamp(prem(24), 5.1vw, prem(34));
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(24), 6.5vw, prem(34));
+  }
 }

@@ -7,7 +7,7 @@
 .p-faq {
   padding-top: prem(70);
   padding-bottom: prem(70);
-  background-image: url("/assets/faq/faq-bg.png");
+  background-image: url("/assets/faq/faq-bg.webp");
   background-position: center top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -27,11 +27,11 @@
 .p-faq__title {
   margin: 0;
   font-size: prem(44);
-  font-weight: $font-weight-uh;
+  font-weight: bold;
   line-height: 1.2;
   text-align: center;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     font-size: prem(52);
@@ -97,7 +97,7 @@
   font-weight: $font-weight-h;
   line-height: 1.5;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     font-size: prem(20);
@@ -201,7 +201,7 @@
   font-weight: $font-weight-r;
   line-height: 1.85;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     font-size: prem(18);

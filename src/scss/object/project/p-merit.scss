@@ -4,13 +4,14 @@
 // メリットセクション
 // ========================================
 .p-merit {
-  padding-top: prem(40);
-  padding-bottom: prem(40);
-  background-color: #eaf3fb;
+  position: relative;
+  z-index: 2;
+  padding: prem(63) 0;
+  background-color: #EFF6FC;
+  overflow: visible;
 
   @include mq("md") {
     padding-top: prem(52);
-    padding-bottom: prem(52);
   }
 }
 
@@ -21,22 +22,40 @@
 }
 
 .p-merit__title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   max-width: prem(820);
-  margin: 0 auto prem(22);
-  padding: prem(18) prem(20);
-  border-radius: prem(14);
+  min-height: prem(74);
+  margin: 0 auto prem(34);
+  padding: prem(11) prem(20) prem(8);
+  border-radius: prem(20);
   font-size: prem(26);
   font-weight: $font-weight-h;
   line-height: 1.3;
   text-align: center;
   letter-spacing: 0.02em;
   color: $white;
-  background-color: $figma-dark-blue;
+  background-color: #1F4598;
 
   @include mq("md") {
     margin-bottom: prem(26);
     padding: prem(20) prem(24);
     font-size: prem(30);
+  }
+
+  &::after {
+    position: absolute;
+    bottom: prem(-10);
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-width: prem(10) prem(12) 0;
+    border-style: solid;
+    border-color: $figma-dark-blue transparent transparent transparent;
+    transform: translateX(-50%);
+    content: "";
   }
 }
 
@@ -51,47 +70,29 @@
   display: flex;
   align-items: center;
   gap: prem(16);
-  padding: prem(16) 0;
-  border-bottom: prem(1) solid rgb(240 138 26 / 55%);
-}
-
-.p-merit__item:last-child {
-  border-bottom: none;
+  padding: prem(22) 0 prem(8);
+  border-bottom: prem(1) solid $main-orange;
 }
 
 .p-merit__icon {
   display: grid;
   flex: 0 0 auto;
-  width: prem(34);
-  height: prem(34);
-  border-radius: 9999px;
-  color: $white;
-  background-color: $color-orange;
-  place-items: center;
-
-  @include mq("md") {
-    width: prem(36);
-    height: prem(36);
-  }
+  width: prem(40);
+  height: prem(40);
 }
 
 .p-merit__check {
-  width: prem(18);
-  height: prem(18);
-
-  @include mq("md") {
-    width: prem(20);
-    height: prem(20);
-  }
+  width: 100%;
+  height: 100%;
 }
 
 .p-merit__text {
   margin: 0;
-  font-size: prem(18);
+  font-size: prem(24);
   font-weight: $font-weight-b;
   line-height: 1.6;
   letter-spacing: 0.01em;
-  color: $text-black;
+  color: #000;
 
   @include mq("md") {
     font-size: prem(20);
@@ -100,5 +101,70 @@
 
 .p-merit__accent {
   font-weight: $font-weight-h;
-  color: $color-orange;
+  color: $main-orange;
+}
+
+.p-merit__bottom {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  z-index: 3;
+  width: 100vw;
+  height: prem(220);
+  padding: prem(48) prem(20) 0;
+  background-color: #EFF6FC;
+  transform: translate(-50%, prem(-40));
+  pointer-events: none;
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+
+  @include mq("md") {
+    padding: prem(32) prem(20) 0;
+  }
+
+  // 先端に矢印SVGを配置
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 4;
+    width: prem(32);
+    height: prem(64);
+    background: url("/assets/merit/merit-arrow-bottom.svg") center / contain no-repeat;
+    transform: translate(-50%, 55%);
+    content: "";
+    pointer-events: none;
+  }
+}
+
+.p-merit__bottom-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: prem(16);
+  max-width: prem(900);
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.p-merit__bottom-question {
+  width: clamp(prem(400), 59vw, prem(630));
+  margin: 0;
+}
+
+.p-merit__bottom-answer {
+  margin: 0;
+  padding: prem(10) prem(18);
+  border-radius: prem(12);
+  box-shadow: 0 prem(4) prem(12) rgb(0 0 0 / 15%);
+  font-size: prem(16);
+  font-weight: $font-weight-b;
+  color: $white;
+  background-color: $figma-dark-blue;
+  align-self: flex-start;
+
+  @include mq("md") {
+    margin-left: prem(40);
+    padding: prem(12) prem(20);
+    font-size: prem(18);
+  }
 }

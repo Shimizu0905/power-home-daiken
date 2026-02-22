@@ -5,6 +5,7 @@
 // ========================================
 .p-timing {
   position: relative;
+  z-index: 1;
   padding-top: prem(56);
   padding-bottom: prem(56);
   overflow: hidden;
@@ -18,7 +19,11 @@
 .p-timing__bg {
   position: absolute;
   z-index: 0;
-  background-color: #e8f4fc;
+  background-color: #fff;
+  background-image: url("/assets/timing/timing_img.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   inset: 0;
 }
 
@@ -60,7 +65,7 @@
   line-height: 1.45;
   text-align: center;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     margin-bottom: prem(24);
@@ -68,8 +73,16 @@
   }
 }
 
-.p-timing__titleAccent {
-  color: $color-orange;
+.p-timing__titleImg {
+  display: inline-block;
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+
+  @include mq("md") {
+    width: auto;
+    height: prem(40);
+  }
 }
 
 .p-timing__text {
@@ -79,7 +92,7 @@
   line-height: 1.6;
   text-align: center;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     margin-bottom: prem(32);
@@ -111,7 +124,7 @@
   font-size: prem(18);
   font-weight: $font-weight-b;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
   background-color: $white;
 
   @include mq("md") {
@@ -126,7 +139,7 @@
   align-items: center;
   gap: prem(20);
   padding: prem(20) prem(24);
-  border: prem(2) solid $figma-kon;
+  border: prem(2) solid $navy;
   border-radius: prem(14);
   box-shadow: 0 prem(6) prem(16) rgb(0 0 0 / 8%);
   background-color: $white;
@@ -146,7 +159,7 @@
   font-weight: $font-weight-m;
   line-height: 1.6;
   letter-spacing: 0.02em;
-  color: $figma-kon;
+  color: $navy;
 
   @include mq("md") {
     font-size: prem(16);

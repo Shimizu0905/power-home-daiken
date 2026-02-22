@@ -11,16 +11,16 @@ $breakpoints: null;
   $breakpoints: (
     "sm": "screen and (min-width: 400px)",
     "md": "screen and (min-width: 768px)",
-    "lg": "screen and (min-width: 1000px)",
+    "lg": "screen and (min-width: 1023px)",
     "xl": "screen and (min-width: 1240px)",
     "xxl": "screen and (min-width: 1440px)",
   );
 } @else {
   // PCファースト（max-width）
   $breakpoints: (
-    "sm": "screen and (max-width: 500px)",
-    "md": "screen and (max-width: 767px)",
-    "lg": "screen and (max-width: 1000px)",
+    "sm": "screen and (max-width: 425px)",
+    "md": "screen and (max-width: 600px)",
+    "lg": "screen and (max-width: 1024px)",
     "xl": "screen and (max-width: 1240px)",
     "xxl": "screen and (max-width: 1440px)",
   );
@@ -30,13 +30,16 @@ $breakpoints: null;
 // レイアウト設定
 // ========================================
 $inner: 1050px;
+$inner-lg: clamp(580px, 90.6vw, 54.375rem);
+$inner-md: clamp(350px, 94vw, 600px);
+$inner-sm: clamp(350px, 100vw, 400px);
 $design-width: 1920px; // デザインカンプの基準幅
 
 // ========================================
 // 余白設定
 // ========================================
 $padding-pc: 25px;
-$padding-sp: 20px;
+$padding-sm: 15px;
 
 // ========================================
 // フォント設定
@@ -45,11 +48,7 @@ $font-family-ja: "Noto Sans JP", sans-serif;
 $font-family-en: "futura-pt", "Century Gothic", arial, sans-serif;
 $font-family-base: $font-family-ja;
 $base-font-size: 16px; // prem()関数で使用する基準フォントサイズ
-$font-20-sp: clamp(16px,4.6vw,20px);
-$font-18-sp: clamp(15px,4.1vw,18px);
-$font-16-sp: clamp(12px,3.7vw,16px);
-$font-15-sp: clamp(12px,3.4vw,15px);
-$font-14-sp: clamp(11px,3.25vw,14px);
+$font-24: clamp(17px, 1.7vw, 24px);
 
 // フォントウェイト (Adobe Fonts準拠)
 $font-weight-el: 200; // Extra Light
@@ -72,16 +71,17 @@ $extra-bold: 800;
 // ========================================
 $white: #fff;
 $text-black: #212529;
-$text-base: #070E50; // 基本テキストカラー（デフォルト）
+$text-base: #070e50;
 $text-gray: #4a4a4a;
-$main-orange: #F46600;
+$main-orange: #f46600;
 $main-blue: #1e3a5f;
 $dark-green: #0c3b2c; // フッター等
 $light-blue: #e8f4fc;
-$figma-kon: #070E50;
-$blue-01: #005FC5;
-$figma-mizuiro: #008BE8;
+$navy: #070e50;
+$blue-01: #005fc5;
+$brown: #6d6d6d;
+$figma-mizuiro: #008be8;
 $figma-dark-blue: #124388;
-$figma-yellow: #FFF100;
+$figma-yellow: #fff100;
 $color-orange: #f29400; // オレンジの強調色
 $color-navy: #001233; // テキストの紺色
