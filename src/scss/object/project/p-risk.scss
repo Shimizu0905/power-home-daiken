@@ -266,7 +266,7 @@
   color: $navy;
 
   @include mq("md") {
-    font-size: prem(24);
+    font-size: 5vw;
   }
 
   @include mq("sm") {
@@ -289,7 +289,7 @@
   }
 
   @include mq("md") {
-    font-size: prem(24);
+    font-size: 5vw;
   }
 
   @include mq("sm") {

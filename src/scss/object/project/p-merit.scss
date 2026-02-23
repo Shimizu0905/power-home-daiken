@@ -7,11 +7,36 @@
   position: relative;
   z-index: 2;
   padding: prem(63) 0;
-  background-color: #EFF6FC;
+  background-color: #eff6fc;
   overflow: visible;
 
   @include mq("md") {
     padding-top: prem(52);
+  }
+
+  // 矢印SVG（clip-pathの外に出すため .p-merit 本体に配置）
+  &::after {
+    position: absolute;
+    top: calc(100% + #{prem(180)});
+    left: 50%;
+    z-index: 4;
+    width: prem(17);
+    height: prem(146);
+    background: url("/assets/merit/merit-arrow-bottom.svg") center / contain
+      no-repeat;
+    transform: translate(-50%, -50%);
+    content: "";
+    pointer-events: none;
+
+    @include mq("md") {
+      // height:prem(150), same translateY(prem(-40)) → 150 - 40 = 110
+      top: calc(100% + #{prem(110)});
+    }
+
+    @include mq("sm") {
+      // height:prem(130) → 130 - 40 = 90
+      top: calc(100% + #{prem(90)});
+    }
   }
 }
 
@@ -31,18 +56,22 @@
   margin: 0 auto prem(34);
   padding: prem(11) prem(20) prem(8);
   border-radius: prem(20);
-  font-size: prem(26);
+  font-size: prem(34);
   font-weight: $font-weight-h;
   line-height: 1.3;
   text-align: center;
   letter-spacing: 0.02em;
   color: $white;
-  background-color: #1F4598;
+  background-color: #1f4598;
 
   @include mq("md") {
     margin-bottom: prem(26);
     padding: prem(20) prem(24);
     font-size: prem(30);
+  }
+
+  @include mq("sm") {
+    font-size: 6.5vw;
   }
 
   &::after {
@@ -93,6 +122,7 @@
   line-height: 1.6;
   letter-spacing: 0.01em;
   color: #000;
+  word-break: auto-phrase;
 
   @include mq("md") {
     font-size: prem(20);
@@ -111,29 +141,22 @@
   z-index: 3;
   width: 100vw;
   height: prem(220);
-  padding: prem(48) prem(20) 0;
-  background-color: #EFF6FC;
+  padding: prem(56) prem(20) 0;
+  background-color: #eff6fc;
   transform: translate(-50%, prem(-40));
   pointer-events: none;
   clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+  overflow: hidden;
 
   @include mq("md") {
+    height: prem(150);
     padding: prem(32) prem(20) 0;
   }
 
-  // 先端に矢印SVGを配置
-  &::after {
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    z-index: 4;
-    width: prem(32);
-    height: prem(64);
-    background: url("/assets/merit/merit-arrow-bottom.svg") center / contain no-repeat;
-    transform: translate(-50%, 55%);
-    content: "";
-    pointer-events: none;
+  @include mq("sm") {
+    height: prem(130);
   }
+
 }
 
 .p-merit__bottom-inner {
@@ -149,6 +172,10 @@
 .p-merit__bottom-question {
   width: clamp(prem(400), 59vw, prem(630));
   margin: 0;
+
+  @include mq("sm") {
+    width: 100%;
+  }
 }
 
 .p-merit__bottom-answer {

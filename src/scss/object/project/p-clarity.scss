@@ -147,9 +147,20 @@
   margin: 0 auto;
   padding: 0 prem(10);
 
+  @include mq("lg") {
+    max-width: 100%;
+  }
+
+  @include mq("md") {
+    --gap-x: #{prem(16)};
+    column-gap: var(--gap-x);
+    gap: prem(40) prem(16);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+  }
+
   @include mq("sm") {
-    gap: prem(40) prem(32);
-    grid-template-columns: 1fr;
+    gap: prem(40) 5vw;
   }
 }
 
@@ -174,7 +185,8 @@
   grid-column: 4 / span 2;
 }
 
-@include mq("sm") {
+@include mq("md") {
+  // PC用 grid-column を無効化（nth-child の詳細度に合わせる）
   .p-clarity__row--top .p-clarity__card:nth-child(1),
   .p-clarity__row--top .p-clarity__card:nth-child(2),
   .p-clarity__row--top .p-clarity__card:nth-child(3),
@@ -187,19 +199,52 @@
     width: auto;
     margin: 0;
   }
+
+  .p-clarity__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+    min-height: prem(120);
+    gap: prem(15);
+
+    @include mq("sm") {
+      min-height: prem(80);
+    }
+  }
+
+  .p-clarity__icon {
+    margin: clamp(-48px, -8vw, -28px) auto 10px;
+
+    @include mq("md") {
+      margin: 0;
+    }
+  }
+}
+@media screen and (max-width: 600px) {
+  .p-clarity__row--bottom > .p-clarity__card:nth-child(2):last-child {
+    grid-column: 1 / -1;
+    width: calc((100% - var(--gap-x)) / 2);
+    justify-self: center;
+  }
 }
 
 .p-clarity__card {
   position: relative;
-  max-width: prem(262);
   padding: prem(64) prem(18) prem(18);
   border-radius: prem(16) 0 0;
   text-align: center;
-  background-color: rgb(255 255 255 / 95%);
+  background-color: #fff;
+
+  @include mq("md") {
+    padding: 0 prem(10) prem(10);
+  }
 
   &::before {
     position: absolute;
-    inset: 0 -7px -7px 0;
+    inset: 7px -7px -7px 0;
     z-index: -1;
     border-radius: prem(20) 0 0; // 左上のみ
     background-image: url("/assets/clarity/clarity-card-bg.webp");
@@ -207,6 +252,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     content: "";
+
+    @include mq("md") {
+      inset: prem(4) prem(-4) prem(-4) 0;
+    }
   }
 }
 
@@ -217,9 +266,15 @@
   margin: -6.875rem auto 0.875rem;
   place-items: center;
 
+  @include mq("lg") {
+    width: 11vw;
+    height: 11vw;
+  }
+
   @include mq("md") {
-    width: 17.2vw;
-    height: 17.2vw;
+    margin: prem(-25) auto 0;
+    width: 14vw;
+    height: 13vw;
   }
 }
 
@@ -239,7 +294,12 @@
   color: $navy;
 
   @include mq("md") {
-    font-size: 3.6vw;
+    letter-spacing: -0.02em;
+    font-size: 3.7vw;
+  }
+
+  @include mq("sm") {
+    font-size: 3.65vw;
   }
 }
 
@@ -314,6 +374,7 @@
   background-size: cover;
 
   @include mq("md") {
+    height: vw(600, 302);
     margin-bottom: prem(-100);
     padding: prem(40) prem(20);
   }
@@ -326,6 +387,10 @@
   font-size: prem(46);
   font-weight: $font-weight-h;
   letter-spacing: 0.06em;
+
+  @include mq("md") {
+    font-size: 8vw;
+  }
 
   // 左右の＼ ／
   &::before,
@@ -355,6 +420,11 @@
   font-size: prem(30);
   font-weight: $font-weight-b;
   letter-spacing: 0.04em;
+
+  @include mq("md") {
+    font-size: 5vw;
+    margin-left: 0;
+  }
 }
 
 .p-clarity__freeMain {
@@ -372,6 +442,10 @@
   margin-right: prem(32);
   font-size: prem(80);
 
+  @include mq("md") {
+    font-size: 11.5vw;
+  }
+
   &::before,
   &::after {
     position: absolute;
@@ -381,6 +455,16 @@
     background-size: contain;
     background-repeat: no-repeat;
     content: "";
+
+    @include mq("md") {
+      width: prem(29);
+      height: prem(18);
+    }
+
+    @include mq("sm") {
+      width: prem(20);
+      height: prem(12);
+    }
   }
 
   &::before {
@@ -397,8 +481,16 @@
 
 .p-clarity__freeMain--60 {
   font-size: prem(60);
+
+  @include mq("md") {
+    font-size: 7.5vw;
+  }
 }
 
 .p-clarity__freeMain--50 {
   font-size: prem(50);
+
+  @include mq("md") {
+    font-size: 5.5vw;
+  }
 }

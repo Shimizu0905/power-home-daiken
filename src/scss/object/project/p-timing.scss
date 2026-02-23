@@ -5,8 +5,8 @@
 // ========================================
 .p-timing {
   position: relative;
-  z-index: 1;
-  padding-top: prem(56);
+  z-index: 0;
+  padding-top: prem(180);
   padding-bottom: prem(56);
   overflow: hidden;
 
@@ -23,7 +23,6 @@
   background-image: url("/assets/timing/timing_img.webp");
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
   inset: 0;
 }
 
@@ -33,39 +32,46 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: prem(900);
-  margin: 0 auto;
-  padding: 0 prem(20);
-}
-
-.p-timing__bubble {
-  display: inline-block;
-  padding: prem(10) prem(18);
-  border-radius: prem(12);
-  box-shadow: 0 prem(4) prem(12) rgb(0 0 0 / 15%);
-  font-size: prem(16);
-  font-weight: $font-weight-b;
-  color: $white;
-  background-color: $figma-dark-blue;
+  margin: 118px auto 0;
 }
 
 .p-timing__bubble--top {
-  margin-bottom: prem(16);
+  position: absolute;
+  max-width: prem(430);
+  top: prem(-80);
+  left: prem(20);
+
+  @include mq("lg") {
+    width: 32vw;
+  }
+
+  @include mq("md") {
+   width: clam ; 
+  }
 }
 
-.p-timing__bubble--small {
-  padding: prem(8) prem(14);
-  font-size: prem(14);
+.p-timing__bubble img {
+  width: 100%;
 }
 
 .p-timing__title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 0 0 prem(20);
-  font-size: prem(22);
+  gap: prem(16);
+  font-size: prem(45);
   font-weight: $font-weight-h;
   line-height: 1.45;
   text-align: center;
   letter-spacing: 0.02em;
   color: $navy;
+
+  @include mq("lg") {
+    font-size: 4.5vw;
+  }
 
   @include mq("md") {
     margin-bottom: prem(24);
@@ -87,7 +93,7 @@
 
 .p-timing__text {
   margin: 0 0 prem(28);
-  font-size: prem(15);
+  font-size: prem(24);
   font-weight: $font-weight-m;
   line-height: 1.6;
   text-align: center;
@@ -105,7 +111,7 @@
   flex-direction: column;
   align-items: center;
   gap: prem(12);
-  margin-bottom: prem(28);
+  margin-bottom: prem(106);
 
   @include mq("md") {
     flex-direction: row;
@@ -117,32 +123,24 @@
 
 .p-timing__question {
   margin: 0;
-  padding: prem(16) prem(28);
-  border: prem(1) solid rgb(0 0 0 / 10%);
-  border-radius: prem(999);
-  box-shadow: inset 0 prem(2) prem(6) rgb(0 0 0 / 5%);
-  font-size: prem(18);
-  font-weight: $font-weight-b;
-  letter-spacing: 0.02em;
-  color: $navy;
-  background-color: $white;
-
-  @include mq("md") {
-    padding: prem(18) prem(32);
-    font-size: prem(20);
-  }
 }
 
 .p-timing__info {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  justify-content: center;
   gap: prem(20);
+  width: 100%;
+  height: prem(205);
   padding: prem(20) prem(24);
-  border: prem(2) solid $navy;
-  border-radius: prem(14);
-  box-shadow: 0 prem(6) prem(16) rgb(0 0 0 / 8%);
-  background-color: $white;
+  border: prem(4) solid $navy;
+  border-radius: prem(20);
+  background-color: #eff6fc;
+
+  @include mq("lg") {
+    height: clamp(prem(150), 25vh, prem(205));
+  }
 
   @include mq("md") {
     flex-direction: row;
@@ -154,20 +152,50 @@
 }
 
 .p-timing__info-text {
+  position: relative;
   margin: 0;
-  font-size: prem(15);
-  font-weight: $font-weight-m;
+  font-size: prem(34);
+  font-weight: $font-weight-b;
   line-height: 1.6;
   letter-spacing: 0.02em;
   color: $navy;
 
+  @include mq("lg") {
+    font-size: 3.2vw;
+  }
+
   @include mq("md") {
     font-size: prem(16);
+  }
+
+  &::after {
+    position: absolute;
+    right: -30%;
+    bottom: 98%;
+    width: prem(421);
+    background-image: url("/assets/timing/timing-img-02.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    aspect-ratio: 1 / 1;
+    content: "";
+    transform: translate(50%, 50%);
+
+    @include mq("lg") {
+      right: -11%;
+      bottom: 60%;
+      width: 29vw;
+    }
+
+    @include mq("md") {
+      width: prem(160);
+    }
   }
 }
 
 .p-timing__info-accent {
   font-weight: $font-weight-b;
+  color: $mizuiro;
 }
 
 .p-timing__illustration {
