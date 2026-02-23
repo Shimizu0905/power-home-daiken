@@ -4,32 +4,55 @@
 // 最後に + WEB限定（1:259）
 // ========================================
 .p-finally {
-  padding: prem(40) prem(20);
+  position: relative;
+  overflow: hidden;
+}
 
-  @include mq("md") {
-    padding: prem(60) prem(25);
-  }
+.p-finally__bg {
+  position: absolute;
+  z-index: 0;
+  background-color: #f5ede5;
+  inset: 0;
+}
+
+.p-finally__bg-img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.p-finally__inner {
+  position: relative;
+  z-index: 1;
 }
 
 .p-finally__content {
-  max-width: prem(700);
-  margin: 0 auto prem(0);
-  padding: prem(32);
-  border-left: prem(4) solid $main-orange;
-  border-radius: prem(12);
-  background: rgb(255 255 255 / 95%);
+  padding: 0 prem(12);
+  background: rgb(255 255 255 / 80%);
 
   @include mq("md") {
     padding: prem(48);
   }
 }
 
+.p-finally__content-bg {
+  padding: prem(46) prem(20) prem(80);
+  border-right: prem(2.4) solid $main-orange;
+  border-left: prem(2.4) solid $main-orange;
+}
+
+.p-finally__content-body {
+  max-width: prem(800);
+  margin: 0 auto;
+}
+
 .p-finally__title {
-  margin-bottom: prem(24);
-  font-size: prem(24);
-  font-weight: $font-weight-b;
-  text-align: center;
-  color: $main-orange;
+  width: prem(266);
+  height: prem(75);
+  margin: 0 auto prem(24);
 
   @include mq("md") {
     font-size: prem(28);
@@ -37,23 +60,23 @@
 }
 
 .p-finally__text {
-  margin-bottom: prem(16);
-  font-size: prem(14);
-  line-height: 1.8;
-  color: $text-black;
+  margin-bottom: 1.5em;
+  font-size: prem(24);
+  line-height: 1.4;
+  color: $navy;
 }
 
 .p-finally__list {
   margin-bottom: prem(24);
-  padding-left: prem(24);
-  font-size: prem(14);
-  line-height: 1.8;
-  color: $text-black;
+  font-size: prem(24);
+  line-height: 1.4;
+  color: $navy;
 }
 
 .p-finally__cta {
-  font-size: prem(18);
-  font-weight: $font-weight-b;
+  border-bottom: prem(1.4) solid $main-orange;
+  font-size: prem(34);
+  font-weight: $font-weight-m;
   text-align: center;
   color: $main-orange;
 }
@@ -61,7 +84,7 @@
 .p-finally__banner {
   padding: prem(24);
   font-size: prem(24);
-  font-weight: $font-weight-b;
+  font-weight: $font-weight-m;
   text-align: center;
   color: $white;
   background-color: $main-orange;

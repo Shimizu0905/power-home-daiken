@@ -10,6 +10,10 @@
   padding-bottom: prem(40);
   overflow: hidden;
 
+  &--bottom {
+    margin-top: 0;
+  }
+
   @include mq("md") {
     padding-top: prem(60);
     padding-bottom: prem(60);
@@ -67,8 +71,8 @@
 .p-campaign__sub {
   margin-bottom: prem(24);
   font-size: prem(30);
-  color: #fff;
   line-height: 1.4;
+  color: #fff;
 
   @include mq("md") {
     font-size: prem(15);
@@ -132,10 +136,10 @@
   width: clamp(prem(280), 43.19vw, 622px);
   max-width: 100%;
   height: auto;
+  border-radius: prem(5);
+  box-shadow: 0 0 15px 0 rgb(0 0 0 / 50%);
   object-fit: contain;
   object-position: center;
-  border-radius: prem(5);
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.50);
 
   @include mq("md") {
     width: clamp(prem(200), 80vw, 622px);
@@ -174,11 +178,12 @@
 }
 
 .p-campaign__lead {
+  display: inline-block;
   margin-bottom: prem(8);
-  padding: prem(12) prem(20);
-  border-radius: prem(8);
+  border-bottom: 1px solid $navy;
   font-size: prem(24);
   font-weight: $font-weight-m;
+  line-height: 1.4;
   color: $navy;
 
   @include mq("md") {
@@ -191,7 +196,7 @@
 
 .p-campaign__text {
   margin-bottom: prem(24);
-  font-size: prem(14);
+  font-size: prem(24);
   color: $navy;
 
   @include mq("md") {
@@ -201,9 +206,11 @@
 }
 
 .p-campaign__disclaimers {
-  margin: 0;
+  width: fit-content;
+  margin: 0 auto;
   padding: 0;
-  font-size: prem(12);
+  font-size: prem(18);
+  text-align: left;
   color: $navy;
   list-style: none;
 

@@ -52,9 +52,7 @@
     <link
       href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
       rel="stylesheet">
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500&display=swap"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500&display=swap" rel="stylesheet">
     <!-- CSS & JavaScript -->
     <script type="module" src="/src/js/main.js"></script>
   </head>
@@ -482,11 +480,12 @@
             <p class="p-campaign__sub">お問い合わせ後、見積もり依頼で</p>
             <div class="p-campaign__box">
               <div class="p-campaign__gift">
-                <img class="p-campaign__gift-img" src="./assets/campaign/campaign-card.webp" alt="ギフトカード3,000円分" loading="lazy">
+                <img class="p-campaign__gift-img" src="./assets/campaign/campaign-card.webp" alt="ギフトカード3,000円分"
+                  loading="lazy">
               </div>
             </div>
             <p class="p-campaign__lead">「相談したいけど、まだ迷っている」</p>
-            <p class="p-campaign__text">そんな方でも動きやすいように、Web限定の特典をご用意しました。</p>
+            <p class="p-campaign__text">そんな方でも動きやすいように、<br class="u-show-md">Web限定の特典をご用意しました。</p>
             <ul class="p-campaign__disclaimers">
               <li>※10万円以上のリフォームをご検討の方が対象です。</li>
               <li>※ご成約後のお渡しとなります。</li>
@@ -555,21 +554,19 @@
             <div class="p-consult__bandInner">
               <p class="p-consult__message">
                 私たちは「工事ありき」ではなく、<br />
-                まず<span class="p-consult__messageAccent">不安を整理</span>して優先順位を決め<br />
-                るところからお手伝いします。
+                まず<span class="p-consult__messageAccent">不安を整理</span>して優先順位を決めるところからお手伝いします。
               </p>
 
               <div class="p-consult__illustration" aria-hidden="true">
-                <!-- TODO: 後で差し替え（人物イラスト） -->
-                <img class="p-consult__illustrationImg" src="" alt="" width="520" height="360" loading="lazy" />
+                <img class="p-consult__illustrationImg" src="./assets/consult/consult-01.webp" alt="" loading="lazy" />
               </div>
             </div>
           </div>
         </section>
         <!-- サービスご利用の流れ（1:273） -->
         <section class="p-flow" aria-labelledby="flow-title">
-          <div class="p-flow__inner">
-            <h2 class="p-flow__title" id="flow-title">ご相談の流れ</h2>
+          <div class="p-flow__inner l-inner">
+            <h2 class="p-flow__title" id="flow-title">ご利用の流れ</h2>
 
             <ol class="p-flow__list">
               <li class="p-flow__item">
@@ -580,8 +577,7 @@
                   <div class="p-flow__content">
                     <h3 class="p-flow__heading">無料相談（LINE/お電話）</h3>
                     <p class="p-flow__text">
-                      まずはLINEまたはお電話でお気軽にご相談ください。<br>
-                      「購入前で迷っている」「費用感だけ知りたい」でも大丈夫です。
+                      まずはLINEまたはお電話でお気軽にご相談ください。<br>「購入前で迷っている」「費用感だけ知りたい」でも大丈夫です。
                     </p>
                   </div>
                 </div>
@@ -687,7 +683,7 @@
         </section>
         <!-- section-11 よくある質問 -->
         <section class="p-faq" aria-labelledby="faq-title">
-          <div class="p-faq__inner">
+          <div class="p-faq__inner l-inner">
             <h2 class="p-faq__title" id="faq-title">よくある質問</h2>
 
             <div class="p-faq__items">
@@ -695,7 +691,7 @@
               <details class="p-faq__item">
                 <summary class="p-faq__question">
                   <span class="p-faq__qIcon" aria-hidden="true">Q</span>
-                  <span class="p-faq__qText">（質問を入れてください）</span>
+                  <span class="p-faq__qText">中古物件を買う前でも現地を見てもらえますか？</span>
                   <span class="p-faq__toggle" aria-hidden="true"></span>
                 </summary>
 
@@ -704,7 +700,8 @@
                     <span class="p-faq__aIcon" aria-hidden="true">A</span>
                     <div class="p-faq__aBody">
                       <p class="p-faq__aText">
-                        （回答を入れてください。改行が必要なら<br>でOK）
+                        はい、購入前でも現地確認が可能です。<br>
+                        購入前にプロが状態を確認することで、直す範囲や費用感、優先順位が整理でき、購入判断の材料になります。まずは物件情報（住所・資料があれば図面）をお知らせください。
                       </p>
                     </div>
                   </div>
@@ -715,7 +712,7 @@
               <details class="p-faq__item">
                 <summary class="p-faq__question">
                   <span class="p-faq__qIcon" aria-hidden="true">Q</span>
-                  <span class="p-faq__qText">（質問を入れてください）</span>
+                  <span class="p-faq__qText">相談したら必ず工事を依頼しないといけませんか？</span>
                   <span class="p-faq__toggle" aria-hidden="true"></span>
                 </summary>
 
@@ -723,7 +720,7 @@
                   <div class="p-faq__answerInner">
                     <span class="p-faq__aIcon" aria-hidden="true">A</span>
                     <div class="p-faq__aBody">
-                      <p class="p-faq__aText">（回答を入れてください）</p>
+                      <p class="p-faq__aText">いいえ、相談・現地確認・見積もりのみでも問題ありません。<br>無理な営業や押し売りは一切行いません。内容と金額にご納得いただけた場合のみ、ご依頼ください。</p>
                     </div>
                   </div>
                 </div>
@@ -733,7 +730,7 @@
               <details class="p-faq__item">
                 <summary class="p-faq__question">
                   <span class="p-faq__qIcon" aria-hidden="true">Q</span>
-                  <span class="p-faq__qText">（質問を入れてください）</span>
+                  <span class="p-faq__qText">予算が決まっていなくても相談できますか？</span>
                   <span class="p-faq__toggle" aria-hidden="true"></span>
                 </summary>
 
@@ -741,49 +738,105 @@
                   <div class="p-faq__answerInner">
                     <span class="p-faq__aIcon" aria-hidden="true">A</span>
                     <div class="p-faq__aBody">
-                      <p class="p-faq__aText">（回答を入れてください）</p>
+                      <p class="p-faq__aText">はい、大丈夫です。<br>「だいたいこのくらいまでなら」「ローンも含めて検討中」など、ざっくりした段階でもOKです。ご希望と物件の状態から、優先順位を整理しながら、予算の目安をご提案します。</p>
                     </div>
                   </div>
                 </div>
               </details>
 
+               <!-- item 04 -->
+               <details class="p-faq__item">
+                <summary class="p-faq__question">
+                  <span class="p-faq__qIcon" aria-hidden="true">Q</span>
+                  <span class="p-faq__qText">小規模なリフォームでも対応できますか？</span>
+                  <span class="p-faq__toggle" aria-hidden="true"></span>
+                </summary>
+
+                <div class="p-faq__answer">
+                  <div class="p-faq__answerInner">
+                    <span class="p-faq__aIcon" aria-hidden="true">A</span>
+                    <div class="p-faq__aBody">
+                      <p class="p-faq__aText">はい、部分的な工事も対応しています。<br>水回り交換・内装の一部・断熱の追加など、必要なところから無理なく進められます。「まずはここだけ直したい」というご相談もお気軽にどうぞ。</p>
+                    </div>
+                  </div>
+                </div>
+              </details>
               <!-- 必要数だけdetailsを増やしてください -->
             </div>
           </div>
         </section>
         <!-- 最後に + WEB限定（1:259, 1:417） -->
         <section class="p-finally">
-          <div class="p-finally__content">
-            <h2 class="p-finally__title">「最後に」</h2>
-            <p class="p-finally__text">中古物件は「買ったらゴール」ではありません。購入後、ご家族が快適に暮らせるように整えてこそ、初めて「良い買い物」になります。</p>
-            <p class="p-finally__text">「購入後に想定外の修繕が必要だった…」そんな後悔を防ぐために、購入前〜購入直後に一度プロに見てもらうことをおすすめします。</p>
-            <ul class="p-finally__list">
-              <li>・見積もりだけでもOK</li>
-              <li>・必要な工事だけを正直にご提案</li>
-              <li>・無理な営業は一切ありません</li>
-            </ul>
-            <p class="p-finally__cta">中古物件の購入前・購入直後のご相談、大歓迎です。</p>
+          <div class="p-finally__bg">
+            <img class="p-finally__bg-img" src="./assets/finally/finally-bg.webp" alt="" loading="lazy">
           </div>
-          <div class="p-finally__banner">WEB限定キャンペーン</div>
-        </section>
-      </main>
-
-      <!-- Footer -->
-      <footer class="p-footer">
-        <div class="p-footer__inner">
-          <div class="p-footer__logo">
-            <img src="./assets/images/common/footer-logo.svg" alt="サイト名" class="p-footer__logo-img">
-          </div>
-          <div class="p-footer__bottom">
-            <div class="p-footer__copyright">
-              <img src="./assets/images/common/footer-copy.svg" alt="Copyright">
+          <div class="p-finally__inner l-inner">
+            <div class="p-finally__content">
+                <div class="p-finally__content-bg">
+                  <div class="p-finally__content-body">
+                    <h2 class="p-finally__title">
+                      <img src="./assets/finally/finally-title.svg" alt="最後に" width="100%" height="100%" loading="lazy">
+                    </h2>
+                    <p class="p-finally__text">中古物件は「買ったらゴール」ではありません。<br>
+                      購入後、ご家族が快適に暮らせるように整えてこそ、初めて「いい買い物」になります。</p>
+                    <p class="p-finally__text">そして一番もったいないのは、
+                      「買ってから想定外の修繕が必要だった…」と後悔してしまうこと。</p>
+                      <p class="p-finally__text">だからこそ、購入前〜購入直後のタイミングで<br>
+                        無料で一度、プロの目で確認しておくことをおすすめします。</p>
+                    <ul class="p-finally__list">
+                      <li>・見積もりだけでもOK</li>
+                      <li>・必要な工事だけを正直にご提案</li>
+                      <li>・無理な営業は一切ありません</li>
+                    </ul>
+                    <p class="p-finally__cta">中古物件の購入前・購入直後のご相談、<br class="u-show-md">大歓迎です。</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <button type="button" class="p-footer__pagetop" id="pagetop">
-              <img src="./assets/images/common/footer-page-top.svg" alt="ページトップへ" class="p-footer__pagetop-icon">
-            </button>
+        </section>
+        <!-- section-08 WEB限定キャンペーン -->
+        <section class="p-campaign p-campaign--bottom">
+          <div class="p-campaign__bg">
+            <img class="p-campaign__bg-img" src="./assets/campaign/campaign-bg.webp" alt="" width="1200" height="600"
+              loading="lazy">
+            <img class="p-campaign__bg-accent" src="./assets/campaign/campaign-bg-accent.webp" alt="" width="1200"
+              height="600" loading="lazy">
+          </div>
+          <div class="p-campaign__inner l-inner">
+            <h2 class="p-campaign__title">WEB限定キャンペーン</h2>
+            <p class="p-campaign__sub">お問い合わせ後、見積もり依頼で</p>
+            <div class="p-campaign__box">
+              <div class="p-campaign__gift">
+                <img class="p-campaign__gift-img" src="./assets/campaign/campaign-card.webp" alt="ギフトカード3,000円分"
+                  loading="lazy">
+              </div>
+            </div>
+            <p class="p-campaign__lead">「相談したいけど、まだ迷っている」</p>
+            <p class="p-campaign__text">そんな方でも動きやすいように、<br class="u-show-md">Web限定の特典をご用意しました。</p>
+            <ul class="p-campaign__disclaimers">
+              <li>※10万円以上のリフォームをご検討の方が対象です。</li>
+              <li>※ご成約後のお渡しとなります。</li>
+              <li>※予告なく終了する場合があります。</li>
+            </ul>
+          </div>
+        </section>
+        <!-- CTA（Figma 1:179） -->
+        <div class="c-cta" id="cta">
+          <div class="c-cta__inner l-inner">
+            <p class="c-cta__label">\ <span class="c-cta__label-inner">現地調査・無料見積もり</span>/</p>
+            <a href="#" class="c-cta__button" target="_blank" rel="noopener noreferrer">
+              <img src="./assets/cta/cta-btn.svg" alt="24時間365日受付可能！LINEで相談する">
+            </a>
+            <p class="c-cta__contact">まずはお気軽にご連絡ください</p>
+            <div class="c-cta__tel-block">
+              <a href="tel:0120-12-3456" class="c-cta__tel">
+                <img src="./assets/cta/tel-number.svg" alt="0120-12-3456">
+              </a>
+              <p class="c-cta__hours">【受付時間】9:00-18:00 <br class="md-none">(休業日:水曜・日曜)</p>
+            </div>
           </div>
         </div>
-      </footer>
+      </main>
     </div>
   </body>
 

@@ -160,8 +160,8 @@
   }
 
   @include mq("sm") {
-    padding: prem(16);
     height: auto;
+    padding: prem(16);
   }
 }
 

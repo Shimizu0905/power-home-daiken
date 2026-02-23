@@ -11,3 +11,5 @@ import '../scss/style.scss';
 import './header.js';
 // ページトップボタン
 import './pagetop.js';
+// FAQ アコーディオン
+import './faq.js';

@@ -5,7 +5,8 @@
 // assets: faq-bg.png, faq-Q.svg, faq-Q-white.svg, faq-A.svg
 // ========================================
 .p-faq {
-  padding-top: prem(70);
+  margin-top: prem(-62);
+  padding-top: prem(173);
   padding-bottom: prem(70);
   background-image: url("/assets/faq/faq-bg.webp");
   background-position: center top;
@@ -18,13 +19,8 @@
   }
 }
 
-.p-faq__inner {
-  max-width: prem(1080);
-  margin: 0 auto;
-  padding: 0 prem(20);
-}
-
 .p-faq__title {
+  position: relative;
   margin: 0;
   font-size: prem(44);
   font-weight: bold;
@@ -35,6 +31,18 @@
 
   @include mq("md") {
     font-size: prem(52);
+  }
+
+  &::before {
+    position: absolute;
+    top: -150px;
+    left: 52%;
+    width: prem(146);
+    height: prem(123);
+    background-image: url("/assets/faq/faq.svg");
+    background-size: contain;
+    transform: translate(-50%);
+    content: "";
   }
 }
 
@@ -64,6 +72,7 @@
   padding: prem(18);
   cursor: pointer;
   list-style: none;
+  transition: background-color 0.5s cubic-bezier(0.33, 1, 0.68, 1);
   column-gap: prem(14);
 
   @include mq("md") {
@@ -80,14 +89,13 @@
 .p-faq__qIcon {
   width: prem(44);
   height: prem(44);
-  border-radius: 9999px;
-  font-size: 0;
-  background-color: #2f79c9;
   background-image: url("/assets/faq/faq-Q.svg");
   background-position: center;
-  background-size: prem(22) prem(22);
+  background-size: contain;
   background-repeat: no-repeat;
   overflow: hidden;
+  transition:
+    background-image 0.5s cubic-bezier(0.33, 1, 0.68, 1);
   text-indent: -9999px;
 }
 
@@ -98,6 +106,7 @@
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: $navy;
+  transition: color 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 
   @include mq("md") {
     font-size: prem(20);
@@ -118,6 +127,7 @@
   width: 100%;
   height: prem(2);
   background-color: #8c8c8c;
+  transition: background-color 0.5s cubic-bezier(0.33, 1, 0.68, 1);
   transform: translateY(-50%);
   content: "";
 }
@@ -129,50 +139,75 @@
   width: prem(2);
   height: 100%;
   background-color: #8c8c8c;
+  transition:
+    transform 0.5s cubic-bezier(0.33, 1, 0.68, 1),
+    opacity 0.4s cubic-bezier(0.33, 1, 0.68, 1);
   transform: translateX(-50%);
   content: "";
 }
 
-.p-faq__item[open] .p-faq__question {
+.p-faq__question:hover,
+.p-faq__question:focus-visible,
+.p-faq__item.is-open .p-faq__question {
   background-color: #0b83d6;
 }
 
-.p-faq__item[open] .p-faq__qText {
+.p-faq__question:hover .p-faq__qText,
+.p-faq__question:focus-visible .p-faq__qText,
+.p-faq__item.is-open .p-faq__qText {
   color: $white;
 }
 
-.p-faq__item[open] .p-faq__qIcon {
-  background-color: $white;
+.p-faq__question:hover .p-faq__qIcon,
+.p-faq__question:focus-visible .p-faq__qIcon,
+.p-faq__item.is-open .p-faq__qIcon {
   background-image: url("/assets/faq/faq-Q-white.svg");
-  background-size: prem(22) prem(22);
 }
 
-.p-faq__item[open] .p-faq__toggle::before {
+.p-faq__question:hover .p-faq__toggle::before,
+.p-faq__question:focus-visible .p-faq__toggle::before,
+.p-faq__item.is-open .p-faq__toggle::before {
   background-color: $white;
 }
 
-.p-faq__item[open] .p-faq__toggle::after {
-  display: none;
+.p-faq__question:hover .p-faq__toggle::after,
+.p-faq__question:focus-visible .p-faq__toggle::after {
+  background-color: $white;
+}
+
+.p-faq__item.is-open .p-faq__toggle::after {
+  opacity: 0;
+  transform: translateX(-50%) rotate(-90deg);
 }
 
 .p-faq__answer {
-  padding: prem(18);
-  border-top: prem(1) solid rgb(47 121 201 / 25%);
+  height: 0;
   background-color: $white;
+  opacity: 0;
+  overflow: hidden;
+  transition:
+    height 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(prem(-10));
+  will-change: height, opacity, transform;
+}
 
-  @include mq("md") {
-    padding: prem(20) prem(22);
-  }
+.p-faq__item.is-open .p-faq__answer {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .p-faq__answerInner {
   display: grid;
   align-items: start;
   grid-template-columns: prem(56) 1fr;
+  padding: prem(18);
   column-gap: prem(14);
 
   @include mq("md") {
     grid-template-columns: prem(62) 1fr;
+    padding: prem(20) prem(22);
     column-gap: prem(16);
   }
 }
@@ -180,14 +215,9 @@
 .p-faq__aIcon {
   width: prem(44);
   height: prem(44);
-  border-radius: 9999px;
-  font-size: 0;
-  background-color: #2f79c9;
   background-image: url("/assets/faq/faq-A.svg");
   background-position: center;
-  background-size: prem(22) prem(22);
-  background-repeat: no-repeat;
-  overflow: hidden;
+  background-size: contain;
   text-indent: -9999px;
 }
 

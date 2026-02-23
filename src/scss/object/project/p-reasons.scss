@@ -26,8 +26,8 @@
 .p-reasons__headerBg {
   position: absolute;
   z-index: 0;
-  background-image: url("/assets/reasons/reason-bg.webp");
   background-color: #1f4598;
+  background-image: url("/assets/reasons/reason-bg.webp");
   background-position: center;
   background-size: cover;
   inset: 0;
@@ -65,10 +65,10 @@
 
 .p-reasons__title {
   position: relative;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
   z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
   margin: 0;
   font-size: prem(60);
   font-weight: bold;
@@ -124,9 +124,9 @@
 
 .p-reasons__titleNum {
   display: inline-block;
+  margin: 0 prem(2);
   font-size: prem(100);
   line-height: 1.1;
-  margin: 0 prem(2);
   color: $figma-yellow;
 }
 
@@ -156,8 +156,8 @@
 }
 
 .p-reasons__item.p-reasons__item--reverse {
-  margin-left: 0;
   margin-right: auto;
+  margin-left: 0;
 }
 
 .p-reasons__row {
@@ -190,26 +190,26 @@
 
 .p-reasons__label {
   position: relative;
+  z-index: 2;
   display: inline-block;
   margin: 0 0 prem(10);
   font-size: prem(33);
   font-weight: $font-weight-m;
   letter-spacing: 0.02em;
   color: $navy;
-  z-index: 2;
 }
 
 .p-reasons__labelNum {
   position: absolute;
   top: 50%;
   left: 100%;
-  transform: translate(-23%, -50%);
   z-index: -1;
   font-family: $font-family-zkgn;
   font-size: clamp(60px, 6vw, 100px);
   font-weight: $font-weight-m;
   line-height: 1;
   color: #D3E8F3;
+  transform: translate(-23%, -50%);
   pointer-events: none;
 }
 
