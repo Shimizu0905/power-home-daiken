@@ -33,20 +33,25 @@
   flex-direction: column;
   align-items: center;
   margin: 118px auto 0;
+
+  @include mq("md") {
+    margin-top: prem(100);
+  }
 }
 
 .p-timing__bubble--top {
   position: absolute;
-  max-width: prem(430);
   top: prem(-80);
   left: prem(20);
+  max-width: prem(430);
 
   @include mq("lg") {
     width: 32vw;
   }
 
   @include mq("md") {
-   width: clam ; 
+  left: -2%;
+   width: clamp(prem(100), 42vw, prem(280)); 
   }
 }
 
@@ -60,8 +65,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 0 prem(20);
   gap: prem(16);
+  margin: 0 0 prem(20);
   font-size: prem(45);
   font-weight: $font-weight-h;
   line-height: 1.45;
@@ -75,7 +80,7 @@
 
   @include mq("md") {
     margin-bottom: prem(24);
-    font-size: prem(28);
+    font-size: 4.8vw;
   }
 }
 
@@ -104,6 +109,10 @@
     margin-bottom: prem(32);
     font-size: prem(16);
   }
+
+  @include mq("sm") {
+    font-size: 3.8vw;
+  }
 }
 
 .p-timing__qa {
@@ -128,8 +137,8 @@
 .p-timing__info {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   justify-content: center;
+  align-items: flex-start;
   gap: prem(20);
   width: 100%;
   height: prem(205);
@@ -149,6 +158,11 @@
     gap: prem(32);
     padding: prem(24) prem(32);
   }
+
+  @include mq("sm") {
+    padding: prem(16);
+    height: auto;
+  }
 }
 
 .p-timing__info-text {
@@ -161,11 +175,17 @@
   color: $navy;
 
   @include mq("lg") {
-    font-size: 3.2vw;
+    font-size: clamp(prem(28), 3.2vw, prem(40));
   }
 
   @include mq("md") {
+    display: flex;
+    flex-direction: column;
     font-size: prem(16);
+  }
+
+  @include mq("sm") {
+    font-size: 4.3vw;
   }
 
   &::after {
@@ -177,18 +197,23 @@
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    transform: translate(50%, 50%);
     aspect-ratio: 1 / 1;
     content: "";
-    transform: translate(50%, 50%);
 
     @include mq("lg") {
-      right: -11%;
-      bottom: 60%;
-      width: 29vw;
+      right: -8%;
+      bottom: 80%;
+      width: clamp(prem(28), 35vw, prem(365));
     }
 
     @include mq("md") {
       width: prem(160);
+    }
+
+    @include mq("sm") {
+      width: 176px;
+      width: 41vw;
     }
   }
 }

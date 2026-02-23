@@ -46,9 +46,14 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script> -->
 
-    <!-- 外部ライブラリ -->
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
       href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500&display=swap"
       rel="stylesheet">
     <!-- CSS & JavaScript -->
     <script type="module" src="/src/js/main.js"></script>
@@ -371,10 +376,13 @@
               むしろ一番 <img src="./assets/timing/timing-title-01.svg" alt="おすすめのタイミングです" class="p-timing__titleImg"
                 width="798" height="67" loading="lazy">
             </h2>
-            <p class="p-timing__text">買ってから「想定外の修繕が必要だった･･･」となる前に、<br>先に全体像を把握しておく方が安全です。</p>
+            <p class="p-timing__text">買ってから「想定外の修繕が必要だった･･･」<br class="u-show-md">となる前に、<br>先に全体像を把握しておく方が安全です。</p>
             <div class="p-timing__qa">
               <div class="p-timing__question">
-                <img src="./assets/timing/timing-title-02.svg" alt="とりあえず見積もりだけでもいい?" loading="lazy">
+                <picture>
+                  <source media="(max-width: 425px)" srcset="./assets/timing/timing-title-02-sp.svg">
+                  <img src="./assets/timing/timing-title-02.svg" alt="とりあえず見積もりだけでもいい?" loading="lazy">
+                </picture>
               </div>
             </div>
             <div class="p-timing__info">
@@ -401,10 +409,10 @@
                   <div class="p-reasons__content">
                     <p class="p-reasons__label">理由<span class="p-reasons__labelNum">01</span></p>
                     <p class="p-reasons__lead">購入前から相談OK。</p>
-                    <h3 class="p-reasons__heading" id="reason-1-title">ムダな出費を防げます</h3>
+                    <h3 class="p-reasons__heading" id="reason-1-title">ムダな出費を防げます！</h3>
                     <p class="p-reasons__text">
                       中古物件は「買ってから」では遅いケースがあります。<br />
-                      購入前に相談できれば、「直す範囲」「予算感」「優先順位」が整理でき、失敗を防ぐ判断ができます。
+                      購入前に相談できれば、<span class="p-reasons__textAccent">「直す範囲」「予算感」「優先順位」</span>が整理でき、失敗を防ぐ判断ができます。
                     </p>
                   </div>
                   <figure class="p-reasons__media p-reasons__media--circle">
@@ -415,7 +423,7 @@
               </li>
 
               <!-- reason 2（reverse・角丸四角形画像） -->
-              <li class="p-reasons__item">
+              <li class="p-reasons__item p-reasons__item--reverse">
                 <article class="p-reasons__row p-reasons__row--reverse" aria-labelledby="reason-2-title">
                   <div class="p-reasons__content">
                     <p class="p-reasons__label">理由<span class="p-reasons__labelNum">02</span></p>
@@ -469,21 +477,12 @@
             <img class="p-campaign__bg-accent" src="./assets/campaign/campaign-bg-accent.webp" alt="" width="1200"
               height="600" loading="lazy">
           </div>
-          <div class="p-campaign__inner">
+          <div class="p-campaign__inner l-inner">
             <h2 class="p-campaign__title">WEB限定キャンペーン</h2>
             <p class="p-campaign__sub">お問い合わせ後、見積もり依頼で</p>
             <div class="p-campaign__box">
               <div class="p-campaign__gift">
-                <img class="p-campaign__gift-img" src="./assets/campaign/campaign-01.svg" alt="ギフトカード3,000円分"
-                  width="150" height="100" loading="lazy">
-                <p class="p-campaign__gift-text">ギフトカード<span class="p-campaign__gift-amount">3,000円分</span>プレゼント</p>
-                <p class="p-campaign__gift-note">本サイトからお問い合わせいただいたお客様限定</p>
-              </div>
-              <div class="p-campaign__illustrations">
-                <img class="p-campaign__illustration p-campaign__illustration--male"
-                  src="./assets/campaign/campaign-02.png" alt="" width="120" height="120" loading="lazy">
-                <img class="p-campaign__illustration p-campaign__illustration--female"
-                  src="./assets/campaign/campaign-03.png" alt="" width="120" height="120" loading="lazy">
+                <img class="p-campaign__gift-img" src="./assets/campaign/campaign-card.webp" alt="ギフトカード3,000円分" loading="lazy">
               </div>
             </div>
             <p class="p-campaign__lead">「相談したいけど、まだ迷っている」</p>

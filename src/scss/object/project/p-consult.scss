@@ -36,15 +36,18 @@
 .p-consult__grid {
   display: grid;
   gap: prem(18);
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   max-width: prem(980);
   margin-top: prem(34);
   margin-right: auto;
   margin-left: auto;
+  
+  @include mq("sm") {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
   @include mq("md") {
     gap: prem(24);
-    grid-template-columns: repeat(3, 1fr);
     margin-top: prem(40);
   }
 }

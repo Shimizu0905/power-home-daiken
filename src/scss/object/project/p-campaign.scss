@@ -5,6 +5,7 @@
 // ========================================
 .p-campaign {
   position: relative;
+  margin-top: prem(-10);
   padding-top: prem(40);
   padding-bottom: prem(40);
   overflow: hidden;
@@ -43,7 +44,6 @@
 .p-campaign__inner {
   position: relative;
   z-index: 1;
-  max-width: prem(600);
   margin: 0 auto;
   padding: 0 prem(20);
   text-align: center;
@@ -55,7 +55,7 @@
 
 .p-campaign__title {
   margin-bottom: prem(8);
-  font-size: prem(24);
+  font-size: prem(80);
   font-weight: $font-weight-b;
   color: $white;
 
@@ -66,8 +66,9 @@
 
 .p-campaign__sub {
   margin-bottom: prem(24);
-  font-size: prem(14);
-  color: $navy;
+  font-size: prem(30);
+  color: #fff;
+  line-height: 1.4;
 
   @include mq("md") {
     font-size: prem(15);
@@ -80,9 +81,6 @@
   gap: prem(16);
   margin-bottom: prem(24);
   padding: prem(24);
-  border-radius: prem(12);
-  box-shadow: 0 prem(4) prem(20) rgb(0 0 0 / 15%);
-  background: $white;
 
   @include mq("md") {
     gap: prem(20);
@@ -91,18 +89,56 @@
 }
 
 .p-campaign__gift {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: prem(12);
+  width: fit-content;
+  margin: 0 auto;
+
+  // 左：男性のイラスト（1440px時 211×228）
+  &::before {
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: clamp(prem(80), 14.65vw, prem(211));
+    height: clamp(prem(96), 15.83vw, prem(228));
+    background-image: url("/assets/campaign/campaign-02.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(-50%, -50%);
+    content: "";
+  }
+
+  // 右：女性のイラスト（1440px時 161×215）
+  &::after {
+    position: absolute;
+    top: 75%;
+    right: 0;
+    width: clamp(prem(64), 11.18vw, prem(161));
+    height: clamp(prem(86), 14.93vw, prem(215));
+    background-image: url("/assets/campaign/campaign-03.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translate(50%, -50%);
+    content: "";
+  }
 }
 
 .p-campaign__gift-img {
-  max-width: prem(150);
+  width: clamp(prem(280), 43.19vw, 622px);
+  max-width: 100%;
   height: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: prem(5);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.50);
 
   @include mq("md") {
-    max-width: prem(180);
+    width: clamp(prem(200), 80vw, 622px);
   }
 }
 
@@ -137,33 +173,13 @@
   }
 }
 
-.p-campaign__illustrations {
-  display: flex;
-  justify-content: center;
-  gap: prem(24);
-
-  @include mq("md") {
-    gap: prem(32);
-  }
-}
-
-.p-campaign__illustration {
-  width: prem(100);
-  height: auto;
-
-  @include mq("md") {
-    width: prem(120);
-  }
-}
-
 .p-campaign__lead {
   margin-bottom: prem(8);
   padding: prem(12) prem(20);
   border-radius: prem(8);
-  font-size: prem(16);
+  font-size: prem(24);
   font-weight: $font-weight-m;
   color: $navy;
-  background: $white;
 
   @include mq("md") {
     display: inline-block;

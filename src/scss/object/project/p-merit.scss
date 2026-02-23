@@ -11,7 +11,7 @@
   overflow: visible;
 
   @include mq("md") {
-    padding-top: prem(52);
+    padding: prem(52) 0;
   }
 
   // 矢印SVG（clip-pathの外に出すため .p-merit 本体に配置）
@@ -29,8 +29,9 @@
     pointer-events: none;
 
     @include mq("md") {
-      // height:prem(150), same translateY(prem(-40)) → 150 - 40 = 110
       top: calc(100% + #{prem(110)});
+      left: 52%;
+      height: prem(110);
     }
 
     @include mq("sm") {
@@ -124,6 +125,10 @@
   color: #000;
   word-break: auto-phrase;
 
+  @include mq("lg") {
+    font-size: 3vw;
+  }
+
   @include mq("md") {
     font-size: prem(20);
   }
@@ -143,10 +148,10 @@
   height: prem(220);
   padding: prem(56) prem(20) 0;
   background-color: #eff6fc;
+  overflow: hidden;
   transform: translate(-50%, prem(-40));
   pointer-events: none;
   clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
-  overflow: hidden;
 
   @include mq("md") {
     height: prem(150);
@@ -172,6 +177,14 @@
 .p-merit__bottom-question {
   width: clamp(prem(400), 59vw, prem(630));
   margin: 0;
+
+  @include mq("lg") {
+    width: clamp(prem(400), 70vw, prem(800));
+  }
+
+  @include mq("md") {
+    width: clamp(prem(352), 80vw, prem(630));
+  }
 
   @include mq("sm") {
     width: 100%;

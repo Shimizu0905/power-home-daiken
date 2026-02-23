@@ -76,8 +76,8 @@
       top: prem(55);
       right: clamp(prem(-40), -2.2vw, prem(-42));
       width: 30.3vw;
-      aspect-ratio: 241 / 259;
       height: auto;
+      aspect-ratio: 241 / 259;
     }
   }
 }
@@ -93,8 +93,8 @@
   }
 
   @include mq("md") {
-    text-align: left;
     font-size: 4.2vw;
+    text-align: left;
   }
 }
 
@@ -116,8 +116,8 @@
   letter-spacing: 0.02em;
 
   @include mq("md") {
-    letter-spacing: 0.06em;
     font-size: 4.4vw;
+    letter-spacing: 0.06em;
   }
 }
 
@@ -153,10 +153,11 @@
 
   @include mq("md") {
     --gap-x: #{prem(16)};
-    column-gap: var(--gap-x);
+
+    align-items: stretch;
     gap: prem(40) prem(16);
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    align-items: stretch;
+    column-gap: var(--gap-x);
   }
 
   @include mq("sm") {
@@ -205,10 +206,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    gap: prem(15);
     width: 100%;
     min-width: 0;
     min-height: prem(120);
-    gap: prem(15);
 
     @include mq("sm") {
       min-height: prem(80);
@@ -223,7 +224,8 @@
     }
   }
 }
-@media screen and (max-width: 600px) {
+
+@media screen and (width <= 600px) {
   .p-clarity__row--bottom > .p-clarity__card:nth-child(2):last-child {
     grid-column: 1 / -1;
     width: calc((100% - var(--gap-x)) / 2);
@@ -244,13 +246,13 @@
 
   &::before {
     position: absolute;
-    inset: 7px -7px -7px 0;
     z-index: -1;
     border-radius: prem(20) 0 0; // 左上のみ
     background-image: url("/assets/clarity/clarity-card-bg.webp");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    inset: 7px -7px -7px 0;
     content: "";
 
     @include mq("md") {
@@ -272,9 +274,9 @@
   }
 
   @include mq("md") {
-    margin: prem(-25) auto 0;
     width: 14vw;
     height: 13vw;
+    margin: prem(-25) auto 0;
   }
 }
 
@@ -294,8 +296,8 @@
   color: $navy;
 
   @include mq("md") {
-    letter-spacing: -0.02em;
     font-size: 3.7vw;
+    letter-spacing: -0.02em;
   }
 
   @include mq("sm") {
@@ -422,8 +424,8 @@
   letter-spacing: 0.04em;
 
   @include mq("md") {
-    font-size: 5vw;
     margin-left: 0;
+    font-size: 5vw;
   }
 }
 

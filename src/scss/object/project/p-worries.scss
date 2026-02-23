@@ -180,8 +180,8 @@
   left: 50%;
   z-index: 3;
   
-  @include mq("sm") {
-    left: 37%;
+  @include mq("md") {
+    left: 38%;
   }
 }
 

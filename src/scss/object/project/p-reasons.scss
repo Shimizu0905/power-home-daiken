@@ -6,6 +6,8 @@
 .p-reasons {
   background-color: $white;
   overflow: hidden;
+
+  
 }
 
 .p-reasons__header {
@@ -24,8 +26,8 @@
 .p-reasons__headerBg {
   position: absolute;
   z-index: 0;
-  background-color: $figma-dark-blue;
   background-image: url("/assets/reasons/reason-bg.webp");
+  background-color: #1f4598;
   background-position: center;
   background-size: cover;
   inset: 0;
@@ -34,22 +36,41 @@
 .p-reasons__kicker {
   position: relative;
   z-index: 1;
-  margin: 0 0 prem(8);
-  font-size: prem(16);
-  font-weight: $font-weight-b;
+  display: inline-block;
+  margin-bottom: prem(10);
+  font-size: prem(40);
+  font-weight: $font-weight-m;
   letter-spacing: 0.04em;
   color: $white;
 
   @include mq("md") {
     font-size: prem(18);
   }
+
+  // キッカー（パワーホーム大建が）の下にライン。キッカーと同じ幅に合わせる
+  &::before {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: prem(17);
+    margin-top: prem(8);
+    background-image: url("/assets/reasons/reason-line.svg");
+    background-position: center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    content: "";
+  }
 }
 
 .p-reasons__title {
   position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
   z-index: 1;
   margin: 0;
-  font-size: prem(28);
+  font-size: prem(60);
   font-weight: bold;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -58,21 +79,62 @@
   @include mq("md") {
     font-size: prem(36);
   }
+
+  // 左アクセント（左右対称にするため反転）
+  &::before {
+    display: block;
+    width: clamp(60px, 5.17vw, 74.5px);
+    height: prem(97);
+    margin-top: prem(5.2);
+    background-image: url("/assets/reasons/reason-accent-title.webp");
+    content: "";
+    flex-shrink: 0;
+
+    @include mq("md") {
+      width: prem(28);
+      height: prem(40);
+      margin-top: prem(2);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
+
+  // 右アクセント
+  &::after {
+    display: block;
+    width: clamp(60px, 5.17vw, 74.5px);
+    height: prem(97);
+    margin-top: prem(5.2);
+    background-image: url("/assets/reasons/reason-accent-title.webp");
+    transform: scaleX(-1);
+    content: "";
+    flex-shrink: 0;
+
+    @include mq("md") {
+      width: prem(28);
+      height: prem(40);
+      margin-top: prem(2);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
 .p-reasons__titleNum {
   display: inline-block;
+  font-size: prem(100);
+  line-height: 1.1;
   margin: 0 prem(2);
   color: $figma-yellow;
 }
 
 .p-reasons__inner {
-  max-width: prem(1080);
-  margin: 0 auto;
-  padding: prem(34) prem(20) prem(0);
+  margin-top: prem(80);
 
   @include mq("md") {
-    padding-top: prem(44);
+    margin-top: prem(40);
   }
 }
 
@@ -88,81 +150,104 @@
   }
 }
 
+.p-reasons__item {
+  width: min(85vw, prem(1224));
+  margin-left: auto;
+}
+
+.p-reasons__item.p-reasons__item--reverse {
+  margin-left: 0;
+  margin-right: auto;
+}
+
 .p-reasons__row {
   display: flex;
-  flex-direction: column;
-  gap: prem(18);
+  flex-direction: row;
+  align-items: center;
+  gap: prem(40);
 
   @include mq("md") {
-    flex-direction: row;
-    align-items: center;
-    gap: prem(44);
+    flex-direction: column;
+    align-items: stretch;
+    gap: prem(8);
   }
 }
 
 .p-reasons__row--reverse {
-  flex-direction: column;
+  flex-direction: row-reverse;
+  margin-right: auto;
 
   @include mq("md") {
-    flex-direction: row-reverse;
+    flex-direction: column;    // ← スマホは縦積みでOK
   }
 }
 
 .p-reasons__content {
-  flex: 1 1 auto;
+  // 1440px時 テキスト499px / 写真734px → 40.47% : 59.53%
+  flex: 0 0 calc((100% - #{prem(8)}) * 0.4047);
+  min-width: 0;
 }
 
 .p-reasons__label {
+  position: relative;
+  display: inline-block;
   margin: 0 0 prem(10);
-  font-size: prem(18);
-  font-weight: $font-weight-h;
+  font-size: prem(33);
+  font-weight: $font-weight-m;
   letter-spacing: 0.02em;
   color: $navy;
+  z-index: 2;
 }
 
 .p-reasons__labelNum {
-  display: inline-block;
-  margin-left: prem(6);
-  font-size: prem(40);
-  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-23%, -50%);
+  z-index: -1;
+  font-family: $font-family-zkgn;
+  font-size: clamp(60px, 6vw, 100px);
+  font-weight: $font-weight-m;
   line-height: 1;
-  color: rgb(120 180 220 / 45%);
+  color: #D3E8F3;
+  pointer-events: none;
 }
 
 .p-reasons__lead {
-  margin: 0 0 prem(6);
-  font-size: prem(18);
-  font-weight: $font-weight-h;
-  letter-spacing: 0.02em;
-  color: $navy;
+  font-size: clamp(prem(18), 2.36vw, prem(34));
+  font-weight: $font-weight-b;
+  color: $main-orange;
 }
 
 .p-reasons__heading {
   margin: 0 0 prem(12);
-  font-size: prem(28);
-  font-weight: bold;
-  line-height: 1.25;
-  letter-spacing: 0.02em;
-  color: $color-orange;
+  font-size: clamp(prem(24), 3.125vw, prem(45));
+  font-weight: $font-weight-b;
+  line-height: 1.4;
+  color: $main-orange;
 }
-
 
 .p-reasons__text {
   margin: 0;
-  font-size: prem(16);
-  font-weight: $font-weight-r;
-  line-height: 1.85;
-  letter-spacing: 0.02em;
+  font-size: clamp(prem(14), 1.67vw, prem(24));
+  font-weight: $font-weight-m;
+  line-height: 1.4;
+  letter-spacing: 0.07em;
   color: $navy;
 }
 
+.p-reasons__textAccent {
+  color: $main-orange;
+}
+
 .p-reasons__media {
-  flex: 0 0 auto;
-  width: 100%;
-  overflow: hidden;
+  // 1440px時 テキスト499px / 写真734px → 40.47% : 59.53%
+  flex: 0 0 calc((100% - #{prem(8)}) * 0.5953);
+  min-width: 0;
 
   @include mq("md") {
-    width: prem(520);
+    flex: 1 1 auto;
+    width: 100%;
   }
 }
 
@@ -190,7 +275,7 @@
 }
 
 .p-reasons__media--circle .p-reasons__img {
-  aspect-ratio: 1;
+  aspect-ratio: 734 / 320;
 }
 
 .p-reasons__accent {
