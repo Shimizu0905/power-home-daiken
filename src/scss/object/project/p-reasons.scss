@@ -6,8 +6,6 @@
 .p-reasons {
   background-color: $white;
   overflow: hidden;
-
-  
 }
 
 .p-reasons__header {
@@ -178,7 +176,7 @@
   margin-right: auto;
 
   @include mq("md") {
-    flex-direction: column;    // ← スマホは縦積みでOK
+    flex-direction: column; // ← スマホは縦積みでOK
   }
 }
 
@@ -208,7 +206,7 @@
   font-size: clamp(60px, 6vw, 100px);
   font-weight: $font-weight-m;
   line-height: 1;
-  color: #D3E8F3;
+  color: #d3e8f3;
   transform: translate(-23%, -50%);
   pointer-events: none;
 }

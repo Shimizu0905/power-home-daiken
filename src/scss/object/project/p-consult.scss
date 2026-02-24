@@ -9,6 +9,7 @@
   padding-top: prem(56);
   padding-bottom: prem(42);
   background-color: #f4f6f7;
+  overflow: hidden;
 }
 
 .p-consult__inner {
@@ -108,6 +109,10 @@
   background-color: transparent;
   overflow: visible;
 
+  @include mq("lg") {
+    margin-top: prem(72);
+  }
+
   @include mq("md") {
     margin-top: prem(30);
     padding: prem(8) 0;
@@ -117,13 +122,17 @@
 .p-consult__bandInner {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
-  max-width: prem(951);
+  max-width: clamp(#{prem(700)}, 74vw, 1080px);
   min-height: prem(132);
-  padding: prem-clamp(22, 31, 1440) prem-clamp(28, 40, 1440) prem-clamp(22, 31, 1440)
-    prem-clamp(156, 219, 1440);
+  --band-pl: calc(#{prem(40)} + 164 * ((100vw - 1024px) / 416));
+  padding-top: prem-clamp(22, 31, 1440);
+  padding-right: prem-clamp(28, 40, 1440);
+  padding-bottom: prem-clamp(22, 31, 1440);
+  padding-left: clamp(#{prem(40)}, var(--band-pl), #{prem(204)});
+
 
   @include mq("md") {
     flex-direction: column;
@@ -146,7 +155,7 @@
 }
 
 .p-consult__message {
-  font-size: prem(40);
+  font-size: clamp(prem(30), 2.81vw, prem(40));
   font-weight: bold;
   line-height: 1.4;
   color: $navy;
@@ -171,10 +180,9 @@
 
 .p-consult__illustration {
   position: absolute;
-  right: -23%;
-  bottom: -22%;
-  width: min(22vw, prem(304));
-  max-width: prem(304);
+  right: clamp(#{prem(-24)}, -1.6vw, #{prem(-10)}); 
+  bottom: clamp(#{prem(-22)}, -1.4vw, #{prem(-10)});
+  width: clamp(#{prem(240)}, 18vw, #{prem(304)});
 
   @include mq("md") {
     position: relative;
