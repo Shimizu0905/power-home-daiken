@@ -32,10 +32,6 @@
 .p-finally__content {
   padding: 0 prem(12);
   background: rgb(255 255 255 / 80%);
-
-  @include mq("md") {
-    padding: prem(48);
-  }
 }
 
 .p-finally__content-bg {
@@ -47,6 +43,7 @@
 .p-finally__content-body {
   max-width: prem(800);
   margin: 0 auto;
+  text-align: center;
 }
 
 .p-finally__title {
@@ -55,7 +52,7 @@
   margin: 0 auto prem(24);
 
   @include mq("md") {
-    font-size: prem(28);
+    width: clamp(#{prem(200)}, 20vw, #{prem(266)});
   }
 }
 
@@ -63,14 +60,28 @@
   margin-bottom: 1.5em;
   font-size: prem(24);
   line-height: 1.4;
+  text-align: left;
   color: $navy;
+
+  @include mq("md") {
+    font-size: clamp(prem(20), 3.2vw, prem(24));
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(17), 4.1vw, prem(24));
+  }
 }
 
 .p-finally__list {
   margin-bottom: prem(24);
   font-size: prem(24);
   line-height: 1.4;
+  text-align: left;
   color: $navy;
+
+  @include mq("md") {
+    font-size: clamp(prem(20), 3.2vw, prem(24));
+  }
 }
 
 .p-finally__cta {
@@ -79,6 +90,30 @@
   font-weight: $font-weight-m;
   text-align: center;
   color: $main-orange;
+
+  &.p-finally__cta--pc {
+    display: inline;
+    @include mq("md") {
+      display: none;
+    }
+  }
+  &.p-finally__cta--md {
+    display: none;
+    @include mq("md") {
+      font-size: clamp(prem(24), 6.7vw, prem(30));
+      display: inline;
+      line-height: 1.6;
+    }
+  }
+
+  @include mq("lg") {
+    display: inline;
+    font-size: clamp(prem(24), 3.5vw, prem(30));
+  }
+
+  @include mq("md") {
+    font-size: clamp(prem(24), 4.2vw, prem(30));
+  }
 }
 
 .p-finally__banner {

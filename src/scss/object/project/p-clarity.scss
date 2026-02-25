@@ -53,6 +53,11 @@
     padding: prem(24) 4.5vw;
   }
 
+  @include mq("sm") {
+    margin-bottom: prem(60);
+    padding: prem(24) 4.5vw;
+  }
+
   &::before {
     position: absolute;
     top: clamp(prem(-12), -0.3vw, prem(-5));
@@ -277,6 +282,12 @@
     width: 14vw;
     height: 13vw;
     margin: prem(-25) auto 0;
+  }
+
+  @include mq("sm") {
+    width: clamp(prem(45), 15vw, prem(70));
+    height: clamp(prem(45), 11vw, prem(70));
+    margin: clamp(-48px, -8vw, -28px) auto 10px;
   }
 }
 

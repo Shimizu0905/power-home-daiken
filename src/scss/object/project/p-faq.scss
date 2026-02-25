@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
 
   @include mq("md") {
-    padding-top: prem(90);
+    padding-top: prem(100);
     padding-bottom: prem(90);
   }
 }
@@ -30,7 +30,11 @@
   color: $navy;
 
   @include mq("md") {
-    font-size: prem(52);
+    font-size: $section-title-md;
+  }
+
+  @include mq("sm") {
+    font-size: $section-title-sm;
   }
 
   &::before {
@@ -43,6 +47,23 @@
     background-size: contain;
     transform: translate(-50%);
     content: "";
+
+    @include mq("lg") {
+      top: prem(-160);
+      width: clamp(prem(90), 11vw, prem(146));
+    }
+
+    @include mq("md") {
+      top: -88px;
+      width: clamp(prem(80), 20vw, prem(146));
+      height: prem(100);
+    }
+
+    @include mq("sm") {
+      top: -100px;
+      width: clamp(prem(60), 11vw, prem(146));
+      width: clamp(prem(80), 16vw, prem(146));
+    }
   }
 }
 
@@ -76,9 +97,16 @@
   column-gap: prem(14);
 
   @include mq("md") {
+    align-items: start;
     grid-template-columns: prem(62) 1fr prem(44);
-    padding: prem(20) prem(22);
-    column-gap: prem(16);
+    padding: prem(20) prem(16);
+    column-gap: prem(8);
+  }
+
+  @include mq("sm") {
+    grid-template-columns: prem(40) 1fr prem(42);
+    padding: prem(18);
+    column-gap: prem(14);
   }
 }
 
@@ -94,9 +122,13 @@
   background-size: contain;
   background-repeat: no-repeat;
   overflow: hidden;
-  transition:
-    background-image 0.5s cubic-bezier(0.33, 1, 0.68, 1);
+  transition: background-image 0.5s cubic-bezier(0.33, 1, 0.68, 1);
   text-indent: -9999px;
+
+  @include mq("sm") {
+    width: clamp(prem(36), 7vw, prem(44));
+    height: clamp(prem(36), 7vw, prem(44));
+  }
 }
 
 .p-faq__qText {
@@ -109,7 +141,7 @@
   transition: color 0.5s cubic-bezier(0.33, 1, 0.68, 1);
 
   @include mq("md") {
-    font-size: prem(20);
+    font-size: clamp(prem(15), 4vw, prem(20));
   }
 }
 
@@ -210,6 +242,12 @@
     padding: prem(20) prem(22);
     column-gap: prem(16);
   }
+
+  @include mq("sm") {
+    grid-template-columns: prem(40) 1fr;
+    padding: prem(18);
+    column-gap: prem(14);
+  }
 }
 
 .p-faq__aIcon {
@@ -219,6 +257,11 @@
   background-position: center;
   background-size: contain;
   text-indent: -9999px;
+
+  @include mq("sm") {
+    width: clamp(prem(36), 7vw, prem(44));
+    height: clamp(prem(36), 7vw, prem(44));
+  }
 }
 
 .p-faq__aBody {
@@ -235,5 +278,9 @@
 
   @include mq("md") {
     font-size: prem(18);
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(14), 4.1vw, prem(16));
   }
 }

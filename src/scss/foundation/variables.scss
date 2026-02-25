@@ -48,7 +48,9 @@ $font-family-ja: "Noto Sans JP", sans-serif;
 $font-family-en: "futura-pt", "Century Gothic", arial, sans-serif;
 $font-family-zkgn: "Zen Kaku Gothic New", sans-serif;
 $font-family-base: $font-family-ja;
-$base-font-size: 16px; // prem()関数で使用する基準フォントサイズ
+$base-font-size: 16px;
+$section-title-md: clamp(1.875rem, 6.5vw, 2.25rem);
+$section-title-sm: clamp(1.5625rem, 8.5vw, 2.25rem);
 $font-24: clamp(17px, 1.7vw, 24px);
 
 // フォントウェイト (Adobe Fonts準拠)

@@ -45,7 +45,7 @@
   }
 
   @include mq("sm") {
-    width: 100%;
+    width: clamp(prem(320), 92vw, prem(400));
   }
 }
 

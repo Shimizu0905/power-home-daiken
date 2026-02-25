@@ -18,12 +18,14 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: $navy;
-}
 
-@include mq("md") {
-  .p-flow__title {
+  @include mq("md") {
     margin-bottom: prem(44);
-    font-size: prem(40);
+    font-size: $section-title-md;
+  }
+
+  @include mq("sm") {
+    font-size: $section-title-sm;
   }
 }
 
@@ -93,11 +95,9 @@
   line-height: 1.25;
   letter-spacing: 0.02em;
   color: #008be8;
-}
 
-@include mq("md") {
-  .p-flow__heading {
-    font-size: prem(28);
+  @include mq("md") {
+    font-size: clamp(prem(24), 4.8vw, prem(33));
   }
 }
 
@@ -109,9 +109,12 @@
   line-height: 1.4;
   letter-spacing: 0.04em;
   color: $navy;
+
+  @include mq("md") {
+    font-size: clamp(prem(20), 3.5vw, prem(24));
+  }
 }
 
-/* 下の矢印（ボックス枠線と繋がって見えるタイプ） */
 .p-flow__arrow {
   display: grid;
   height: prem(22);
@@ -134,7 +137,6 @@
   display: none;
 }
 
-/* ===== 1024未満（ひとまず縦積み） ===== */
 @media (width <= 600px) {
   .p-flow__card {
     flex-direction: column;
@@ -143,10 +145,12 @@
   .p-flow__media {
     width: 100%;
     flex-basis: auto;
+    aspect-ratio: 2 / 1;
   }
 
   .p-flow__img {
-    height: auto;
+    height: 100%;
+    object-fit: cover;
   }
 
   .p-flow__content {

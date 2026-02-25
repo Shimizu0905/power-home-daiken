@@ -34,6 +34,10 @@
       top: 25%;
       left: 0%;
     }
+
+    @include mq("sm") {
+      top: 41%;
+    }
   }
 }
 
@@ -52,6 +56,10 @@
   @include mq("md") {
     font-size: 4.4vw;
   }
+
+  @include mq("sm") {
+    font-size: clamp(prem(20), 6.4vw, prem(38));
+  }
 }
 
 .p-risk__heading-main {
@@ -60,8 +68,26 @@
   line-height: 1.4;
   color: $navy;
 
+  &--pc {
+    display: block;
+    @include mq("sm") {
+      display: none;
+    }
+  }
+
+  &--sp {
+    display: none;
+    @include mq("sm") {
+      display: block;
+    }
+  }
+
   @include mq("md") {
     font-size: 4.4vw;
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(20), 6.4vw, prem(38));
   }
 
   .p-risk__heading-main-bold {
@@ -77,6 +103,10 @@
 
     @include mq("md") {
       font-size: 5vw;
+    }
+
+    @include mq("sm") {
+      font-size: clamp(prem(24), 9.1vw, prem(40));
     }
   }
 
@@ -102,6 +132,10 @@
   @include mq("md") {
     font-size: 4.4vw;
   }
+
+  @include mq("sm") {
+    font-size: clamp(prem(20), 6.4vw, prem(30));
+  }
 }
 
 .p-risk__intro-dots {
@@ -112,7 +146,7 @@
   object-fit: contain;
 
   @include mq("sm") {
-    width: clamp(prem(75), 20.1vw, prem(101));
+    width: clamp(prem(50), 14.1vw, prem(101));
   }
 }
 
@@ -221,6 +255,10 @@
     padding: prem(20);
     font-size: 4.1vw;
   }
+
+  @include mq("sm") {
+    font-size: clamp(prem(16), 5.1vw, prem(20));
+  }
 }
 
 .p-risk__bottom-content {
@@ -243,6 +281,10 @@
     padding: prem(64) prem(20) prem(32);
   }
 
+  @include mq("sm") {
+    padding: prem(40) prem(20) prem(32);
+  }
+
   &::before {
     position: absolute;
     top: -18%;
@@ -256,6 +298,11 @@
     transform: translateX(-50%);
     content: "";
     pointer-events: none;
+
+    @include mq("sm") {
+      width: clamp(prem(250), 39vw, prem(294));
+      height: clamp(prem(60), 17.1vw, prem(94));
+    }
   }
 }
 

@@ -8,7 +8,9 @@
 
   padding-top: prem(56);
   padding-bottom: prem(42);
-  background-color: #f4f6f7;
+  background-color: #FFF;
+  background-image: url("/assets/common/bg-white.webp");
+  background-size: cover;
   overflow: hidden;
 }
 
@@ -19,18 +21,40 @@
 }
 
 .p-consult__title {
+  position: relative;
   margin: 0;
+  padding-bottom: prem(16);
   font-size: prem(34);
   font-weight: bold;
   line-height: 1.25;
   text-align: center;
   letter-spacing: 0.02em;
-  color: transparent;
-  background-image: linear-gradient(90deg, #2f79c9 0% 35%, $navy 35% 100%);
-  background-clip: text;
+  color: $navy;
+
+  .p-consult__title-highlight {
+    color: $mizuiro;
+  }
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: min(prem(317), 85vw);
+    background-image: url("/assets/consult/consult-accent-title.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transform: translateX(-50%);
+    aspect-ratio: 317 / 11;
+    content: "";
+  }
 
   @include mq("md") {
-    font-size: prem(40);
+    font-size: $section-title-md;
+  }
+
+  @include mq("sm") {
+    font-size: $section-title-sm;
   }
 }
 
@@ -43,13 +67,14 @@
   margin-right: auto;
   margin-left: auto;
 
-  @include mq("sm") {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   @include mq("md") {
     gap: prem(24);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     margin-top: prem(40);
+  }
+
+  @include mq("sm") {
+    gap: prem(8);
   }
 }
 
@@ -66,7 +91,7 @@
 
   @include mq("md") {
     min-height: prem(110);
-    padding: prem(26) prem(18);
+    padding: prem(10);
   }
 }
 
@@ -78,9 +103,18 @@
   text-align: center;
   letter-spacing: 0.02em;
   color: $white;
+  word-break: auto-phrase;
+
+  @include mq("lg") {
+    font-size: clamp(prem(20), 2.125vw, prem(30));
+  }
 
   @include mq("md") {
-    font-size: prem(20);
+    font-size: clamp(prem(20), 2.125vw, prem(30));
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(14), 4vw, prem(18));
   }
 }
 
@@ -94,8 +128,11 @@
   color: $navy;
 
   @include mq("md") {
-    margin-top: prem(44);
     font-size: prem(20);
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(16), 4vw, prem(20));
   }
 }
 
@@ -127,19 +164,17 @@
   width: 100%;
   max-width: clamp(#{prem(700)}, 74vw, 1080px);
   min-height: prem(132);
-  --band-pl: calc(#{prem(40)} + 164 * ((100vw - 1024px) / 416));
-  padding-top: prem-clamp(22, 31, 1440);
-  padding-right: prem-clamp(28, 40, 1440);
-  padding-bottom: prem-clamp(22, 31, 1440);
-  padding-left: clamp(#{prem(40)}, var(--band-pl), #{prem(204)});
 
+  --band-pl: calc(#{prem(40)} + 164 * ((100vw - 1024px) / 416));
+
+  padding: prem-clamp(22, 31, 1440) prem-clamp(28, 40, 1440) prem-clamp(22, 31, 1440) clamp(#{prem(40)}, var(--band-pl), #{prem(204)});
 
   @include mq("md") {
-    flex-direction: column;
-    align-items: stretch;
-    gap: prem(14);
-    min-height: auto;
-    padding: prem(18) prem(16) prem(14);
+    padding-left: prem(20);
+  }
+
+  @include mq("sm") {
+    width: 93%;
   }
 
   // Figma：箱型パネル（左だけはみ出し・全角丸・軽い影）
@@ -148,7 +183,7 @@
     z-index: 0;
     border-radius: 0 prem(266) prem(266) 0;
     box-shadow: 0 prem(2) prem(12) rgb(0 0 0 / 6%);
-    background-color: #dcecf7;
+    background: rgb(220 236 247 / 60%);
     inset: 0 0 0 clamp(prem(-80), -6vw, prem(-40));
     content: "";
   }
@@ -161,9 +196,7 @@
   color: $navy;
 
   @include mq("md") {
-    max-width: none;
-    font-size: prem(30);
-    line-height: 1.34;
+    font-size: clamp(prem(18), 4vw, prem(23));
   }
 }
 
@@ -185,13 +218,8 @@
   width: clamp(#{prem(240)}, 18vw, #{prem(304)});
 
   @include mq("md") {
-    position: relative;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    max-width: prem(240);
-    margin-top: prem(6);
-    margin-left: auto;
+    bottom: -33%;
+    width: clamp(#{prem(143)}, 32vw, #{prem(200)});
   }
 }
 

@@ -140,6 +140,10 @@
   @include mq("md") {
     width: prem(32);
   }
+
+  @include mq("sm") {
+    width: clamp(prem(24), 6vw, prem(40));
+  }
 }
 
 .p-worries__item-text {
@@ -153,7 +157,7 @@
   }
 
   @include mq("sm") {
-    font-size: clamp(prem(14.4), 1.7vw, prem(15));
+    font-size: clamp(prem(14.4), 4.1vw, prem(17));
   }
 }
 

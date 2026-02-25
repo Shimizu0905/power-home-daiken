@@ -17,6 +17,14 @@
   }
 }
 
+.u-none-sm {
+  display: inline;
+
+  @include mq("sm") {
+    display: none;
+  }
+}
+
 .lg-show {
   display: none;
 

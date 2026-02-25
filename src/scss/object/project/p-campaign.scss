@@ -14,9 +14,9 @@
     margin-top: 0;
   }
 
-  @include mq("md") {
-    padding-top: prem(60);
-    padding-bottom: prem(60);
+  @include mq("sm") {
+    padding-top: prem(32);
+    padding-bottom: prem(32);
   }
 }
 
@@ -45,6 +45,24 @@
   object-position: center;
 }
 
+.p-campaign__bg-accent-card {
+  position: absolute;
+  top: 33%;
+  left: 50%;
+  width: min(100%, prem(1440));
+  height: auto;
+  max-height: 60%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  object-position: center;
+  pointer-events: none;
+
+  @include mq("lg") {
+    top: 24%;
+    left: 42%;
+  }
+}
+
 .p-campaign__inner {
   position: relative;
   z-index: 1;
@@ -59,12 +77,16 @@
 
 .p-campaign__title {
   margin-bottom: prem(8);
-  font-size: prem(80);
+  font-size: clamp(prem(40), 6.5vw, prem(80));
   font-weight: $font-weight-b;
   color: $white;
 
   @include mq("md") {
-    font-size: prem(28);
+    font-size: clamp(prem(34), 6.5vw, prem(80));
+  }
+
+  @include mq("sm") {
+    font-size: clamp(prem(25), 6.5vw, prem(80));
   }
 }
 
@@ -74,8 +96,8 @@
   line-height: 1.4;
   color: #fff;
 
-  @include mq("md") {
-    font-size: prem(15);
+  @include mq("lg") {
+    font-size: clamp(prem(20), 3.3vw, prem(24));
   }
 }
 
@@ -88,7 +110,7 @@
 
   @include mq("md") {
     gap: prem(20);
-    padding: prem(28) prem(32);
+    padding: prem(10);
   }
 }
 
@@ -114,6 +136,16 @@
     background-repeat: no-repeat;
     transform: translate(-50%, -50%);
     content: "";
+
+    @include mq("lg") {
+      width: clamp(prem(80), 20.65vw, prem(211));
+      height: clamp(prem(96), 20.83vw, prem(228));
+    }
+
+    @include mq("sm") {
+      width: clamp(prem(80), 27.65vw, prem(120));
+      height: clamp(prem(96), 27.83vw, prem(120));
+    }
   }
 
   // 右：女性のイラスト（1440px時 161×215）
@@ -129,7 +161,23 @@
     background-repeat: no-repeat;
     transform: translate(50%, -50%);
     content: "";
+
+    @include mq("lg") {
+      width: clamp(prem(64), 19.18vw, prem(161));
+      height: clamp(prem(86), 19.93vw, prem(215));
+    }
+
+    @include mq("sm") {
+      width: clamp(prem(64), 27.18vw, prem(161));
+      height: clamp(prem(86), 27.93vw, prem(215));
+    }
   }
+}
+
+.p-campaign__gift-img-wrap {
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 .p-campaign__gift-img {
@@ -140,6 +188,12 @@
   box-shadow: 0 0 15px 0 rgb(0 0 0 / 50%);
   object-fit: contain;
   object-position: center;
+
+  @include mq("lg") {
+    width: 100%;
+
+    // max-width: clamp(prem(600), 70.19vw, prem(800));
+  }
 
   @include mq("md") {
     width: clamp(prem(200), 80vw, 622px);
@@ -186,11 +240,12 @@
   line-height: 1.4;
   color: $navy;
 
+  @include mq("lg") {
+    font-size: clamp(prem(24), 3.125vw, prem(45));
+  }
+
   @include mq("md") {
-    display: inline-block;
-    margin-bottom: prem(12);
-    padding: prem(14) prem(28);
-    font-size: prem(18);
+    font-size: clamp(prem(20), 2.125vw, prem(30));
   }
 }
 

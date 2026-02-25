@@ -50,7 +50,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@100..900&family=Noto+Sans+JP:wght@100..900&family=Zen+Maru+Gothic:wght@400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=M+PLUS+1:wght@700&family=Noto+Sans+JP:wght@400;500;700;800&family=Zen+Maru+Gothic:wght@700&display=swap"
       rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500&display=swap" rel="stylesheet">
     <!-- CSS & JavaScript -->
@@ -114,7 +114,7 @@
           <div class="c-cta" id="cta">
             <div class="c-cta__inner l-inner">
               <p class="c-cta__label">\ <span class="c-cta__label-inner">現地調査・無料見積もり</span>/</p>
-              <a href="#" class="c-cta__button" target="_blank" rel="noopener noreferrer">
+              <a href="https://lin.ee/2WpEko1" class="c-cta__button" target="_blank" rel="noopener noreferrer">
                 <img src="./assets/cta/cta-btn.svg" alt="24時間365日受付可能！LINEで相談する">
               </a>
               <p class="c-cta__contact">まずはお気軽にご連絡ください</p>
@@ -203,9 +203,11 @@
           <div class="p-risk__inner l-inner">
             <div class="p-risk__heading">
               <p class="p-risk__heading-lead">中古物件のリフォームで<br class="u-show-sm">一番怖いのは</p>
-              <p class="p-risk__heading-main"><span class="u-color-brown">“</span><span
+              <p class="p-risk__heading-main p-risk__heading-main--pc"><span class="u-color-brown">“</span><span
                   class="p-risk__heading-main-bold">「購入後に想定外の出費が出ること」</span><span class="u-color-brown">”</span><br
                   class="u-show-md">です。</span></p>
+              <p class="p-risk__heading-main p-risk__heading-main--sp"><span
+                  class="p-risk__heading-main-bold">購入後に想定外の<br>出費が出ること</span><br class="u-show-md">です。</span></p>
             </div>
             <div class="p-risk__intro">
               <p class="p-risk__intro-label">たとえば･･･</p>
@@ -385,7 +387,7 @@
             </div>
             <div class="p-timing__info">
               <p class="p-timing__info-text"><span class="p-timing__info-accent">「費用感だけ知りたい」</span><span
-                  class="p-timing__info-accent">「相場を知りたい」<br></span>そんな段階でも問題ありません。</p>
+                  class="p-timing__info-accent">「相場を知りたい」<br></span>そんな段階でも<br class="u-show-md">問題ありません。</p>
             </div>
           </div>
         </section>
@@ -423,7 +425,7 @@
               <!-- reason 2（reverse・角丸四角形画像） -->
               <li class="p-reasons__item p-reasons__item--reverse">
                 <article class="p-reasons__row p-reasons__row--reverse" aria-labelledby="reason-2-title">
-                  <div class="p-reasons__content">
+                  <div class="p-reasons__content p-reasons__content--reverse">
                     <p class="p-reasons__label">理由<span class="p-reasons__labelNum">02</span></p>
                     <p class="p-reasons__lead">必要な工事だけをご提案。</p>
                     <h3 class="p-reasons__heading" id="reason-2-title">押し売りはしません。</h3>
@@ -474,14 +476,19 @@
               loading="lazy">
             <img class="p-campaign__bg-accent" src="./assets/campaign/campaign-bg-accent.webp" alt="" width="1200"
               height="600" loading="lazy">
+            <img class="p-campaign__bg-accent-card" src="./assets/campaign/reason-accent-bg.webp" alt="" width="1440"
+              height="444" loading="lazy">
           </div>
           <div class="p-campaign__inner l-inner">
             <h2 class="p-campaign__title">WEB限定キャンペーン</h2>
             <p class="p-campaign__sub">お問い合わせ後、見積もり依頼で</p>
             <div class="p-campaign__box">
               <div class="p-campaign__gift">
-                <img class="p-campaign__gift-img" src="./assets/campaign/campaign-card.webp" alt="ギフトカード3,000円分"
-                  loading="lazy">
+                <picture class="p-campaign__gift-img-wrap">
+                  <source media="(max-width: 600px)" srcset="./assets/campaign/campaign-card-sp.webp">
+                  <img class="p-campaign__gift-img" src="./assets/campaign/campaign-card.webp" alt="ギフトカード3,000円分"
+                    loading="lazy">
+                </picture>
               </div>
             </div>
             <p class="p-campaign__lead">「相談したいけど、まだ迷っている」</p>
@@ -497,47 +504,47 @@
         <section class="p-consult" aria-labelledby="consult-title">
           <div class="p-consult__inner">
             <h2 class="p-consult__title" id="consult-title">
-              相談できる内容
+              <span class="p-consult__title-highlight">相談</span>できる内容
             </h2>
 
             <div class="p-consult__grid" role="list">
               <div class="p-consult__card" role="listitem">
                 <p class="p-consult__cardText">
-                  この中古物件、<br />
+                  この中古物件、<br class="u-none-sm">
                   買ってから後悔しない？
                 </p>
               </div>
 
               <div class="p-consult__card" role="listitem">
                 <p class="p-consult__cardText">
-                  水回りだけ<br />
-                  交換したらいくら？
+                  水回りだけ<br class="u-none-sm">
+                  交換したら<br class="u-show-md">いくら？
                 </p>
               </div>
 
               <div class="p-consult__card" role="listitem">
                 <p class="p-consult__cardText">
-                  断熱を入れると<br />
+                  断熱を入れると<br class="u-none-sm">
                   どれくらい変わる？
                 </p>
               </div>
 
               <div class="p-consult__card" role="listitem">
                 <p class="p-consult__cardText">
-                  間取り変更は可能？
+                  間取り変更は<br class="u-show-md">可能？
                 </p>
               </div>
 
               <div class="p-consult__card" role="listitem">
                 <p class="p-consult__cardText">
-                  予算〇〇万円なら、<br />
+                  予算〇〇万円<br class="u-show-md">なら、
                   どこまでできる？
                 </p>
               </div>
 
               <div class="p-consult__card" role="listitem">
                 <p class="p-consult__cardText">
-                  優先順位を<br />
+                  優先順位を<br class="u-none-sm">
                   一緒に整理してほしい
                 </p>
               </div>
@@ -545,7 +552,7 @@
 
             <p class="p-consult__note">
               どんな内容でも大丈夫です。<br />
-              「これ聞いていいのかな？」と思うことほど、遠慮なくご相談ください。
+              「これ聞いていいのかな？」と<br class="u-show-md">思うことほど、<br class="u-show-md">遠慮なくご相談ください。
             </p>
           </div>
 
@@ -720,7 +727,8 @@
                   <div class="p-faq__answerInner">
                     <span class="p-faq__aIcon" aria-hidden="true">A</span>
                     <div class="p-faq__aBody">
-                      <p class="p-faq__aText">いいえ、相談・現地確認・見積もりのみでも問題ありません。<br>無理な営業や押し売りは一切行いません。内容と金額にご納得いただけた場合のみ、ご依頼ください。</p>
+                      <p class="p-faq__aText">
+                        いいえ、相談・現地確認・見積もりのみでも問題ありません。<br>無理な営業や押し売りは一切行いません。内容と金額にご納得いただけた場合のみ、ご依頼ください。</p>
                     </div>
                   </div>
                 </div>
@@ -738,14 +746,16 @@
                   <div class="p-faq__answerInner">
                     <span class="p-faq__aIcon" aria-hidden="true">A</span>
                     <div class="p-faq__aBody">
-                      <p class="p-faq__aText">はい、大丈夫です。<br>「だいたいこのくらいまでなら」「ローンも含めて検討中」など、ざっくりした段階でもOKです。ご希望と物件の状態から、優先順位を整理しながら、予算の目安をご提案します。</p>
+                      <p class="p-faq__aText">
+                        はい、大丈夫です。<br>「だいたいこのくらいまでなら」「ローンも含めて検討中」など、ざっくりした段階でもOKです。ご希望と物件の状態から、優先順位を整理しながら、予算の目安をご提案します。
+                      </p>
                     </div>
                   </div>
                 </div>
               </details>
 
-               <!-- item 04 -->
-               <details class="p-faq__item">
+              <!-- item 04 -->
+              <details class="p-faq__item">
                 <summary class="p-faq__question">
                   <span class="p-faq__qIcon" aria-hidden="true">Q</span>
                   <span class="p-faq__qText">小規模なリフォームでも対応できますか？</span>
@@ -756,7 +766,8 @@
                   <div class="p-faq__answerInner">
                     <span class="p-faq__aIcon" aria-hidden="true">A</span>
                     <div class="p-faq__aBody">
-                      <p class="p-faq__aText">はい、部分的な工事も対応しています。<br>水回り交換・内装の一部・断熱の追加など、必要なところから無理なく進められます。「まずはここだけ直したい」というご相談もお気軽にどうぞ。</p>
+                      <p class="p-faq__aText">
+                        はい、部分的な工事も対応しています。<br>水回り交換・内装の一部・断熱の追加など、必要なところから無理なく進められます。「まずはここだけ直したい」というご相談もお気軽にどうぞ。</p>
                     </div>
                   </div>
                 </div>
@@ -772,27 +783,29 @@
           </div>
           <div class="p-finally__inner l-inner">
             <div class="p-finally__content">
-                <div class="p-finally__content-bg">
-                  <div class="p-finally__content-body">
-                    <h2 class="p-finally__title">
-                      <img src="./assets/finally/finally-title.svg" alt="最後に" width="100%" height="100%" loading="lazy">
-                    </h2>
-                    <p class="p-finally__text">中古物件は「買ったらゴール」ではありません。<br>
-                      購入後、ご家族が快適に暮らせるように整えてこそ、初めて「いい買い物」になります。</p>
-                    <p class="p-finally__text">そして一番もったいないのは、
-                      「買ってから想定外の修繕が必要だった…」と後悔してしまうこと。</p>
-                      <p class="p-finally__text">だからこそ、購入前〜購入直後のタイミングで<br>
-                        無料で一度、プロの目で確認しておくことをおすすめします。</p>
-                    <ul class="p-finally__list">
-                      <li>・見積もりだけでもOK</li>
-                      <li>・必要な工事だけを正直にご提案</li>
-                      <li>・無理な営業は一切ありません</li>
-                    </ul>
-                    <p class="p-finally__cta">中古物件の購入前・購入直後のご相談、<br class="u-show-md">大歓迎です。</p>
-                  </div>
+              <div class="p-finally__content-bg">
+                <div class="p-finally__content-body">
+                  <h2 class="p-finally__title">
+                    <img src="./assets/finally/finally-title.svg" alt="最後に" width="100%" height="100%" loading="lazy">
+                  </h2>
+                  <p class="p-finally__text">中古物件は「買ったらゴール」ではありません。<br>
+                    購入後、ご家族が快適に暮らせるように整えてこそ、初めて「いい買い物」になります。</p>
+                  <p class="p-finally__text">そして一番もったいないのは、
+                    「買ってから想定外の修繕が必要だった…」と後悔してしまうこと。</p>
+                  <p class="p-finally__text">だからこそ、購入前〜購入直後のタイミングで<br>
+                    無料で一度、プロの目で確認しておくことをおすすめします。</p>
+                  <ul class="p-finally__list">
+                    <li>・見積もりだけでもOK</li>
+                    <li>・必要な工事だけを正直にご提案</li>
+                    <li>・無理な営業は一切ありません</li>
+                  </ul>
+                  <p class="p-finally__cta p-finally__cta--pc">中古物件の<br class="u-show-sm">購入前・購入直後のご相談、<br
+                      class="u-show-md">大歓迎です。</p>
+                  <p class="p-finally__cta p-finally__cta--md">中古物件の<br>購入前・購入直後の<br>ご相談、大歓迎です。</p>
                 </div>
               </div>
             </div>
+          </div>
         </section>
         <!-- section-08 WEB限定キャンペーン -->
         <section class="p-campaign p-campaign--bottom">
@@ -801,14 +814,19 @@
               loading="lazy">
             <img class="p-campaign__bg-accent" src="./assets/campaign/campaign-bg-accent.webp" alt="" width="1200"
               height="600" loading="lazy">
+            <img class="p-campaign__bg-accent-card" src="./assets/campaign/reason-accent-bg.webp" alt="" width="1440"
+              height="444" loading="lazy">
           </div>
           <div class="p-campaign__inner l-inner">
             <h2 class="p-campaign__title">WEB限定キャンペーン</h2>
             <p class="p-campaign__sub">お問い合わせ後、見積もり依頼で</p>
             <div class="p-campaign__box">
               <div class="p-campaign__gift">
-                <img class="p-campaign__gift-img" src="./assets/campaign/campaign-card.webp" alt="ギフトカード3,000円分"
-                  loading="lazy">
+                <picture class="p-campaign__gift-img-wrap">
+                  <source media="(max-width: 600px)" srcset="./assets/campaign/campaign-card-sp.webp">
+                  <img class="p-campaign__gift-img" src="./assets/campaign/campaign-card.webp" alt="ギフトカード3,000円分"
+                    loading="lazy">
+                </picture>
               </div>
             </div>
             <p class="p-campaign__lead">「相談したいけど、まだ迷っている」</p>
@@ -824,7 +842,7 @@
         <div class="c-cta" id="cta">
           <div class="c-cta__inner l-inner">
             <p class="c-cta__label">\ <span class="c-cta__label-inner">現地調査・無料見積もり</span>/</p>
-            <a href="#" class="c-cta__button" target="_blank" rel="noopener noreferrer">
+            <a href="https://lin.ee/2WpEko1" class="c-cta__button" target="_blank" rel="noopener noreferrer">
               <img src="./assets/cta/cta-btn.svg" alt="24時間365日受付可能！LINEで相談する">
             </a>
             <p class="c-cta__contact">まずはお気軽にご連絡ください</p>
